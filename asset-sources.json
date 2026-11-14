@@ -1,0 +1,76 @@
+{
+  "checked_on": "2026-11-14",
+  "assets": [
+    {
+      "path": "assets/logo.png",
+      "source": "Pièce jointe fournie par Claire, nouvelle icône à venir sur App Store"
+    },
+    {
+      "path": "assets/app-screen-1.png",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/05/f8/91/05f891f6-79cc-2fd3-951f-8a41c9da42f5/1.png/1290x2796bb.png",
+      "store_page": "https://apps.apple.com/us/app/tree-identifier-id/id6752256800",
+      "dimensions": [
+        1287,
+        2796
+      ],
+      "platform": "ios",
+      "kind": "official_store_screenshot"
+    },
+    {
+      "path": "assets/app-screen-2.png",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2b/b1/82/2bb1822e-9179-e47f-b0c7-947d1e78a479/2.png/1290x2796bb.png",
+      "store_page": "https://apps.apple.com/us/app/tree-identifier-id/id6752256800",
+      "dimensions": [
+        1287,
+        2796
+      ],
+      "platform": "ios",
+      "kind": "official_store_screenshot"
+    },
+    {
+      "path": "assets/app-screen-3.png",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/d4/0d/abd40d77-4eda-cb27-80a8-5d0794b2f237/3.png/1290x2796bb.png",
+      "store_page": "https://apps.apple.com/us/app/tree-identifier-id/id6752256800",
+      "dimensions": [
+        1287,
+        2796
+      ],
+      "platform": "ios",
+      "kind": "official_store_screenshot"
+    },
+    {
+      "path": "assets/android/app-screen-1.png",
+      "source": "https://play-lh.googleusercontent.com/L_bwHaqGW82Yr42k0AF0eS_o_ILm1GzrkoxWNYudOtIW5YEwc8mEYd7yjt2IXPEaedCnXEuGc_8x94jOzlWG5X0=s0",
+      "store_page": "https://play.google.com/store/apps/details?id=com.identify.plant&gl=us&hl=en",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "platform": "android",
+      "kind": "official_store_screenshot"
+    },
+    {
+      "path": "assets/android/app-screen-2.png",
+      "source": "https://play-lh.googleusercontent.com/HVv_X4XU-fe8PdcCRLvl9Yy76syVKtKVDZ9i6M5E8FrAKT_CfJLY1hKCYaZfbwkTJdM_-oaOgkdcb_dT814dyxI=s0",
+      "store_page": "https://play.google.com/store/apps/details?id=com.identify.plant&gl=us&hl=en",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "platform": "android",
+      "kind": "official_store_screenshot"
+    },
+    {
+      "path": "assets/android/app-screen-3.png",
+      "source": "https://play-lh.googleusercontent.com/3MJYCT2iY5ACFHdHzv8nmuyrVip_ISIfrb8-SsnvVe2Wm6dhRWYr_olanjaMyZ2irylKY495ADZnJDI_bP5_=s0",
+      "store_page": "https://play.google.com/store/apps/details?id=com.identify.plant&gl=us&hl=en",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "platform": "android",
+      "kind": "official_store_screenshot"
+    }
+  ],
+  "monty_status": "missing_requested_photo"
+}

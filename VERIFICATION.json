@@ -1,0 +1,54 @@
+{
+  "checked_on": "2026-11-14",
+  "images_decodable": true,
+  "logo_identical_to_attachment": true,
+  "store_links_match_user": true,
+  "assets": [
+    {
+      "path": "assets/android/app-screen-1.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "923e4b1eff0d2ddb7d27bd5045c560f9f85dae5725842b5d4df979e6972ddb31"
+    },
+    {
+      "path": "assets/android/app-screen-2.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "c5fabcfdbd7523c87aec28259acba5e0ba64761fdf9e069e1bf117afd52e027c"
+    },
+    {
+      "path": "assets/android/app-screen-3.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "9aaa2ad12267b8eba44904cb2b1f9ddb8c12788cf9a38a3a4931ef74aafc2e65"
+    },
+    {
+      "path": "assets/app-screen-1.png",
+      "width": 1287,
+      "height": 2796,
+      "sha256": "75387e983d8a9123d046ddc34cf8d18499af5aa993c1963a96bb80a1a82182fe"
+    },
+    {
+      "path": "assets/app-screen-2.png",
+      "width": 1287,
+      "height": 2796,
+      "sha256": "b75c3c693401965f03b00fa4cf35a2c82c763fa87c19729f5198ea207484ef42"
+    },
+    {
+      "path": "assets/app-screen-3.png",
+      "width": 1287,
+      "height": 2796,
+      "sha256": "ea9cec2fa411c4eb2dabad15dfb490b8175ae1b12bcdf16a8d65566fcbf63c4a"
+    },
+    {
+      "path": "assets/logo.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "b0b1a0cb6ca28d43e26ca3582f42832b11bc439c6c1b1bd4d95a227860c4510b"
+    }
+  ],
+  "missing": [
+    "assets/monty.png"
+  ],
+  "ready_for_complete_asset_handoff": false
+}
