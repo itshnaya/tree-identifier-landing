@@ -2,12 +2,13 @@
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
 import { site } from '../lib/content.js';
+import { withBase } from '../lib/paths.js';
 const { nav } = site;
 ---
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 btn btn-mint">{nav.skip_link}</a>
 <header class="sticky top-0 z-40 border-b border-white/10 bg-forest/95 backdrop-blur supports-[backdrop-filter]:bg-forest/80">
   <div class="wrap flex h-16 items-center justify-between gap-3">
-    <a href="/" class="flex items-center gap-2.5 no-underline" aria-label={nav.home_label}>
+    <a href={withBase('/')} class="flex items-center gap-2.5 no-underline" aria-label={nav.home_label}>
       <Image src={logo} alt="" width={36} height={36} densities={[1, 2, 3]} class="rounded-[9px]" loading="eager" />
       <span class="font-display text-[1.2rem] font-semibold">{site.app_name}</span>
     </a>
@@ -16,7 +17,7 @@ const { nav } = site;
         {nav.links.map((l) => <li><a href={l.href} class="no-underline opacity-90 hover:opacity-100 hover:text-mint">{l.label}</a></li>)}
       </ul>
     </nav>
-    <a href="/get/" class="btn btn-mint text-sm js-get-link" data-source="header">{nav.cta}</a>
+    <a href={withBase('/get/')} data-get-link class="btn btn-mint text-sm" data-source="header">{nav.cta}</a>
   </div>
   <nav aria-label={nav.aria_label} class="md:hidden border-t border-white/10">
     <ul class="wrap flex gap-5 overflow-x-auto py-2 text-sm whitespace-nowrap [scrollbar-width:none]">

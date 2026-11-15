@@ -5,6 +5,7 @@
 import Base from '../layouts/Base.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import { site } from '../lib/content.js';
+import { withBase } from '../lib/paths.js';
 import fs from 'node:fs';
 // Inline the redirect logic (zero extra request before leaving for the store):
 // the small ES modules are concatenated into one script, imports/exports removed.
@@ -26,7 +27,7 @@ const stores = {
         <p class="max-w-[40ch] text-mint-light">{g.desktop_text}</p>
         <div data-get-qr class="rounded-3xl bg-ink p-4 empty:hidden" role="img" aria-label={g.qr_alt}></div>
         <StoreBadges source="get" />
-        <a href="/" class="underline">{g.back}</a>
+        <a href={withBase('/')} class="underline">{g.back}</a>
       </div>
       <noscript><style>[data-get-redirecting]{display:none}[data-get-fallback]{display:grid!important}</style><p>{g.noscript}</p></noscript>
     </div>

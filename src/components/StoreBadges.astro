@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
 import { site } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
+import { withBase } from '../lib/paths.js';
 const { showIcon = true, size = 'md', source = '' } = Astro.props;
 const h = size === 'lg' ? 48 : 44; // Apple badge height (>= 40px on screen)
 const playMissing = isTBC(site.stores.android_url);
@@ -14,11 +15,11 @@ const playMissing = isTBC(site.stores.android_url);
   {showIcon && (
     <Image src={logo} alt={site.stores.app_icon_alt} width={h + 12} height={h + 12} densities={[1, 2, 3]} class="app-icon rounded-[12px] border border-white/15" loading="lazy" />
   )}
-  <a href="/get/?to=ios" data-store="ios" class="badge-link" style={`--h:${h}px`}>
-    <img src="/badges/app-store-badge-black-en-us.svg" alt={site.stores.app_store_badge_alt} width={Math.round(h * 2.99)} height={h} />
+  <a href={withBase('/get/?to=ios')} data-get-link data-store="ios" class="badge-link" style={`--h:${h}px`}>
+    <img src={withBase('/badges/app-store-badge-black-en-us.svg')} alt={site.stores.app_store_badge_alt} width={Math.round(h * 2.99)} height={h} />
   </a>
-  <a href="/get/?to=android" data-store="android" class="badge-link badge-play" style={`--h:${h}px`}>
-    <img src="/badges/google-play-badge-en-us.png" alt={site.stores.google_play_badge_alt} width={Math.round(h * 1.5 * 2.584)} height={Math.round(h * 1.5)} />
+  <a href={withBase('/get/?to=android')} data-get-link data-store="android" class="badge-link badge-play" style={`--h:${h}px`}>
+    <img src={withBase('/badges/google-play-badge-en-us.png')} alt={site.stores.google_play_badge_alt} width={Math.round(h * 1.5 * 2.584)} height={Math.round(h * 1.5)} />
   </a>
   {playMissing && <span class="tbc">Google Play link [À CONFIRMER]</span>}
 </div>

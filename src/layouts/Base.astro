@@ -2,10 +2,14 @@
 import '../styles/global.css';
 import { site } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
-const { title = site.seo.title, description = site.seo.description, noindex = false, jsonLd = null } = Astro.props;
+import { withBase } from '../lib/paths.js';
+const { title = site.seo.title, description = site.seo.description, noindex: noindexProp = false, jsonLd = null } = Astro.props;
+// PREVIEW_NOINDEX=1: temporary previews (e.g. GitHub Pages) are kept out of search engines.
+const noindex = noindexProp || process.env.PREVIEW_NOINDEX === '1';
 const base = isTBC(site.site_url) ? null : site.site_url.replace(/\/$/, '');
 const canonical = base ? base + Astro.url.pathname : null;
-const ogImage = base ? `${base}/og-image.jpg` : '/og-image.jpg';
+const previewOrigin = import.meta.env.SITE ? new URL(import.meta.env.SITE).origin : '';
+const ogImage = base ? `${base}/og-image.jpg` : previewOrigin + withBase('/og-image.jpg');
 const analytics = { enabled: site.analytics.enabled, domain: site.analytics.domain, api_host: site.analytics.api_host };
 ---
 <!doctype html>
@@ -18,9 +22,9 @@ const analytics = { enabled: site.analytics.enabled, domain: site.analytics.doma
   {noindex && <meta name="robots" content="noindex" />}
   {canonical && <link rel="canonical" href={canonical} />}
   <meta name="theme-color" content="#0A3927" />
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" href={withBase('/favicon.ico')} sizes="32x32" />
+  <link rel="icon" href={withBase('/icon-192.png')} type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />

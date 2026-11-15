@@ -13,8 +13,8 @@ if (r.url) {
 } else {
   document.querySelector('[data-get-redirecting]').hidden = true;
   document.querySelector('[data-get-fallback]').hidden = false;
-  document.querySelectorAll('a[href^="/get/"]').forEach((a) => {
-    const u = new URL(a.getAttribute('href'), location.origin);
+  document.querySelectorAll('a[data-get-link]').forEach((a) => {
+    const u = new URL(a.getAttribute('href'), location.href);
     u.searchParams.set('s', r.series);
     u.searchParams.set('p', r.network);
     a.setAttribute('href', u.pathname + u.search);

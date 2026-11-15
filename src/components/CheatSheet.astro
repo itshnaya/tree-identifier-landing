@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { site } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
+import { withBase } from '../lib/paths.js';
 const c = site.cheatsheet;
 const e = c.email_capture;
 const fileExists = fs.existsSync(path.join(process.cwd(), 'public', c.file));
@@ -29,7 +30,7 @@ const emailOn = e.enabled && !isTBC(e.form_action);
             <p class="text-xs">{e.privacy_note}</p>
           </form>
         ) : fileExists ? (
-          <a href={c.file} download class="btn btn-forest text-base" data-cheatsheet>{c.download}</a>
+          <a href={withBase(c.file)} download class="btn btn-forest text-base" data-cheatsheet>{c.download}</a>
         ) : (
           <p><span class="btn btn-forest cursor-default opacity-70">{c.download}</span><br /><span class="tbc mt-2">{c.file_missing} [À CONFIRMER]</span></p>
         )}
