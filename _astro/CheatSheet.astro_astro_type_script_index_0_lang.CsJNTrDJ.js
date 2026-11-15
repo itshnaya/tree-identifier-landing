@@ -1,0 +1,1 @@
+import{t as e}from"./track.CslX9ECB.js";var t=e(JSON.parse(document.getElementById(`analytics-config`)?.textContent||`{}`));document.querySelector(`[data-cheatsheet]`)?.addEventListener(`click`,()=>t(`cheatsheet_download`,{method:`direct`})),document.querySelector(`[data-cheatsheet-form]`)?.addEventListener(`submit`,()=>t(`cheatsheet_download`,{method:`email`}));
