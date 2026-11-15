@@ -21,6 +21,8 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Icône de l'app Tree Identifier
 - TikTok · Instagram · YouTube
   🇫🇷 (noms des réseaux, non traduits)
+- Google Play link · Proposed Google Play listing:
+  🇫🇷 Lien Google Play · Fiche Google Play proposée : (visibles seulement en aperçu, à côté du badge Google Play)
 
 ## SEO (onglet du navigateur, partage, Google) — `site.json → seo`
 
@@ -136,6 +138,8 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Plante {n} sur {total}
 - Not sure what's on your windowsill? Scan it.
   🇫🇷 Vous ne savez pas ce qui pousse sur votre rebord de fenêtre ? Scannez-le.
+- [À CONFIRMER] Every tree report in the app has a safety section: toxic for pets or people, pollen allergy and edible parts.
+  🇫🇷 Chaque fiche d'arbre de l'app a une rubrique sécurité : toxique pour les animaux ou les humains, allergie au pollen et parties comestibles. (proposition, masquée en production tant que non confirmée)
 - Think your pet ate something? Call your vet right away.
   🇫🇷 Vous pensez que votre animal a mangé quelque chose ? Appelez votre vétérinaire tout de suite.
 - No plants to show yet: a plant only appears here once its sources have been checked by hand.
@@ -228,10 +232,14 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 - FAQ
   🇫🇷 FAQ
-- Is Tree Identifier free? → [À CONFIRMER]
-  🇫🇷 Tree Identifier est-elle gratuite ? → [À CONFIRMER]
-- Which plants can it identify? → [À CONFIRMER]
-  🇫🇷 Quelles plantes peut-elle identifier ? → [À CONFIRMER]
+- Is Tree Identifier free?
+  🇫🇷 Tree Identifier est-elle gratuite ?
+- Tree Identifier is free to download. Identification, health checks and the AI tree expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store account settings.
+  🇫🇷 Tree Identifier se télécharge gratuitement. L'identification, le bilan de santé et l'expert arbres par IA font partie de Premium, un abonnement payant (hebdomadaire ou annuel). Le prix s'affiche dans l'app avant de vous abonner, et vous pouvez résilier à tout moment dans les réglages de votre compte App Store. (source : fiche App Store)
+- Which plants can it identify?
+  🇫🇷 Quelles plantes peut-elle identifier ?
+- Trees, shrubs, palms, conifers and fruit trees. You can photograph a leaf, the bark, a flower, a fruit or the whole tree, and bark and buds work in winter too, when the leaves are gone. The app also includes an encyclopedia of 160 trees and shrubs.
+  🇫🇷 Les arbres, arbustes, palmiers, conifères et arbres fruitiers. Vous pouvez photographier une feuille, l'écorce, une fleur, un fruit ou l'arbre entier ; l'écorce et les bourgeons fonctionnent aussi en hiver, quand il n'y a plus de feuilles. L'app contient aussi une encyclopédie de 160 arbres et arbustes. (source : description App Store)
 - Is the toxicity info veterinary or medical advice?
   🇫🇷 Les informations de toxicité sont-elles un avis vétérinaire ou médical ?
 - No. It's general information with sources. If you think a pet or a child ate a plant, contact a vet or a poison control center right away.

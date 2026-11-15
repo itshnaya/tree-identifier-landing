@@ -13,13 +13,15 @@ import StoreLinkScript from '../components/StoreLinkScript.astro';
 import { site } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
 
-// SoftwareApplication: no price, no rating until confirmed (CLAUDE.md rule 1).
+// SoftwareApplication: price only from the store listing; no rating (CLAUDE.md rule 1).
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: site.app_name,
   description: site.hero.subtitle,
   operatingSystem: site.seo.structured_data_operating_systems.join(', '),
+  // Price from the App Store listing (iTunes Lookup: price 0, "Free"). No rating.
+  ...(isTBC(site.seo.structured_data_price) ? {} : { offers: { '@type': 'Offer', price: site.seo.structured_data_price, priceCurrency: site.seo.structured_data_currency } }),
   ...(isTBC(site.stores.ios_url) ? {} : { downloadUrl: site.stores.ios_url, installUrl: site.stores.ios_url }),
   ...(isTBC(site.site_url) ? {} : { url: site.site_url, image: `${site.site_url.replace(/\/$/, '')}/og-image.jpg` }),
 };

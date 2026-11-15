@@ -7,9 +7,12 @@ import logo from '../assets/logo.png';
 import { site } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
 import { withBase } from '../lib/paths.js';
+import { showTBC } from '../lib/mode.js';
+import Tbc from './Tbc.astro';
 const { showIcon = true, size = 'md', source = '' } = Astro.props;
 const h = size === 'lg' ? 48 : 44; // Apple badge height (>= 40px on screen)
 const playMissing = isTBC(site.stores.android_url);
+const showPlay = !playMissing || showTBC; // production: no Play badge until the link is confirmed
 ---
 <div style={`--hb:${h}px;--icon:${h}px`} class="store-badges flex flex-wrap items-center gap-2 sm:gap-3" data-source={source}>
   {showIcon && (
@@ -18,10 +21,16 @@ const playMissing = isTBC(site.stores.android_url);
   <a href={withBase('/get/?to=ios')} data-get-link data-store="ios" class="badge-link" style={`--h:${h}px`}>
     <img src={withBase('/badges/app-store-badge-black-en-us.svg')} alt={site.stores.app_store_badge_alt} width={Math.round(h * 2.99)} height={h} />
   </a>
-  <a href={withBase('/get/?to=android')} data-get-link data-store="android" class="badge-link badge-play" style={`--h:${h}px`}>
-    <img src={withBase('/badges/google-play-badge-en-us.png')} alt={site.stores.google_play_badge_alt} width={Math.round(h * 1.5 * 2.584)} height={Math.round(h * 1.5)} />
-  </a>
-  {playMissing && <span class="tbc">Google Play link [À CONFIRMER]</span>}
+  {showPlay && (
+    <a href={withBase('/get/?to=android')} data-get-link data-store="android" class="badge-link badge-play" style={`--h:${h}px`}>
+      <img src={withBase('/badges/google-play-badge-en-us.png')} alt={site.stores.google_play_badge_alt} width={Math.round(h * 1.5 * 2.584)} height={Math.round(h * 1.5)} />
+    </a>
+  )}
+  {playMissing && showTBC && (
+    <span class="text-xs leading-snug"><Tbc value={site.stores.android_url} label="Google Play link" />
+      {site.stores.android_url_proposal && <span class="block opacity-90">{site.stores.android_proposal_label} <Tbc value={site.stores.android_url_proposal} /></span>}
+    </span>
+  )}
 </div>
 <style>
   .badge-link { display: inline-flex; border-radius: 10px; transition: box-shadow .15s ease; }

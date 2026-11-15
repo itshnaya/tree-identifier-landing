@@ -36,6 +36,7 @@
   .btn-mint:hover { background: #a6f0a8; }
   .btn-outline { border: 2px solid currentColor; background: transparent; }
   .tbc { display: inline-block; background: var(--color-gold); color: #1a1200; font: 700 .72rem/1.4 var(--font-sans); padding: 1px 6px; border-radius: 4px; letter-spacing: .02em; vertical-align: middle; }
+  .proposal { font-style: italic; opacity: .9; }
   .kicker { display: inline-flex; gap: 8px; align-items: center; font-size: .82rem; font-weight: 600; color: var(--color-mint); letter-spacing: .02em; }
   .kicker::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--color-terra); }
 }

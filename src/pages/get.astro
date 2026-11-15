@@ -6,16 +6,19 @@ import Base from '../layouts/Base.astro';
 import StoreBadges from '../components/StoreBadges.astro';
 import { site } from '../lib/content.js';
 import { withBase } from '../lib/paths.js';
+import { isTBC } from '../lib/tbc.js';
 import fs from 'node:fs';
 // Inline the redirect logic (zero extra request before leaving for the store):
 // the small ES modules are concatenated into one script, imports/exports removed.
 const strip = (f) => fs.readFileSync(`src/lib/${f}`, 'utf8').replace(/^import .*$/gm, '').replace(/^export (?=(const|function|async))/gm, '');
 const inlineRedirect = `(()=>{${['tbc.js', 'storeLinks.js', 'track.js', 'getRedirect.js'].map(strip).join('\n')}})();`;
 const g = site.get_page;
+// Only confirmed values reach the browser (a proposal is never used for a redirect).
+const confirmed = (v) => (isTBC(v) ? '' : v);
 const stores = {
-  ios_url: site.stores.ios_url,
-  android_url: site.stores.android_url,
-  apple_provider_token: site.stores.apple_provider_token,
+  ios_url: confirmed(site.stores.ios_url),
+  android_url: confirmed(site.stores.android_url),
+  apple_provider_token: confirmed(site.stores.apple_provider_token),
 };
 ---
 <Base title={g.title} noindex={true}>

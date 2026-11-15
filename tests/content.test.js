@@ -3,7 +3,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { findTBC } from '../src/lib/tbc.js';
+import { findTBC, proposalOf, TBC } from '../src/lib/tbc.js';
 
 const read = (p) => fs.readFileSync(p, 'utf8');
 const json = (p) => JSON.parse(read(p));
@@ -28,8 +28,9 @@ function strings(obj, out = []) {
 
 test('every page text is in content/copy.md (English + French)', () => {
   const copy = read('content/copy.md');
-  const skip = /^(https?:|\/|\[À CONFIRMER\]$|#|plausible$|step-\d|monty$|terra$|leaf$|gold$|mint$|iOS$|[a-z-]+$|\d{4}-)/;
+  const skip = /^(https?:|\/|\[À CONFIRMER\]$|#|plausible$|step-\d|monty$|terra$|leaf$|gold$|mint$|iOS$|USD$|0$|[a-z-]+$|\d{4}-)/;
   const texts = [...strings(content.site), ...strings(content.cast), ...strings(content.series)]
+    .map((t) => (t.includes(TBC) ? proposalOf(t) : t))
     .filter((t) => t.trim() && !skip.test(t));
   const missing = texts.filter((t) => !copy.includes(t));
   assert.deepEqual(missing, []);
@@ -45,6 +46,16 @@ test('no invented social proof or forbidden wording in content', () => {
 test('"safe" only in the allowed places (cheat sheet title given by the brief, non_toxic status label)', () => {
   const allowed = new Set(['The Pet-Safe Plant Cheat Sheet', 'Not toxic (listed as safe)']);
   const bad = [...strings(content.site), ...strings(content.cast), ...strings(content.series)]
-    .filter((t) => !t.startsWith('/') && /\bsafe/i.test(t) && !allowed.has(t));
+    .filter((t) => !t.startsWith('/') && /\bsafe(ly)?\b/i.test(t) && !allowed.has(t));
   assert.deepEqual(bad, []);
+});
+
+test('production build: no [À CONFIRMER] and no proposal is visible', { skip: !fs.existsSync('dist/index.html') && 'run npm run build first' }, () => {
+  const html = read('dist/index.html');
+  if (html.includes('name="robots" content="noindex"')) return; // preview build: badges allowed
+  assert.ok(!html.includes(TBC), 'dist/index.html (production) contains [À CONFIRMER]');
+  for (const f of files) for (const t of strings(content[f])) {
+    const prop = proposalOf(t);
+    if (prop) assert.ok(!html.includes(prop), `proposal visible in production: ${prop}`);
+  }
 });

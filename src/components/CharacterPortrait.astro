@@ -4,6 +4,7 @@
 import { Picture } from 'astro:assets';
 import { site } from '../lib/content.js';
 import { TBC } from '../lib/tbc.js';
+import { showTBC } from '../lib/mode.js';
 const ui = site.ui;
 const { character, size = 280, class: cls = '' } = Astro.props;
 const files = import.meta.glob('../assets/cast/*.{png,jpg,jpeg,webp}', { eager: true });
@@ -25,6 +26,6 @@ const accent = accents[character.accent] || accents.leaf;
       <rect x="22" y="44" width="76" height="12" rx="4" fill={accent} />
       <text x="60" y="88" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="24" fill="#0A3927">{initials}</text>
     </svg>
-    <span class="tbc absolute bottom-2 left-1/2 max-w-[92%] -translate-x-1/2 text-center !text-[0.65rem]">{`${ui.image_label} ${TBC}`}</span>
+    {showTBC && <span class="tbc absolute bottom-2 left-1/2 max-w-[92%] -translate-x-1/2 text-center !text-[0.65rem]">{`${ui.image_label} ${TBC}`}</span>}
   </div>
 )}

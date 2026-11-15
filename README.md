@@ -35,11 +35,22 @@ Tout est dans `content/site.json` :
 | Lien Google Play | `stores.android_url` |
 | Jeton de campagne Apple (`pt`) | `stores.apple_provider_token` (App Store Connect → App Analytics → Campagnes) |
 | TikTok, Instagram, YouTube | `social.tiktok.url` / `.handle`, etc. |
-| Confidentialité, conditions, contact | `footer.privacy_url`, `footer.terms_url`, `footer.contact_email` |
+| Confidentialité, conditions, contact | `footer.privacy_url`, `footer.terms_url`, `footer.contact_url` |
 | Adresse du site (sitemap, image de partage) | `site_url`, par ex. `"https://www.exemple.com"` |
 | Mesure d'audience | `analytics.enabled` → `true`, `analytics.domain` → votre domaine |
 
-Tant qu'une valeur vaut `"[À CONFIRMER]"`, la page affiche un repère doré à sa place.
+## [À CONFIRMER] et propositions : aperçu ou production
+
+- `"[À CONFIRMER]"` seul : information manquante.
+- `"[À CONFIRMER] texte…"` : **proposition** de Claude, en attente de votre « oui ». Pour l'accepter, supprimez simplement `[À CONFIRMER] ` au début du texte.
+
+| Mode | Commande | [À CONFIRMER] et propositions |
+|---|---|---|
+| Développement | `npm run dev` | affichés avec le badge doré |
+| Aperçu public (GitHub Pages, noindex) | `npm run deploy:preview` | affichés avec le badge doré |
+| Production (futur domaine) | `npm run build` | **masqués** (l'élément entier disparaît : question de FAQ, lien, bouton Google Play, section PDF…) |
+
+Une proposition n'est **jamais** utilisée pour une redirection : `/get` n'envoie que vers des liens confirmés. Un test vérifie qu'aucun [À CONFIRMER] n'apparaît dans un build de production.
 
 ## Ajouter ou modifier une série
 
@@ -103,6 +114,24 @@ Netlify (même réglages : `npm run build`, dossier `dist`) et Vercel (preset As
 
 ---
 
+## Sources des informations remplies (vérifiées le 16/11/2026)
+
+| Info sur la page | Valeur | Source |
+|---|---|---|
+| FAQ « Is Tree Identifier free? » | Gratuite au téléchargement ; identification, bilan de santé et expert IA dans Premium (abonnement hebdomadaire ou annuel) | API iTunes Lookup (`price: 0`, `formattedPrice: "Free"`) + description App Store (section PREMIUM) + page apps.apple.com (achats intégrés : Weekly Subscription 6,99 $, Yearly Subscription 34,99 $ et 17,49 $) |
+| FAQ « Which plants can it identify? » | Arbres, arbustes, palmiers, conifères, arbres fruitiers ; feuille, écorce, fleur, fruit ou arbre entier ; écorce et bourgeons en hiver ; encyclopédie de 160 arbres et arbustes | Description officielle App Store (sections IDENTIFY ANY TREE et FREE TOOLS) |
+| Lien « Privacy » | https://qualitechnologies.com/privacy-policy | Fiche App Store, lien « Developer's Privacy Policy » (et description) |
+| Lien « Terms » | https://qualitechnologies.com/terms-of-use | Description officielle App Store (« Terms of Use ») |
+| Lien « Contact » | https://qualitechnologies.com/contact | Fiche App Store, lien « Support » du développeur |
+| Données structurées : prix | `0` USD | API iTunes Lookup (`price`, `currency`) |
+| Lien App Store | https://apps.apple.com/us/app/tree-identifier-id/id6752256800 | Fourni par Claire |
+
+Développeur sur l'App Store : vendeur « Qualitech Solutions Ltd », nom affiché « Qualitech » (id 1833549754). Les prix des abonnements ne sont pas affichés sur la page, car ils peuvent changer.
+
+**Google Play** : aucune fiche trouvée avec exactement le même nom de développeur. L'app `com.identify.plant` (« Identify Plants: Weeds & Care ») est publiée par « Qualitech Apps LLC » : elle reste une proposition [À CONFIRMER], jamais utilisée pour rediriger.
+
+**Non utilisé** : la note App Store (4,9 sur 13 avis au 16/11/2026, voir la question à Claire) ; « Available in 12 languages » (la fiche technique n'indique que l'anglais).
+
 ## Liste de tous les [À CONFIRMER]
 
 Chaque ligne correspond à un endroit précis de `/content` (le test `npm test` vérifie qu'aucun n'est oublié).
@@ -110,6 +139,7 @@ Chaque ligne correspond à un endroit précis de `/content` (le test `npm test` 
 **Liens et identifiants**
 - `site.json → site_url` : adresse définitive du site (domaine).
 - `site.json → stores.android_url` : lien Google Play de Tree Identifier.
+- `site.json → stores.android_url_proposal` : **proposition** `com.identify.plant` (doute : développeur « Qualitech Apps LLC » ≠ « Qualitech Solutions Ltd » sur l'App Store, et nom d'app différent).
 - `site.json → stores.apple_provider_token` : jeton fournisseur Apple pour les campagnes (`pt`).
 - `site.json → social.tiktok.handle`, `site.json → social.tiktok.url` : compte TikTok de Plant Tea.
 - `site.json → social.instagram.handle`, `site.json → social.instagram.url` : compte Instagram.
@@ -119,14 +149,9 @@ Chaque ligne correspond à un endroit précis de `/content` (le test `npm test` 
 - `series.json → [2].tiktok_video_url` : vidéo TikTok de Toxic or Not?.
 - `series.json → [3].tiktok_video_url` : vidéo TikTok de Windowsill Villa.
 - `series.json → [4].tiktok_video_url` : vidéo TikTok de Who's That Tree?.
-- `site.json → footer.privacy_url` : page de confidentialité.
-- `site.json → footer.terms_url` : conditions d'utilisation.
-- `site.json → footer.contact_email` : adresse de contact.
 
-**Informations sur l'app**
-- `site.json → faq.items[0].a` : l'app est-elle gratuite ? (prix, abonnement, essai)
-- `site.json → faq.items[1].a` : quelles plantes l'app identifie-t-elle ?
-- Toute autre fonctionnalité (non affichée tant qu'elle n'est pas confirmée).
+**Propositions de texte**
+- `site.json → quiz.safety_note` : **proposition** « Every tree report in the app has a safety section… » sous l'invitation à scanner du mini-jeu (source : description App Store, rubrique Safety ; doute : nouvelle phrase marketing que vous n'avez pas demandée).
 
 **Services à choisir**
 - `site.json → analytics.domain` : outil de mesure sans cookies (prévu : Plausible, ou équivalent) et domaine déclaré.

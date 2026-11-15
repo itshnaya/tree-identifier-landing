@@ -6,12 +6,14 @@ import path from 'node:path';
 import { site } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
 import { withBase } from '../lib/paths.js';
+import { showTBC } from '../lib/mode.js';
 const c = site.cheatsheet;
 const e = c.email_capture;
 const fileExists = fs.existsSync(path.join(process.cwd(), 'public', c.file));
 const emailOn = e.enabled && !isTBC(e.form_action);
+const visible = emailOn || fileExists || showTBC;
 ---
-<section id="cheat-sheet" class="section bg-forest-2" aria-labelledby="cheat-title">
+{visible && <section id="cheat-sheet" class="section bg-forest-2" aria-labelledby="cheat-title">
   <div class="wrap">
     <div class="card-light grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-10">
       <div>
@@ -37,7 +39,7 @@ const emailOn = e.enabled && !isTBC(e.form_action);
       </div>
     </div>
   </div>
-</section>
+</section>}
 <style>.btn-forest { background: var(--color-forest); color: var(--color-ink); }</style>
 <script>
   import { makeTracker } from '../lib/track.js';

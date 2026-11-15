@@ -3,6 +3,9 @@
 // time (source + verified_at required). Unverified cards never reach the page.
 import CharacterPortrait from './CharacterPortrait.astro';
 import StoreBadges from './StoreBadges.astro';
+import Tbc from './Tbc.astro';
+import { isTBC } from '../lib/tbc.js';
+import { showTBC } from '../lib/mode.js';
 import { site, cast, cards, isQuizPreview } from '../lib/content.js';
 const q = site.quiz;
 const host = cast.find((c) => c.id === 'dr-whiskers');
@@ -45,6 +48,7 @@ const labels = {
             <div data-quiz-result hidden tabindex="-1" class="mt-6 rounded-2xl bg-white/70 p-4 outline-none" aria-live="polite"></div>
             <div data-quiz-after hidden class="mt-6 border-t border-forest/15 pt-5">
               <p class="font-display text-[1.25rem] font-semibold">{q.scan_cta}</p>
+              {(!isTBC(q.safety_note) || showTBC) && <p class="mt-1 text-[0.95rem]"><Tbc value={q.safety_note} /></p>}
               <div class="badges-on-light mt-3"><StoreBadges showIcon={true} source="quiz" /></div>
               <button type="button" class="btn btn-forest mt-5" data-quiz-next></button>
             </div>

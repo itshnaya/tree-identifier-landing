@@ -3,8 +3,9 @@
 import Tbc from './Tbc.astro';
 import { site, series } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
+import { showTBC } from '../lib/mode.js';
 const w = site.watch;
-const socials = Object.values(site.social);
+const socials = Object.values(site.social).filter((s) => showTBC || !isTBC(s.url));
 const videoId = (url) => (isTBC(url) ? null : (String(url).match(/\/video\/(\d+)/) || [])[1] || null);
 ---
 <section id="watch" class="section" aria-labelledby="watch-title">
@@ -23,21 +24,21 @@ const videoId = (url) => (isTBC(url) ? null : (String(url).match(/\/video\/(\d+)
                 <button type="button" class="btn btn-mint" data-tiktok-url={s.tiktok_video_url} data-tiktok-id={id} data-series={s.id} data-watch-label={w.watch_on_tiktok}>
                   <span aria-hidden="true">▶</span> {w.play_label}<span class="sr-only">: {s.title}</span>
                 </button>
-              ) : (
+              ) : showTBC ? (
                 <p class="text-sm text-mint-light">{w.no_video} <Tbc value={s.tiktok_video_url} /></p>
-              )}
+              ) : null}
             </div>
           </li>
         );
       })}
     </ul>
-    <p class="mt-3 text-sm text-mint-light">{w.embed_notice}</p>
-    <div class="mt-8 flex flex-wrap items-center gap-3">
+    {series.some((s) => videoId(s.tiktok_video_url)) && <p class="mt-3 text-sm text-mint-light">{w.embed_notice}</p>}
+    {socials.length > 0 && <div class="mt-8 flex flex-wrap items-center gap-3">
       <span class="font-semibold">{w.follow_label}</span>
       {socials.map((s) => isTBC(s.url)
         ? <span class="btn btn-outline cursor-default text-sm">{s.label} <span class="tbc">[À CONFIRMER]</span></span>
         : <a class="btn btn-outline text-sm" href={s.url} target="_blank" rel="noopener">{s.label}</a>)}
-    </div>
+    </div>}
   </div>
 </section>
 <script>

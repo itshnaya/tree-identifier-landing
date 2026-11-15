@@ -10,7 +10,7 @@ const base = isTBC(site.site_url) ? null : site.site_url.replace(/\/$/, '');
 const canonical = base ? base + Astro.url.pathname : null;
 const previewOrigin = import.meta.env.SITE ? new URL(import.meta.env.SITE).origin : '';
 const ogImage = base ? `${base}/og-image.jpg` : previewOrigin + withBase('/og-image.jpg');
-const analytics = { enabled: site.analytics.enabled, domain: site.analytics.domain, api_host: site.analytics.api_host };
+const analytics = { enabled: site.analytics.enabled && !isTBC(site.analytics.domain), domain: isTBC(site.analytics.domain) ? '' : site.analytics.domain, api_host: site.analytics.api_host };
 ---
 <!doctype html>
 <html lang="en-US">

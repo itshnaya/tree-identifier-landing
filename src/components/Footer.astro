@@ -2,12 +2,14 @@
 import StoreBadges from './StoreBadges.astro';
 import { site } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
+import { showTBC } from '../lib/mode.js';
 const f = site.footer;
 const links = [
   { label: f.privacy_label, href: f.privacy_url },
   { label: f.terms_label, href: f.terms_url },
-  { label: f.contact_label, href: isTBC(f.contact_email) ? f.contact_email : `mailto:${f.contact_email}` },
-];
+  { label: f.contact_label, href: f.contact_url },
+].filter((l) => showTBC || !isTBC(l.href));
+const socials = Object.values(site.social).filter((s) => showTBC || !isTBC(s.url));
 ---
 <footer class="border-t border-white/10 bg-[#072B1D] py-12">
   <div class="wrap grid gap-8 md:grid-cols-2">
@@ -16,18 +18,18 @@ const links = [
       <p class="mt-6 font-semibold">{f.made_by}.</p>
     </div>
     <div class="grid gap-6 md:justify-items-end">
-      <div>
+      {socials.length > 0 && <div>
         <p class="font-semibold md:text-right">{f.follow}</p>
         <ul class="mt-3 flex flex-wrap gap-3 md:justify-end">
-          {Object.values(site.social).map((s) => (
+          {socials.map((s) => (
             <li>{isTBC(s.url)
               ? <span class="btn btn-outline text-sm">{s.label} <span class="tbc">[À CONFIRMER]</span></span>
               : <a class="btn btn-outline text-sm" href={s.url} target="_blank" rel="noopener">{s.label}{!isTBC(s.handle) && ` ${s.handle}`}</a>}</li>
           ))}
         </ul>
-      </div>
+      </div>}
       <ul class="flex flex-wrap gap-5 text-sm md:justify-end">
-        {links.map((l) => <li>{isTBC(l.href) ? <span>{l.label} <span class="tbc">[À CONFIRMER]</span></span> : <a href={l.href} class="underline">{l.label}</a>}</li>)}
+        {links.map((l) => <li>{isTBC(l.href) ? <span>{l.label} <span class="tbc">[À CONFIRMER]</span></span> : <a href={l.href} class="underline" target="_blank" rel="noopener">{l.label}</a>}</li>)}
       </ul>
     </div>
   </div>

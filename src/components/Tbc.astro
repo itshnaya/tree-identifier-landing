@@ -1,8 +1,16 @@
 ---
-// Shows the value, or a visible [À CONFIRMER] marker when the info is missing.
-import { isTBC, TBC } from '../lib/tbc.js';
+// Confirmed value → shown as is.
+// [À CONFIRMER] (+ optional proposal) → badge + proposal in dev/preview, nothing in production.
+import { isTBC, proposalOf, TBC } from '../lib/tbc.js';
+import { showTBC } from '../lib/mode.js';
 const { value, label } = Astro.props;
+const tbc = isTBC(value);
+const proposal = proposalOf(value);
 ---
-{isTBC(value)
-  ? <span class="tbc" title="Information to confirm">{label ? `${label} ${TBC}` : TBC}</span>
-  : <Fragment set:text={value} />}
+{!tbc && <Fragment set:text={value} />}
+{tbc && showTBC && (
+  <>
+    <span class="tbc" title="Information to confirm">{label ? `${label} ${TBC}` : TBC}</span>
+    {proposal && <> <span class="proposal">{proposal}</span></>}
+  </>
+)}
