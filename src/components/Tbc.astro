@@ -1,0 +1,8 @@
+---
+// Shows the value, or a visible [À CONFIRMER] marker when the info is missing.
+import { isTBC, TBC } from '../lib/tbc.js';
+const { value, label } = Astro.props;
+---
+{isTBC(value)
+  ? <span class="tbc" title="Information to confirm">{label ? `${label} ${TBC}` : TBC}</span>
+  : <Fragment set:text={value} />}

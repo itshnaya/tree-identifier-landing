@@ -1,0 +1,212 @@
+{
+  "site_url": "[À CONFIRMER]",
+  "app_name": "Tree Identifier",
+  "media_name": "Plant Tea",
+  "stores": {
+    "ios_url": "https://apps.apple.com/us/app/tree-identifier-id/id6752256800",
+    "android_url": "[À CONFIRMER]",
+    "apple_provider_token": "[À CONFIRMER]",
+    "app_store_badge_alt": "Download on the App Store",
+    "google_play_badge_alt": "Get it on Google Play",
+    "app_icon_alt": "Tree Identifier app icon"
+  },
+  "social": {
+    "tiktok": {
+      "label": "TikTok",
+      "handle": "[À CONFIRMER]",
+      "url": "[À CONFIRMER]"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "handle": "[À CONFIRMER]",
+      "url": "[À CONFIRMER]"
+    },
+    "youtube": {
+      "label": "YouTube",
+      "handle": "[À CONFIRMER]",
+      "url": "[À CONFIRMER]"
+    }
+  },
+  "analytics": {
+    "provider": "plausible",
+    "enabled": false,
+    "domain": "[À CONFIRMER]",
+    "api_host": "https://plausible.io"
+  },
+  "seo": {
+    "title": "Tree Identifier — Snap a photo. Meet your plant.",
+    "description": "Tree Identifier names your plant from a photo and tells you how to care for it. From the team behind Plant Tea.",
+    "og_image_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
+    "structured_data_operating_systems": [
+      "iOS"
+    ]
+  },
+  "nav": {
+    "home_label": "Tree Identifier home",
+    "links": [
+      {
+        "label": "How it works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Toxic or Not?",
+        "href": "#toxic-or-not"
+      },
+      {
+        "label": "The cast",
+        "href": "#cast"
+      },
+      {
+        "label": "Watch",
+        "href": "#watch"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": "Get the app",
+    "skip_link": "Skip to content",
+    "aria_label": "Sections"
+  },
+  "hero": {
+    "title_line_1": "Snap a photo.",
+    "title_line_2": "Meet your plant.",
+    "subtitle": "Tree Identifier names your plant from a photo and tells you how to care for it.",
+    "tea_line": "Your plants have drama. We translate it.",
+    "tea_signature": "— From the team behind Plant Tea",
+    "monty_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
+    "monty_bubble_before": "Darling, ",
+    "monty_bubble_highlight": "I",
+    "monty_bubble_after": " have a name."
+  },
+  "how_it_works": {
+    "title": "How it works",
+    "intro": "Three steps. No drama. (We save that for the show.)",
+    "steps": [
+      {
+        "title": "Take a photo",
+        "text": "Point your camera at the plant.",
+        "image": "step-1-photo",
+        "alt": "Tree Identifier app screen: a tree framed in the camera viewfinder, labeled Tilia"
+      },
+      {
+        "title": "Get its name",
+        "text": "The app's AI tells you what it is.",
+        "image": "step-2-name",
+        "alt": "Tree Identifier app screen: result page naming the tree African Mahogany, Khaya anthotheca"
+      },
+      {
+        "title": "Learn how to care for it",
+        "text": "Watering, light, soil and more.",
+        "image": "step-3-care",
+        "alt": "Tree Identifier app screen: care tips for watering, light, soil, temperature and fertilizing"
+      }
+    ],
+    "screens_note": "Screens from the iPhone app."
+  },
+  "quiz": {
+    "title": "Toxic or Not?",
+    "host_intro": "Hosted by Dr. Whiskers",
+    "intro": "Could this plant hurt your cat or dog? Make your call.",
+    "question": "For cats and dogs, is this plant…",
+    "answer_toxic": "Toxic",
+    "answer_not_toxic": "Not toxic",
+    "correct": "You got it.",
+    "wrong": "Not quite.",
+    "label_cats": "Cats",
+    "label_dogs": "Dogs",
+    "label_children": "Children",
+    "status_toxic": "Toxic",
+    "status_mild": "Mildly toxic",
+    "status_non_toxic": "Not toxic (listed as safe)",
+    "status_unknown": "Unknown",
+    "children_unknown": "Keep out of reach of children and pets",
+    "source_label": "Source",
+    "next": "Next plant",
+    "restart": "Play again",
+    "progress": "Plant {n} of {total}",
+    "scan_cta": "Not sure what's on your windowsill? Scan it.",
+    "vet_warning": "Think your pet ate something? Call your vet right away.",
+    "empty": "No plants to show yet: a plant only appears here once its sources have been checked by hand."
+  },
+  "cast": {
+    "title": "Meet the cast",
+    "intro": "The faces are on the pots. The drama is in the leaves."
+  },
+  "watch": {
+    "title": "Watch the show",
+    "intro": "Plant Tea is a sitcom about houseplants. The jokes come first, and every episode sneaks in a real plant lesson.",
+    "play_label": "Play an episode",
+    "follow_label": "Follow on",
+    "embed_notice": "Playing loads a video from TikTok.",
+    "no_video": "Episode link",
+    "watch_on_tiktok": "Watch on TikTok"
+  },
+  "cheatsheet": {
+    "title": "The Pet-Safe Plant Cheat Sheet",
+    "text": "A free PDF to keep on your phone or stick on the fridge.",
+    "download": "Download the free PDF",
+    "file": "/downloads/pet-safe-plant-cheat-sheet.pdf",
+    "file_missing": "PDF file not added yet",
+    "email_capture": {
+      "enabled": false,
+      "provider_name": "[À CONFIRMER]",
+      "form_action": "[À CONFIRMER]",
+      "email_label": "Your email",
+      "consent_label": "Yes, send me the cheat sheet and occasional emails from the Tree Identifier team. I can unsubscribe anytime.",
+      "submit": "Send me the PDF",
+      "privacy_note": "We'll only use your email as described in our privacy policy."
+    },
+    "kicker": "Free"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {
+        "q": "Is Tree Identifier free?",
+        "a": "[À CONFIRMER]"
+      },
+      {
+        "q": "Which plants can it identify?",
+        "a": "[À CONFIRMER]"
+      },
+      {
+        "q": "Is the toxicity info veterinary or medical advice?",
+        "a": "No. It's general information with sources. If you think a pet or a child ate a plant, contact a vet or a poison control center right away."
+      },
+      {
+        "q": "Who makes Plant Tea?",
+        "a": "Plant Tea is made by the Tree Identifier team."
+      },
+      {
+        "q": "Are the characters AI?",
+        "a": "Yes, our characters are animated with AI."
+      }
+    ]
+  },
+  "footer": {
+    "made_by": "Plant Tea is made by the Tree Identifier team",
+    "follow": "Follow Plant Tea",
+    "privacy_label": "Privacy",
+    "privacy_url": "[À CONFIRMER]",
+    "terms_label": "Terms",
+    "terms_url": "[À CONFIRMER]",
+    "contact_label": "Contact",
+    "contact_email": "[À CONFIRMER]"
+  },
+  "get_page": {
+    "title": "Get Tree Identifier",
+    "redirecting": "Taking you to the store…",
+    "desktop_title": "Get Tree Identifier on your phone",
+    "desktop_text": "Scan this code with your phone's camera, or pick your store.",
+    "qr_alt": "QR code that opens this page on your phone",
+    "back": "Back to the home page",
+    "noscript": "Pick your store below."
+  },
+  "ui": {
+    "image_placeholder_suffix": "(image coming)",
+    "quiz_noscript": "JavaScript is needed to play.",
+    "image_label": "Image"
+  }
+}

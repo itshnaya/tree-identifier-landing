@@ -1,26 +1,41 @@
-# Préparation de la landing Plant / Tree Identifier
+# Landing Tree Identifier × Plant Tea — consignes permanentes
 
-Ce dossier contient les assets préparés à la demande de Claire le 14 novembre 2026. La landing sera réalisée avec Claude Code à partir du brief de Claire ; le brief complet de la page n'est pas inclus dans cette conversation. Ne pas inventer un brief de remplacement.
+Site statique Astro + Tailwind. Page en anglais américain (marché US puis UK), échanges avec Claire en français.
+Les consignes globales de Claire (`~/.claude/CLAUDE.md`) s'appliquent aussi.
 
-## Fichiers à utiliser
+## RÈGLES NON NÉGOCIABLES (valables pour toute modification future)
 
-- `assets/logo.png` : logo exact fourni par Claire, fond vert foncé et pousse vert clair. Utiliser ce logo, même si l'icône publique du store est encore différente. Claire indique qu'une mise à jour de l'icône iOS est prévue ; cette mise à jour n'a pas été effectuée ni vérifiée ici.
-- `assets/monty.png` : photo demandée de Monty, deuxième photo de profil, tasse contre la bouche. Fichier fourni par Claire dans Téléchargements, copié sans modification le 15 novembre 2026 ; correspondance visuelle vérifiée (personnage plante en pot tenant la tasse contre la bouche). Utiliser ce portrait exact.
-- `assets/app-screen-1.png`, `assets/app-screen-2.png`, `assets/app-screen-3.png` : trois visuels officiels de la fiche App Store de l'app iOS fournie, en haute résolution. Ce sont les compositions promotionnelles publiées sur le store, avec l'interface de l'app ; pas des captures brutes prises sur un iPhone par nos soins. Les employer tels quels si cela correspond au brief ; si des écrans bruts sont nécessaires, demander de vraies captures à Claire.
-- `assets/android/app-screen-1.png` à `app-screen-3.png` : trois alternatives officielles de la nouvelle app Android. Ne pas présenter un écran Android comme l'interface iOS, ni l'inverse.
-- `store-links.json` : liens stores exacts autorisés par Claire.
-- `asset-sources.json` : provenance des images.
+1. Aucun avis, témoignage, note, nombre de téléchargements, logo de presse, récompense ou statistique inventés. Aucune note (`aggregateRating`) ni prix (`offers`) dans les données structurées tant qu'il n'y a pas de vraie note ou de vrai prix.
+2. Aucune fonctionnalité de l'app qui n'est pas confirmée. Confirmé à ce jour, et rien d'autre : l'app identifie une plante à partir d'une photo grâce à l'IA, et explique comment en prendre soin. Pas de « best app », pas de nom de concurrent.
+3. Toxicité : seulement les fiches de `/content/toxicity.json` qui ont une source et un champ `verified_at` rempli. Le mini-jeu ignore les autres fiches (filtre dans `src/lib/toxicity.js`, test `tests/toxicity.test.js`). Le mot « safe » n'apparaît que pour un statut `non_toxic` sourcé (seule exception : le titre « The Pet-Safe Plant Cheat Sheet » donné par Claire). Si le statut pour les enfants est inconnu, afficher « Keep out of reach of children and pets ». Ne jamais récupérer automatiquement le contenu du site de l'ASPCA : seulement un lien vers la fiche, vérifiée à la main par Claire (`verified_by`, `verified_at`).
+4. La page dit clairement qu'elle vient de l'équipe Tree Identifier.
+5. Ne jamais inviter à « chercher Tree Identifier » dans les stores (d'autres apps portent ce nom) : toujours des liens directs, via `/get`.
+6. Aucun symbole protégé à l'image (croix rouge sur fond blanc). Aucun nom ni élément d'une marque existante (pas de « Love Island »).
+7. Ne créer aucun compte, n'acheter aucun domaine, ne souscrire à aucun service : dire à Claire ce qu'il faut, elle s'en occupe.
 
-## Liens imposés
+## Autres règles du brief
 
-Android (nouvelle app) : https://play.google.com/store/apps/details?id=com.identify.plant&gl=us
+- Information manquante → valeur `"[À CONFIRMER]"` dans `/content`, repère doré visible sur la page, et ligne dans la liste du README (un test le vérifie). Ne jamais remplacer par une supposition.
+- Tous les textes, liens et identifiants vivent dans `/content` (site.json, cast.json, series.json, toxicity.json), jamais en dur dans le code. Chaque texte a sa traduction dans `/content/copy.md` (un test le vérifie).
+- N'inventer aucune capture d'app. Aucune fausse interface de réseau social (compteurs de likes, vues, commentaires).
+- Visages des personnages sur les pots, jamais sur les feuilles. Répliques du casting : du caractère, aucun conseil botanique.
+- Badges App Store / Google Play : fichiers officiels, non modifiés (`public/badges/`).
+- Mobile d'abord (375 px), contraste AA, textes alternatifs, clavier, `prefers-reduced-motion`. Très peu de JavaScript. Lighthouse mobile ≥ 90 (performance, accessibilité, SEO).
+- Mesure d'audience sans cookies, désactivée tant que `analytics.enabled` est `false`.
 
-Apple (une seule app) : https://apps.apple.com/us/app/tree-identifier-id/id6752256800
+## Assets (préparés par Codex le 14–15/11/2026)
 
-Le « deuxième lien Google » désigne ici l'app Android ci-dessus. Aucun autre lien Android n'a été fourni pour cette préparation : ne pas en déduire un ancien lien et ne pas ajouter un second bouton iOS.
+- `assets/logo.png` : logo exact fourni par Claire. `assets/monty.png` : portrait exact de Monty. Ne pas les remplacer.
+- `assets/app-screen-1..3.png` : visuels officiels de la fiche App Store (iOS). La page utilise des **recadrages sans les titres promotionnels** (`src/assets/screens/`), choix validé par Claire le 15/11/2026, car ces titres annoncent des fonctionnalités non confirmées. Le bouton « Ask Expert » de l'interface reste visible sur l'étape 3 : à ne pas mettre en avant dans les textes.
+- `assets/android/` : visuels de l'app Google Play `com.identify.plant` (nom sur le store : « Identify Plants: Weeds & Care »). **Non utilisés** : Claire a demandé le 15/11/2026 de n'utiliser pour l'instant que le lien App Store, avec un bouton Google Play dont le lien reste `[À CONFIRMER]`. Ne pas brancher ce lien Android sans son accord.
 
-## Réalisation
+## Commandes
 
-Lire le brief complet de Claire avant de construire la page. Conserver le logo fourni et le portrait Monty exact. Ne pas modifier les fiches stores ou leurs icônes ; ce dossier prépare seulement la landing. Ne pas inventer d'avis, de statistiques, de tarifs ou de garanties de précision. Vérifier les boutons vers les stores, l'affichage mobile et le chargement des assets avant de conclure.
+Node : `~/.local/node22/bin` (ajouter au PATH). `node_modules` et `dist` sont des liens vers des dossiers `.nosync` (iCloud).
 
-Le projet est local. Aucune publication ni destination d'hébergement n'a été créée ou autorisée pour cette landing. Ne pas mélanger ce dossier avec Gutdrama ou les autres projets de Claire.
+- `npm run dev` : serveur local. `npm run preview-quiz` : aperçu local du jeu avec les fiches NON vérifiées (bannière rouge ; refusé au build).
+- `npm run build` puis `npm test` : à lancer avant tout commit. `npm run icons` : régénère favicons et image de partage.
+
+## Hébergement
+
+Aucun hébergement ni domaine créé ou autorisé à ce jour. Ne rien publier sans destination enregistrée et accord de Claire.

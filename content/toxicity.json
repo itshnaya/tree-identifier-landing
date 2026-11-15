@@ -1,0 +1,24 @@
+[
+  {
+    "species_scientific": "Monstera deliciosa",
+    "common_name": "Monstera",
+    "toxic_cats": "toxic",
+    "toxic_dogs": "toxic",
+    "toxic_children": "unknown",
+    "note": "",
+    "source_url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/ceriman",
+    "verified_by": "",
+    "verified_at": ""
+  },
+  {
+    "species_scientific": "Lilium longiflorum",
+    "common_name": "Easter lily",
+    "toxic_cats": "toxic",
+    "toxic_dogs": "mild",
+    "toxic_children": "unknown",
+    "note": "For cats, the whole plant is dangerous, including the pollen and the water in the vase: it can cause kidney failure. In dogs, it may cause a mild stomach upset.",
+    "source_url": "https://www.fda.gov/animal-veterinary/animal-health-literacy/lovely-lilies-and-curious-cats-dangerous-combination",
+    "verified_by": "",
+    "verified_at": ""
+  }
+]

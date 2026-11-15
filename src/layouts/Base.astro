@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+import { site } from '../lib/content.js';
+import { isTBC } from '../lib/tbc.js';
+const { title = site.seo.title, description = site.seo.description, noindex = false, jsonLd = null } = Astro.props;
+const base = isTBC(site.site_url) ? null : site.site_url.replace(/\/$/, '');
+const canonical = base ? base + Astro.url.pathname : null;
+const ogImage = base ? `${base}/og-image.jpg` : '/og-image.jpg';
+const analytics = { enabled: site.analytics.enabled, domain: site.analytics.domain, api_host: site.analytics.api_host };
+---
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex" />}
+  {canonical && <link rel="canonical" href={canonical} />}
+  <meta name="theme-color" content="#0A3927" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={site.seo.og_image_alt} />
+  {canonical && <meta property="og:url" content={canonical} />}
+  <meta name="twitter:card" content="summary_large_image" />
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  <script type="application/json" id="analytics-config" set:html={JSON.stringify(analytics)} />
+</head>
+<body>
+  <slot />
+</body>
+</html>

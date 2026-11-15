@@ -1,0 +1,120 @@
+---
+// "Toxic or Not?" — data comes ONLY from /content/toxicity.json, filtered at build
+// time (source + verified_at required). Unverified cards never reach the page.
+import CharacterPortrait from './CharacterPortrait.astro';
+import StoreBadges from './StoreBadges.astro';
+import { site, cast, cards, isQuizPreview } from '../lib/content.js';
+const q = site.quiz;
+const host = cast.find((c) => c.id === 'dr-whiskers');
+const labels = {
+  toxic: q.status_toxic, mild: q.status_mild, non_toxic: q.status_non_toxic, unknown: q.status_unknown,
+  cats: q.label_cats, dogs: q.label_dogs, children: q.label_children, children_unknown: q.children_unknown,
+  correct: q.correct, wrong: q.wrong, source: q.source_label, next: q.next, restart: q.restart, progress: q.progress,
+};
+---
+<section id="toxic-or-not" class="section" aria-labelledby="quiz-title">
+  <div class="wrap">
+    <div class="grid gap-8 md:grid-cols-[280px_1fr] md:items-start">
+      <div class="flex items-center gap-4 md:flex-col md:items-start">
+        <div class="w-28 shrink-0 overflow-hidden rounded-3xl md:w-full">
+          {host && <CharacterPortrait character={host} size={280} />}
+        </div>
+        <div>
+          <p class="kicker">{q.host_intro}</p>
+          <h2 id="quiz-title" class="section-title mt-2">{q.title}</h2>
+          <p class="section-intro">{q.intro}</p>
+        </div>
+      </div>
+
+      <div>
+        {isQuizPreview && (
+          <p class="mb-4 rounded-xl bg-terra px-4 py-3 font-semibold text-ink" role="note">APERÇU LOCAL — fiches NON vérifiées. Ce mode est refusé lors du build.</p>
+        )}
+        {cards.length === 0 ? (
+          <div class="card-light p-6"><p class="font-medium">{q.empty}</p></div>
+        ) : (
+          <div class="card-light p-5 md:p-8" id="quiz" data-labels={JSON.stringify(labels)}>
+            <p class="text-sm font-semibold text-leaf-dark" data-quiz-progress></p>
+            <p class="mt-3 text-[0.95rem]">{q.question}</p>
+            <h3 class="mt-1 text-[1.9rem] font-bold" data-quiz-name></h3>
+            <p class="italic" data-quiz-sci></p>
+            <div class="mt-5 grid grid-cols-2 gap-3" role="group" aria-label={q.question}>
+              <button type="button" class="btn btn-quiz" data-answer="toxic">{q.answer_toxic}</button>
+              <button type="button" class="btn btn-quiz" data-answer="not_toxic">{q.answer_not_toxic}</button>
+            </div>
+            <div data-quiz-result hidden tabindex="-1" class="mt-6 rounded-2xl bg-white/70 p-4 outline-none" aria-live="polite"></div>
+            <div data-quiz-after hidden class="mt-6 border-t border-forest/15 pt-5">
+              <p class="font-display text-[1.25rem] font-semibold">{q.scan_cta}</p>
+              <div class="badges-on-light mt-3"><StoreBadges showIcon={true} source="quiz" /></div>
+              <button type="button" class="btn btn-forest mt-5" data-quiz-next></button>
+            </div>
+            <noscript><p class="mt-4">{site.ui.quiz_noscript}</p></noscript>
+            <script type="application/json" data-quiz-cards set:html={JSON.stringify(cards)} />
+          </div>
+        )}
+        <p class="mt-5 flex items-start gap-3 rounded-2xl border-2 border-terra bg-forest-2 p-4 font-semibold" role="note">
+          <span aria-hidden="true" class="text-xl leading-none">⚠</span><span>{q.vet_warning}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .text-leaf-dark { color: #17733A; }
+  .btn-quiz { background: var(--color-forest); color: var(--color-ink); min-height: 52px; font-size: 1.05rem; border-radius: 16px; }
+  .btn-quiz:hover:not(:disabled) { background: #12573c; }
+  .btn-quiz:disabled { cursor: default; opacity: .55; }
+  .btn-quiz[aria-pressed="true"] { opacity: 1; box-shadow: 0 0 0 3px var(--color-terra); }
+  .btn-forest { background: var(--color-forest); color: var(--color-ink); }
+</style>
+<script>
+  import { makeTracker } from '../lib/track.js';
+  const root = document.getElementById('quiz');
+  if (root) {
+    const track = makeTracker(JSON.parse(document.getElementById('analytics-config')?.textContent || '{}'));
+    const L = JSON.parse(root.dataset.labels);
+    const cards = JSON.parse(root.querySelector('[data-quiz-cards]').textContent);
+    const $ = (s) => root.querySelector(s);
+    const buttons = [...root.querySelectorAll('[data-answer]')];
+    const result = $('[data-quiz-result]');
+    const after = $('[data-quiz-after]');
+    const next = $('[data-quiz-next]');
+    let i = 0;
+
+    const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+    const status = (s) => L[s] || L.unknown;
+
+    function show() {
+      const c = cards[i];
+      $('[data-quiz-progress]').textContent = L.progress.replace('{n}', i + 1).replace('{total}', cards.length);
+      $('[data-quiz-name]').textContent = c.common_name;
+      $('[data-quiz-sci]').textContent = c.species_scientific;
+      buttons.forEach((b) => { b.disabled = false; b.setAttribute('aria-pressed', 'false'); });
+      result.hidden = true; after.hidden = true;
+    }
+
+    function answer(choice) {
+      const c = cards[i];
+      const ok = choice === c.answer;
+      buttons.forEach((b) => { b.disabled = true; b.setAttribute('aria-pressed', String(b.dataset.answer === choice)); });
+      const kids = c.toxic_children === 'unknown' ? L.children_unknown : `${L.children}: ${status(c.toxic_children)}`;
+      result.innerHTML = `
+        <p class="font-display text-xl font-bold">${esc(ok ? L.correct : L.wrong)}</p>
+        <ul class="mt-2 space-y-1">
+          <li><strong>${esc(L.cats)}:</strong> ${esc(status(c.toxic_cats))}</li>
+          <li><strong>${esc(L.dogs)}:</strong> ${esc(status(c.toxic_dogs))}</li>
+        </ul>
+        ${c.note ? `<p class="mt-2">${esc(c.note)}</p>` : ''}
+        <p class="mt-2 font-semibold">${esc(kids)}</p>
+        <p class="mt-2 text-sm">${esc(L.source)}: <a class="underline font-semibold break-all" href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(new URL(c.source_url).hostname.replace(/^www\./, ''))}</a></p>`;
+      result.hidden = false; after.hidden = false;
+      next.textContent = i < cards.length - 1 ? L.next : L.restart;
+      result.focus({ preventScroll: true });
+      track('quiz_answer', { plant: c.species_scientific, answer: choice, correct: ok ? 'yes' : 'no' });
+    }
+
+    buttons.forEach((b) => b.addEventListener('click', () => answer(b.dataset.answer)));
+    next.addEventListener('click', () => { i = (i + 1) % cards.length; show(); $('[data-quiz-name]').scrollIntoView({ block: 'nearest' }); buttons[0].focus(); });
+    show();
+  }
+</script>

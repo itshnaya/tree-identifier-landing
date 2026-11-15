@@ -1,0 +1,61 @@
+---
+// /get?s=<series>&p=<network>[&to=ios|android]
+// iPhone → App Store (pt + ct), Android → Google Play (install referrer with UTM),
+// desktop (or missing store link) → badges + QR code.
+import Base from '../layouts/Base.astro';
+import StoreBadges from '../components/StoreBadges.astro';
+import { site } from '../lib/content.js';
+const g = site.get_page;
+const stores = {
+  ios_url: site.stores.ios_url,
+  android_url: site.stores.android_url,
+  apple_provider_token: site.stores.apple_provider_token,
+};
+---
+<Base title={g.title} noindex={true}>
+  <main id="main" class="wrap grid min-h-svh place-items-center py-10 text-center">
+    <div class="grid justify-items-center gap-5">
+      <p data-get-redirecting class="font-display text-xl" aria-live="polite">{g.redirecting}</p>
+      <div data-get-fallback hidden class="grid justify-items-center gap-5">
+        <h1 class="text-[2rem] font-bold md:text-[2.6rem]">{g.desktop_title}</h1>
+        <p class="max-w-[40ch] text-mint-light">{g.desktop_text}</p>
+        <div data-get-qr class="rounded-3xl bg-ink p-4 empty:hidden" role="img" aria-label={g.qr_alt}></div>
+        <StoreBadges source="get" />
+        <a href="/" class="underline">{g.back}</a>
+      </div>
+      <noscript><style>[data-get-redirecting]{display:none}[data-get-fallback]{display:grid!important}</style><p>{g.noscript}</p></noscript>
+    </div>
+    <script type="application/json" id="get-stores" set:html={JSON.stringify(stores)} />
+  </main>
+</Base>
+<script>
+  import { resolveGet } from '../lib/storeLinks.js';
+  import { makeTracker } from '../lib/track.js';
+  const stores = JSON.parse(document.getElementById('get-stores').textContent);
+  const track = makeTracker(JSON.parse(document.getElementById('analytics-config')?.textContent || '{}'));
+  const r = resolveGet({ search: location.search, userAgent: navigator.userAgent, maxTouchPoints: navigator.maxTouchPoints || 0, stores });
+
+  if (r.url) {
+    track('store_click', { os: r.platform, series: r.series, network: r.network, from: 'get' }); // beacon: non-blocking
+    location.replace(r.url);
+  } else {
+    document.querySelector('[data-get-redirecting]').hidden = true;
+    document.querySelector('[data-get-fallback]').hidden = false;
+    // Badges on this page keep s/p and force the store.
+    document.querySelectorAll('a[href^="/get/"]').forEach((a) => {
+      const u = new URL(a.getAttribute('href'), location.origin);
+      u.searchParams.set('s', r.series); u.searchParams.set('p', r.network);
+      a.setAttribute('href', u.pathname + u.search);
+    });
+    if (r.platform === 'desktop') {
+      import('qrcode-generator').then(({ default: qrcode }) => {
+        const u = new URL(location.href); u.searchParams.delete('to');
+        const qr = qrcode(0, 'M'); qr.addData(u.toString()); qr.make();
+        const box = document.querySelector('[data-get-qr]');
+        box.innerHTML = qr.createSvgTag({ cellSize: 6, margin: 2, scalable: true });
+        box.querySelector('svg').setAttribute('aria-hidden', 'true');
+        box.querySelector('svg').style.width = '200px';
+      });
+    }
+  }
+</script>

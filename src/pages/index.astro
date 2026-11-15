@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Quiz from '../components/Quiz.astro';
+import Cast from '../components/Cast.astro';
+import Watch from '../components/Watch.astro';
+import CheatSheet from '../components/CheatSheet.astro';
+import Faq from '../components/Faq.astro';
+import Footer from '../components/Footer.astro';
+import StoreLinkScript from '../components/StoreLinkScript.astro';
+import { site } from '../lib/content.js';
+import { isTBC } from '../lib/tbc.js';
+
+// SoftwareApplication: no price, no rating until confirmed (CLAUDE.md rule 1).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: site.app_name,
+  description: site.hero.subtitle,
+  operatingSystem: site.seo.structured_data_operating_systems.join(', '),
+  ...(isTBC(site.stores.ios_url) ? {} : { downloadUrl: site.stores.ios_url, installUrl: site.stores.ios_url }),
+  ...(isTBC(site.site_url) ? {} : { url: site.site_url, image: `${site.site_url.replace(/\/$/, '')}/og-image.jpg` }),
+};
+---
+<Base jsonLd={jsonLd}>
+  <Header />
+  <main id="main">
+    <Hero />
+    <HowItWorks />
+    <Quiz />
+    <Cast />
+    <Watch />
+    <CheatSheet />
+    <Faq />
+  </main>
+  <Footer />
+  <StoreLinkScript />
+</Base>

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "monty",
+    "name": "Monty",
+    "role": "The Monstera diva",
+    "line": "Main character energy.",
+    "image": "monty",
+    "image_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
+    "accent": "terra"
+  },
+  {
+    "id": "dr-spike",
+    "name": "Dr. Spike",
+    "role": "Grumpy cactus, emergency doctor",
+    "line": "Code yellow. Again.",
+    "image": "",
+    "image_alt": "Dr. Spike, a cactus in a pot",
+    "accent": "leaf"
+  },
+  {
+    "id": "cally",
+    "name": "Cally",
+    "role": "The dramatic Calathea",
+    "line": "I'm fine. (I'm not fine.)",
+    "image": "",
+    "image_alt": "Cally, a Calathea in a pot",
+    "accent": "gold"
+  },
+  {
+    "id": "pothos-pete",
+    "name": "Pothos Pete",
+    "role": "Unkillable, sarcastic",
+    "line": "You can't kill me. Stop trying.",
+    "image": "",
+    "image_alt": "Pothos Pete, a trailing pothos in a pot",
+    "accent": "mint"
+  },
+  {
+    "id": "dr-whiskers",
+    "name": "Dr. Whiskers",
+    "role": "Cat, game show host",
+    "line": "Toxic… or not?",
+    "image": "",
+    "image_alt": "Dr. Whiskers, a cat game show host",
+    "accent": "terra"
+  }
+]

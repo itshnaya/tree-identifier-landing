@@ -1,0 +1,30 @@
+---
+// Character image, or a replaceable placeholder when no image exists yet.
+// To add an image: put <id>.png in src/assets/cast/ and set "image": "<id>" in content/cast.json.
+import { Picture } from 'astro:assets';
+import { site } from '../lib/content.js';
+import { TBC } from '../lib/tbc.js';
+const ui = site.ui;
+const { character, size = 280, class: cls = '' } = Astro.props;
+const files = import.meta.glob('../assets/cast/*.{png,jpg,jpeg,webp}', { eager: true });
+const match = character.image
+  ? Object.entries(files).find(([p]) => p.split('/').pop().split('.')[0] === character.image)
+  : null;
+const initials = character.name.replace(/^Dr\.\s*/, '').split(/\s+/).map((w) => w[0]).join('').slice(0, 2);
+const accents = { terra: '#D8582D', leaf: '#219A4B', gold: '#C67A13', mint: '#8BE88E' };
+const accent = accents[character.accent] || accents.leaf;
+---
+{match ? (
+  <Picture src={match[1].default} formats={['avif', 'webp']} fallbackFormat="jpg" widths={[size, size * 2]} sizes={`${size}px`}
+    alt={character.image_alt} loading="lazy" decoding="async" class={`block aspect-square h-auto w-full object-cover ${cls}`} />
+) : (
+  <div class={`relative grid aspect-square w-full place-items-center bg-mint-light ${cls}`} role="img" aria-label={`${character.image_alt} ${ui.image_placeholder_suffix}`}>
+    <svg viewBox="0 0 120 120" class="w-1/2" aria-hidden="true">
+      <path d="M60 14c-8 10-10 20-6 30M60 14c10 6 16 16 12 30" fill="none" stroke="#219A4B" stroke-width="6" stroke-linecap="round" />
+      <path d="M26 50h68l-8 52a8 8 0 0 1-8 7H42a8 8 0 0 1-8-7z" fill={accent} />
+      <rect x="22" y="44" width="76" height="12" rx="4" fill={accent} />
+      <text x="60" y="88" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="24" fill="#0A3927">{initials}</text>
+    </svg>
+    <span class="tbc absolute bottom-2 left-1/2 max-w-[92%] -translate-x-1/2 text-center !text-[0.65rem]">{`${ui.image_label} ${TBC}`}</span>
+  </div>
+)}

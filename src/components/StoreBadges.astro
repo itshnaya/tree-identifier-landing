@@ -1,0 +1,35 @@
+---
+// App icon + official store badges. Links always go through /get (direct links,
+// never "search for Tree Identifier"). A small script adds s/p and highlights the
+// visitor's platform. Badges are used unmodified (Apple / Google guidelines).
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+import { site } from '../lib/content.js';
+import { isTBC } from '../lib/tbc.js';
+const { showIcon = true, size = 'md', source = '' } = Astro.props;
+const h = size === 'lg' ? 48 : 44; // Apple badge height (>= 40px on screen)
+const playMissing = isTBC(site.stores.android_url);
+---
+<div style={`--hb:${h}px;--icon:${h}px`} class="store-badges flex flex-wrap items-center gap-2 sm:gap-3" data-source={source}>
+  {showIcon && (
+    <Image src={logo} alt={site.stores.app_icon_alt} width={h + 12} height={h + 12} densities={[1, 2, 3]} class="app-icon rounded-[12px] border border-white/15" loading="lazy" />
+  )}
+  <a href="/get/?to=ios" data-store="ios" class="badge-link" style={`--h:${h}px`}>
+    <img src="/badges/app-store-badge-black-en-us.svg" alt={site.stores.app_store_badge_alt} width={Math.round(h * 2.99)} height={h} />
+  </a>
+  <a href="/get/?to=android" data-store="android" class="badge-link badge-play" style={`--h:${h}px`}>
+    <img src="/badges/google-play-badge-en-us.png" alt={site.stores.google_play_badge_alt} width={Math.round(h * 1.5 * 2.584)} height={Math.round(h * 1.5)} />
+  </a>
+  {playMissing && <span class="tbc">Google Play link [À CONFIRMER]</span>}
+</div>
+<style>
+  .badge-link { display: inline-flex; border-radius: 10px; transition: box-shadow .15s ease; }
+  .badge-link img { height: var(--h); width: auto; display: block; }
+  /* Google's PNG includes built-in padding: scale it so the visible badge matches Apple's. */
+  .badge-play { margin-block: calc(var(--h) * -0.25); margin-inline: calc(var(--h) * -0.26); }
+  .badge-play img { height: calc(var(--h) * 1.5); }
+  .app-icon { width: var(--icon); height: var(--icon); }
+  @media (min-width: 640px) { .store-badges { --icon: calc(var(--hb) + 12px); } }
+  .badge-link.is-primary { box-shadow: 0 0 0 3px var(--color-mint); }
+  .badge-play.is-primary { box-shadow: none; outline: 3px solid var(--color-mint); outline-offset: -9px; border-radius: 16px; }
+</style>

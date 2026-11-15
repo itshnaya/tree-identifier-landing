@@ -1,0 +1,21 @@
+---
+import Tbc from './Tbc.astro';
+import { site } from '../lib/content.js';
+---
+<section id="faq" class="section" aria-labelledby="faq-title">
+  <div class="wrap max-w-3xl">
+    <h2 id="faq-title" class="section-title">{site.faq.title}</h2>
+    <div class="mt-8 divide-y divide-white/12 border-y border-white/12">
+      {site.faq.items.map((item) => (
+        <details class="group py-1">
+          <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-[1.15rem] font-semibold">
+            {item.q}
+            <span aria-hidden="true" class="text-2xl text-mint transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="pb-4 text-mint-light"><Tbc value={item.a} /></p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+<style>summary::-webkit-details-marker { display: none; }</style>

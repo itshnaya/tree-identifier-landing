@@ -1,0 +1,35 @@
+<script>
+  // Carries the landing's ?s= and ?p= into every /get link, highlights the
+  // visitor's platform badge, and records store_click (without delaying it).
+  import { detectPlatform, cleanParam } from '../lib/storeLinks.js';
+  import { makeTracker } from '../lib/track.js';
+  const track = makeTracker(JSON.parse(document.getElementById('analytics-config')?.textContent || '{}'));
+  const q = new URLSearchParams(location.search);
+  const s = cleanParam(q.get('s'), 'direct');
+  const p = cleanParam(q.get('p'), 'direct');
+  const platform = detectPlatform(navigator.userAgent, navigator.maxTouchPoints || 0);
+
+  document.querySelectorAll('a[href^="/get/"]').forEach((a) => {
+    const u = new URL(a.getAttribute('href'), location.origin);
+    u.searchParams.set('s', s);
+    u.searchParams.set('p', p);
+    a.setAttribute('href', u.pathname + u.search);
+  });
+
+  if (platform !== 'desktop') {
+    document.querySelectorAll('.store-badges').forEach((group) => {
+      const mine = group.querySelector(`[data-store="${platform}"]`);
+      if (!mine) return;
+      mine.classList.add('is-primary');
+      const firstBadge = group.querySelector('[data-store]');
+      if (firstBadge !== mine) group.insertBefore(mine, firstBadge);
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest?.('a[href^="/get/"]');
+    if (!a) return;
+    const to = new URL(a.href).searchParams.get('to') || platform;
+    track('store_click', { os: to, series: s, network: p, from: a.closest('[data-source]')?.dataset.source || 'page' });
+  });
+</script>

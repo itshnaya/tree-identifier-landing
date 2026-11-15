@@ -1,0 +1,30 @@
+---
+import { Picture } from 'astro:assets';
+import monty from '../assets/cast/monty.png';
+import StoreBadges from './StoreBadges.astro';
+import { site } from '../lib/content.js';
+const h = site.hero;
+---
+<section class="wrap grid items-center gap-6 pt-5 md:gap-8 pb-14 md:grid-cols-[1.1fr_.9fr] md:pt-14 md:pb-24" aria-labelledby="hero-title">
+  <div class="relative mx-auto w-[min(56vw,230px)] md:order-2 md:w-full md:max-w-[440px]">
+    <Picture src={monty} formats={['avif', 'webp']} fallbackFormat="jpg" widths={[320, 480, 640, 880]} sizes="(min-width: 768px) 440px, 56vw"
+      alt={h.monty_alt} loading="eager" fetchpriority="high" class="block w-full rounded-[28px] shadow-[0_18px_40px_rgba(0,0,0,.35)]" />
+    <p class="bubble absolute -bottom-3 -left-8 whitespace-nowrap rounded-[18px_18px_18px_4px] bg-ink px-3.5 py-2 font-display text-[0.95rem] font-semibold text-forest shadow-lg md:-left-6 md:text-lg" aria-hidden="true">
+      {h.monty_bubble_before}<span class="text-terra-dark">{h.monty_bubble_highlight}</span>{h.monty_bubble_after}
+    </p>
+  </div>
+  <div>
+    <h1 id="hero-title" class="mb-3 text-[2.35rem] font-bold tracking-[-0.01em] md:text-[4rem]">
+      {h.title_line_1}<br /><span class="text-mint">{h.title_line_2}</span>
+    </h1>
+    <p class="max-w-[34ch] text-[1.07rem] md:text-[1.2rem]">{h.subtitle}</p>
+    <p class="mt-4 rounded-r-xl border-l-[3px] border-gold bg-mint-light/10 px-3.5 py-3">
+      <span class="block font-display text-[1.07rem] font-semibold">{h.tea_line}</span>
+      <span class="text-sm text-mint-light">{h.tea_signature}</span>
+    </p>
+    <div class="mt-5"><StoreBadges size="lg" source="hero" /></div>
+  </div>
+</section>
+<style>
+  .text-terra-dark { color: #B8441D; } /* darker terracotta: 4.6:1 on the off-white bubble */
+</style>
