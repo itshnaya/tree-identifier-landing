@@ -38,4 +38,4 @@ Node : `~/.local/node22/bin` (ajouter au PATH). `node_modules` et `dist` sont de
 
 ## Hébergement
 
-Aucun hébergement ni domaine créé ou autorisé à ce jour. Ne rien publier sans destination enregistrée et accord de Claire.
+Aperçu public autorisé par Claire le 16/11/2026 : dépôt public `itshnaya/tree-identifier-landing`, GitHub Pages (noindex) https://itshnaya.github.io/tree-identifier-landing/ — mise à jour avec `npm run deploy:preview` (build + tests avant push). Aucun domaine ni hébergement définitif : à confirmer avec Claire.
