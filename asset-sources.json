@@ -70,7 +70,19 @@
       ],
       "platform": "android",
       "kind": "official_store_screenshot"
+    },
+    {
+      "path": "assets/monty.png",
+      "source": "/Users/claire/Downloads/monty.png",
+      "provided_by": "Claire",
+      "added_on": "2026-11-15",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "kind": "user_provided_mascot",
+      "visually_verified": "Plante en pot avec tasse contre la bouche"
     }
   ],
-  "monty_status": "missing_requested_photo"
+  "monty_status": "provided_verified"
 }

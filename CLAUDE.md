@@ -5,7 +5,7 @@ Ce dossier contient les assets préparés à la demande de Claire le 14 novembre
 ## Fichiers à utiliser
 
 - `assets/logo.png` : logo exact fourni par Claire, fond vert foncé et pousse vert clair. Utiliser ce logo, même si l'icône publique du store est encore différente. Claire indique qu'une mise à jour de l'icône iOS est prévue ; cette mise à jour n'a pas été effectuée ni vérifiée ici.
-- `assets/monty.png` : photo demandée de Monty, deuxième photo de profil, tasse contre la bouche. Fichier encore manquant au moment de la préparation. Ne pas inventer ou générer un autre portrait, ni utiliser une photo trouvée au hasard. Demander le fichier exact à Claire si son absence persiste.
+- `assets/monty.png` : photo demandée de Monty, deuxième photo de profil, tasse contre la bouche. Fichier fourni par Claire dans Téléchargements, copié sans modification le 15 novembre 2026 ; correspondance visuelle vérifiée (personnage plante en pot tenant la tasse contre la bouche). Utiliser ce portrait exact.
 - `assets/app-screen-1.png`, `assets/app-screen-2.png`, `assets/app-screen-3.png` : trois visuels officiels de la fiche App Store de l'app iOS fournie, en haute résolution. Ce sont les compositions promotionnelles publiées sur le store, avec l'interface de l'app ; pas des captures brutes prises sur un iPhone par nos soins. Les employer tels quels si cela correspond au brief ; si des écrans bruts sont nécessaires, demander de vraies captures à Claire.
 - `assets/android/app-screen-1.png` à `app-screen-3.png` : trois alternatives officielles de la nouvelle app Android. Ne pas présenter un écran Android comme l'interface iOS, ni l'inverse.
 - `store-links.json` : liens stores exacts autorisés par Claire.

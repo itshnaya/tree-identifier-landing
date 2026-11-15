@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-11-14",
+  "checked_on": "2026-11-15",
   "images_decodable": true,
   "logo_identical_to_attachment": true,
   "store_links_match_user": true,
@@ -45,10 +45,15 @@
       "width": 1254,
       "height": 1254,
       "sha256": "b0b1a0cb6ca28d43e26ca3582f42832b11bc439c6c1b1bd4d95a227860c4510b"
+    },
+    {
+      "path": "assets/monty.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "3226499ffd2d6c0bd7201e86b157888ad65699d1695fd773789e1b9716a06d6f"
     }
   ],
-  "missing": [
-    "assets/monty.png"
-  ],
-  "ready_for_complete_asset_handoff": false
+  "missing": [],
+  "ready_for_complete_asset_handoff": true,
+  "monty_identical_to_download": true
 }
