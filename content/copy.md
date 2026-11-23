@@ -37,8 +37,6 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Accueil Tree Identifier (lu par les lecteurs d'écran sur le logo)
 - How it works
   🇫🇷 Comment ça marche
-- Features
-  🇫🇷 Fonctionnalités
 - Plant Tea
   🇫🇷 Plant Tea
 - FAQ
@@ -49,25 +47,21 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Télécharger l'app
 - Skip to content
   🇫🇷 Aller au contenu (lien caché, visible au clavier)
-- Sections
-  🇫🇷 Sections (nom du menu pour les lecteurs d'écran)
 
 ## 2. Hero — `site.json → hero`
 
-- Free app for iPhone and Android
-  🇫🇷 App gratuite pour iPhone et Android
 - Your plant looks sick?
   🇫🇷 Votre plante a l'air malade ?
 - Find out what it needs.
   🇫🇷 Découvrez ce dont elle a besoin.
 - Snap a photo of any plant at home or in your garden, from a Monstera to a fruit tree. Get its name, how to care for it, and what's wrong when it looks sick.
   🇫🇷 Prenez en photo n'importe quelle plante de la maison ou du jardin, de la Monstera à l'arbre fruitier. Obtenez son nom, comment en prendre soin, et ce qui ne va pas quand elle a l'air malade.
-- Free to download
-  🇫🇷 Téléchargement gratuit
-- No account needed
-  🇫🇷 Sans compte
-- 12 languages
-  🇫🇷 12 langues
+- Health check for sick plants
+  🇫🇷 Bilan de santé pour les plantes malades
+- Watering & care reminders
+  🇫🇷 Rappels d'arrosage et d'entretien
+- Chat with an AI plant expert
+  🇫🇷 Discussion avec un expert des plantes (IA)
 - (Image : écran réel de l'app, conseils d'entretien — texte alternatif identique à l'étape 3 ci-dessous)
 
 ## 2 bis. What the app does — `site.json → features`
@@ -278,8 +272,8 @@ Sources : descriptions officielles des fiches App Store et Google Play (lues le 
 
 - Do I need an account?
   🇫🇷 Faut-il un compte ?
-- No account needed. The app is available in 12 languages.
-  🇫🇷 Aucun compte nécessaire. L'app est disponible en 12 langues.
+- Yes. Premium comes with a login: after you pay, your login details are sent by email, and you sign in to the app with them on iPhone or Android. The app is available in 12 languages.
+  🇫🇷 Oui. Premium s'accompagne d'un identifiant : après le paiement, vos identifiants vous sont envoyés par e-mail, et vous vous connectez à l'app avec, sur iPhone ou Android. L'app est disponible en 12 langues.
 - Are the results always right?
   🇫🇷 Les résultats sont-ils toujours justes ?
 - Results come from an AI analysis of your photos and are indicative. Never eat a plant on the word of an app alone, and ask a certified arborist before felling a tree or doing major work on it.
@@ -326,6 +320,65 @@ Sources : descriptions officielles des fiches App Store et Google Play (lues le 
   🇫🇷 Conditions
 - Contact
   🇫🇷 Contact
+
+## 10. Paiement Premium — `site.json → premium` (pages /premium et /premium/thanks)
+
+Ces textes n'apparaissent qu'une fois qu'au moins un lien de paiement Stripe est renseigné. Avant cela, la page garde les badges officiels des stores.
+
+- Get Premium for iPhone
+  🇫🇷 Obtenir Premium pour iPhone
+- Get Premium for Android
+  🇫🇷 Obtenir Premium pour Android
+- Get Premium
+  🇫🇷 Obtenir Premium (bouton de l'en-tête)
+- Premium unlocks identification, health checks and the AI expert.
+  🇫🇷 Premium débloque l'identification, le bilan de santé et l'expert IA.
+- Tree Identifier Premium
+  🇫🇷 Tree Identifier Premium (titre de l'onglet)
+- Get Tree Identifier Premium
+  🇫🇷 Obtenez Tree Identifier Premium
+- Premium unlocks identification, health checks and the AI expert. After payment, you get a login to sign in to the app on iPhone or Android.
+  🇫🇷 Premium débloque l'identification, le bilan de santé et l'expert IA. Après le paiement, vous recevez un identifiant pour vous connecter à l'app sur iPhone ou Android.
+- Weekly · $6.99 · per week
+  🇫🇷 Hebdomadaire · 6,99 $ · par semaine
+- Weekly
+  🇫🇷 Hebdomadaire
+- $6.99
+  🇫🇷 6,99 $
+- per week
+  🇫🇷 par semaine
+- Yearly
+  🇫🇷 Annuel
+- $34.99
+  🇫🇷 34,99 $
+- per year
+  🇫🇷 par an
+- Continue to payment
+  🇫🇷 Continuer vers le paiement
+- Payment coming soon.
+  🇫🇷 Paiement bientôt disponible.
+- Subscriptions renew automatically until you cancel. Payment is processed by Stripe.
+  🇫🇷 L'abonnement se renouvelle automatiquement jusqu'à résiliation. Le paiement est géré par Stripe.
+- Manage or cancel your subscription
+  🇫🇷 Gérer ou résilier votre abonnement
+- Back to the home page
+  🇫🇷 Retour à l'accueil
+- Thank you — Tree Identifier Premium
+  🇫🇷 Merci — Tree Identifier Premium (titre de l'onglet)
+- Thank you! Your payment went through.
+  🇫🇷 Merci ! Votre paiement est bien passé.
+- Check your email: your login details are sent to the address you used at checkout.
+  🇫🇷 Regardez vos e-mails : vos identifiants sont envoyés à l'adresse utilisée lors du paiement.
+- Download Tree Identifier on your phone.
+  🇫🇷 Téléchargez Tree Identifier sur votre téléphone.
+- Open the app and sign in with your login.
+  🇫🇷 Ouvrez l'app et connectez-vous avec vos identifiants.
+- Download the app
+  🇫🇷 Télécharger l'app
+- How do I get Premium?
+  🇫🇷 Comment obtenir Premium ?
+- Choose a plan on this site and pay with Stripe. Your login details are sent by email: download the app on iPhone or Android and sign in to use Premium.
+  🇫🇷 Choisissez une formule sur ce site et payez avec Stripe. Vos identifiants vous sont envoyés par e-mail : téléchargez l'app sur iPhone ou Android et connectez-vous pour utiliser Premium.
 
 ## Page /get — `site.json → get_page`
 

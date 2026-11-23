@@ -29,7 +29,8 @@
   document.addEventListener('click', (e) => {
     const a = e.target.closest?.('a[data-get-link]');
     if (!a) return;
-    const to = new URL(a.href).searchParams.get('to') || platform;
-    track('store_click', { os: to, series: s, network: p, from: a.closest('[data-source]')?.dataset.source || 'page' });
+    const url = new URL(a.href);
+    const to = url.searchParams.get('to') || url.searchParams.get('platform') || platform;
+    track(url.pathname.includes('/premium') ? 'premium_click' : 'store_click', { os: to, series: s, network: p, from: a.closest('[data-source]')?.dataset.source || 'page' });
   });
 </script>

@@ -57,3 +57,22 @@ test('params are sanitized and defaulted', () => {
   const r = resolveGet({ search: '', userAgent: IPHONE, stores });
   assert.equal(new URL(r.url).searchParams.get('ct'), 'direct_direct');
 });
+
+// Web payment (Premium): official store badges must always point to the stores;
+// payment goes through our own buttons, and only public Payment Link URLs are stored.
+import fsP from 'node:fs';
+test('premium: no Stripe secret in content, payment links are https Stripe URLs when set', () => {
+  const raw = fsP.readFileSync('content/site.json', 'utf8');
+  assert.ok(!/\b(sk|rk)_(live|test)_/.test(raw), 'Stripe secret key found in content/site.json');
+  const site = JSON.parse(raw);
+  for (const p of site.premium.plans) {
+    if (p.stripe_payment_link.includes('[À CONFIRMER]')) continue;
+    assert.match(p.stripe_payment_link, /^https:\/\/(buy\.stripe\.com|checkout\.stripe\.com)\//);
+  }
+});
+test('premium: store badges in the build never link to the payment page', { skip: !fsP.existsSync('dist/index.html') && 'build first' }, () => {
+  for (const f of ['dist/index.html', 'dist/premium/thanks/index.html']) {
+    const html = fsP.readFileSync(f, 'utf8');
+    for (const m of html.matchAll(/<a [^>]*class="badge-link[^"]*"[^>]*>/g)) assert.ok(!m[0].includes('/premium'), `${f}: ${m[0]}`);
+  }
+});

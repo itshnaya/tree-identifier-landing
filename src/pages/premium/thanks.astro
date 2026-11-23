@@ -1,0 +1,24 @@
+---
+// /premium/thanks: where Stripe sends the buyer after payment (set in each Payment Link:
+// "After payment → Don't show confirmation page → redirect to https://<site>/premium/thanks/").
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import StoreBadges from '../../components/StoreBadges.astro';
+import StoreLinkScript from '../../components/StoreLinkScript.astro';
+import { site } from '../../lib/content.js';
+const m = site.premium;
+---
+<Base title={m.thanks_page_title} noindex={true}>
+  <Header />
+  <main id="main" class="wrap max-w-3xl py-12 md:py-20">
+    <h1 class="text-[2.2rem] font-bold md:text-[3rem]">{m.thanks_title}</h1>
+    <ol class="mt-6 grid gap-3 text-[1.1rem]">
+      {m.thanks_steps.map((t, i) => <li class="flex gap-3"><span class="grid size-8 shrink-0 place-items-center rounded-full bg-mint font-display font-bold" aria-hidden="true">{i + 1}</span><span>{t}</span></li>)}
+    </ol>
+    <h2 class="mt-10 text-[1.4rem] font-semibold">{m.thanks_download}</h2>
+    <div class="mt-4"><StoreBadges size="lg" stores={true} source="thanks" /></div>
+  </main>
+  <Footer />
+  <StoreLinkScript />
+</Base>

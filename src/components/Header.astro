@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
 import { site } from '../lib/content.js';
 import { withBase } from '../lib/paths.js';
+import { paymentMode } from '../lib/premium.js';
 const { nav } = site;
 ---
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 btn btn-mint">{nav.skip_link}</a>
@@ -12,16 +13,6 @@ const { nav } = site;
       <Image src={logo} alt="" width={36} height={36} densities={[1, 2, 3]} class="rounded-[9px]" loading="eager" />
       <span class="font-display text-[1.2rem] font-semibold">{site.app_name}</span>
     </a>
-    <nav aria-label={nav.aria_label} class="hidden md:block">
-      <ul class="flex gap-6 text-[0.95rem]">
-        {nav.links.map((l) => <li><a href={l.href} class="no-underline opacity-90 hover:opacity-100 hover:text-leaf-dark">{l.label}</a></li>)}
-      </ul>
-    </nav>
-    <a href={withBase('/get/')} data-get-link class="btn btn-mint text-sm" data-source="header">{nav.cta}</a>
+    <a href={withBase(paymentMode ? '/premium/' : '/get/')} data-get-link class="btn btn-mint text-sm" data-source="header">{paymentMode ? site.premium.nav_cta : nav.cta}</a>
   </div>
-  <nav aria-label={nav.aria_label} class="md:hidden border-t border-forest/10">
-    <ul class="wrap flex gap-5 overflow-x-auto py-2 text-sm whitespace-nowrap [scrollbar-width:none]">
-      {nav.links.map((l) => <li><a href={l.href} class="no-underline opacity-90 inline-block py-1">{l.label}</a></li>)}
-    </ul>
-  </nav>
 </header>

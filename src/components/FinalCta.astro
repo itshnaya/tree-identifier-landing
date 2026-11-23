@@ -1,13 +1,14 @@
 ---
 import StoreBadges from './StoreBadges.astro';
 import { site } from '../lib/content.js';
+import { paymentMode } from '../lib/premium.js';
 const c = site.final_cta;
 ---
 <section class="section" aria-labelledby="cta-title">
   <div class="wrap">
     <div class="grid justify-items-center gap-4 rounded-[32px] bg-forest px-6 py-12 text-center text-ink md:py-16">
       <h2 id="cta-title" class="section-title">{c.title}</h2>
-      <p class="text-[1.1rem] text-mint-light">{c.text}</p>
+      <p class="text-[1.1rem] text-mint-light">{paymentMode ? site.premium.final_text : c.text}</p>
       <div class="mt-2"><StoreBadges size="lg" source="final" /></div>
     </div>
   </div>

@@ -46,37 +46,17 @@
   },
   "nav": {
     "home_label": "Tree Identifier home",
-    "links": [
-      {
-        "label": "Features",
-        "href": "#features"
-      },
-      {
-        "label": "How it works",
-        "href": "#how-it-works"
-      },
-      {
-        "label": "Plant Tea",
-        "href": "#plant-tea"
-      },
-      {
-        "label": "FAQ",
-        "href": "#faq"
-      }
-    ],
     "cta": "Get the app",
-    "skip_link": "Skip to content",
-    "aria_label": "Sections"
+    "skip_link": "Skip to content"
   },
   "hero": {
-    "kicker": "Free app for iPhone and Android",
     "title_line_1": "Your plant looks sick?",
     "title_line_2": "Find out what it needs.",
     "subtitle": "Snap a photo of any plant at home or in your garden, from a Monstera to a fruit tree. Get its name, how to care for it, and what's wrong when it looks sick.",
     "facts": [
-      "Free to download",
-      "No account needed",
-      "12 languages"
+      "Health check for sick plants",
+      "Watering & care reminders",
+      "Chat with an AI plant expert"
     ],
     "screen_alt": "Tree Identifier app screen: care tips for watering, light, soil, temperature and fertilizing"
   },
@@ -174,7 +154,7 @@
       },
       {
         "q": "Do I need an account?",
-        "a": "No account needed. The app is available in 12 languages."
+        "a": "Yes. Premium comes with a login: after you pay, your login details are sent by email, and you sign in to the app with them on iPhone or Android. The app is available in 12 languages."
       },
       {
         "q": "Are the results always right?",
@@ -183,14 +163,6 @@
       {
         "q": "Is the toxicity info veterinary or medical advice?",
         "a": "No. It's general information with sources. If you think a pet or a child ate a plant, contact a vet or a poison control center right away."
-      },
-      {
-        "q": "Who makes Plant Tea?",
-        "a": "Plant Tea is made by the Tree Identifier team."
-      },
-      {
-        "q": "Are the characters AI?",
-        "a": "Yes, our characters are animated with AI."
       }
     ]
   },
@@ -253,7 +225,6 @@
   "plant_tea": {
     "title": "From the team behind Plant Tea",
     "text": "Plant Tea is our comedy show about plants on TikTok, Instagram and YouTube. The plants talk (the faces are on the pots), and every episode slips in a real plant lesson.",
-    "cast_title": "The cast",
     "monty_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
     "monty_bubble_before": "Darling, ",
     "monty_bubble_highlight": "I",
@@ -262,5 +233,48 @@
   "final_cta": {
     "title": "Give your plants the care they need.",
     "text": "Free to download on iPhone and Android."
+  },
+  "premium": {
+    "button_ios": "Get Premium for iPhone",
+    "button_android": "Get Premium for Android",
+    "nav_cta": "Get Premium",
+    "final_text": "Premium unlocks identification, health checks and the AI expert.",
+    "page_title": "Tree Identifier Premium",
+    "title": "Get Tree Identifier Premium",
+    "intro": "Premium unlocks identification, health checks and the AI expert. After payment, you get a login to sign in to the app on iPhone or Android.",
+    "plans": [
+      {
+        "id": "weekly",
+        "name": "Weekly",
+        "price": "$6.99",
+        "period": "per week",
+        "stripe_payment_link": "[À CONFIRMER]"
+      },
+      {
+        "id": "yearly",
+        "name": "Yearly",
+        "price": "$34.99",
+        "period": "per year",
+        "stripe_payment_link": "[À CONFIRMER]"
+      }
+    ],
+    "choose": "Continue to payment",
+    "unavailable": "Payment coming soon.",
+    "renewal_note": "Subscriptions renew automatically until you cancel. Payment is processed by Stripe.",
+    "manage_label": "Manage or cancel your subscription",
+    "manage_url": "[À CONFIRMER]",
+    "back": "Back to the home page",
+    "thanks_page_title": "Thank you — Tree Identifier Premium",
+    "thanks_title": "Thank you! Your payment went through.",
+    "thanks_steps": [
+      "Check your email: your login details are sent to the address you used at checkout.",
+      "Download Tree Identifier on your phone.",
+      "Open the app and sign in with your login."
+    ],
+    "thanks_download": "Download the app",
+    "faq": {
+      "q": "How do I get Premium?",
+      "a": "Choose a plan on this site and pay with Stripe. Your login details are sent by email: download the app on iPhone or Android and sign in to use Premium."
+    }
   }
 }

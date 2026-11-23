@@ -147,6 +147,9 @@ Chaque ligne correspond à un endroit précis de `/content` (le test `npm test` 
 
 **Liens et identifiants**
 - `site.json → site_url` : adresse définitive du site (domaine).
+- `site.json → premium.plans[0].stripe_payment_link` : lien de paiement Stripe de la formule hebdomadaire (à créer par l'associé, voir NOTICE-ASSOCIE.md).
+- `site.json → premium.plans[1].stripe_payment_link` : lien de paiement Stripe de la formule annuelle.
+- `site.json → premium.manage_url` : lien du portail client Stripe (gérer ou résilier l'abonnement).
 - `site.json → stores.apple_provider_token` : jeton fournisseur Apple pour les campagnes (`pt`).
 - `site.json → social.tiktok.handle`, `site.json → social.tiktok.url` : compte TikTok de Plant Tea.
 - `site.json → social.instagram.handle`, `site.json → social.instagram.url` : compte Instagram.

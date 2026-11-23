@@ -3,7 +3,8 @@ import Tbc from './Tbc.astro';
 import { site } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
 import { showTBC } from '../lib/mode.js';
-const items = site.faq.items.filter((i) => showTBC || !isTBC(i.a));
+import { paymentMode } from '../lib/premium.js';
+const items = [...(paymentMode ? [site.premium.faq] : []), ...site.faq.items].filter((i) => showTBC || !isTBC(i.a));
 ---
 <section id="faq" class="section" aria-labelledby="faq-title">
   <div class="wrap max-w-3xl">

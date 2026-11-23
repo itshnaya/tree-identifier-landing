@@ -9,7 +9,10 @@ import { isTBC } from '../lib/tbc.js';
 import { withBase } from '../lib/paths.js';
 import { showTBC } from '../lib/mode.js';
 import Tbc from './Tbc.astro';
-const { showIcon = true, size = 'md', source = '' } = Astro.props;
+import { paymentMode } from '../lib/premium.js';
+// stores=true: always the real store badges (e.g. after payment, to download the app).
+const { showIcon = true, size = 'md', source = '', stores = false } = Astro.props;
+const pay = paymentMode && !stores;
 const h = size === 'lg' ? 48 : 44; // Apple badge height (>= 40px on screen)
 const playMissing = isTBC(site.stores.android_url);
 const showPlay = !playMissing || showTBC; // production: no Play badge until the link is confirmed
@@ -18,6 +21,10 @@ const showPlay = !playMissing || showTBC; // production: no Play badge until the
   {showIcon && (
     <Image src={logo} alt={site.stores.app_icon_alt} width={h + 12} height={h + 12} densities={[1, 2, 3]} class="app-icon rounded-[12px] border border-forest/15" loading="lazy" />
   )}
+  {pay ? (<>
+    <a href={withBase('/premium/?platform=ios')} data-get-link data-store="ios" class="pay-btn" style={`--h:${h}px`}>{site.premium.button_ios}</a>
+    <a href={withBase('/premium/?platform=android')} data-get-link data-store="android" class="pay-btn" style={`--h:${h}px`}>{site.premium.button_android}</a>
+  </>) : (<>
   <a href={withBase('/get/?to=ios')} data-get-link data-store="ios" class="badge-link" style={`--h:${h}px`}>
     <img src={withBase('/badges/app-store-badge-black-en-us.svg')} alt={site.stores.app_store_badge_alt} width={Math.round(h * 2.99)} height={h} />
   </a>
@@ -26,7 +33,8 @@ const showPlay = !playMissing || showTBC; // production: no Play badge until the
       <img src={withBase('/badges/google-play-badge-en-us.png')} alt={site.stores.google_play_badge_alt} width={Math.round(h * 1.5 * 2.584)} height={Math.round(h * 1.5)} />
     </a>
   )}
-  {playMissing && showTBC && (
+  </>)}
+  {!pay && playMissing && showTBC && (
     <span class="text-xs leading-snug"><Tbc value={site.stores.android_url} label="Google Play link" />
     </span>
   )}
@@ -37,6 +45,9 @@ const showPlay = !playMissing || showTBC; // production: no Play badge until the
   /* Google's PNG includes built-in padding: scale it so the visible badge matches Apple's. */
   .badge-play { margin-block: calc(var(--h) * -0.25); margin-inline: calc(var(--h) * -0.26); }
   .badge-play img { height: calc(var(--h) * 1.5); }
+  .pay-btn { display: inline-flex; align-items: center; min-height: var(--h); padding: 0 18px; border-radius: 10px; background: #000; color: #fff; font-weight: 600; font-size: .98rem; text-decoration: none; border: 1px solid #a6a6a6; }
+  .pay-btn:hover { background: #1f1f1f; }
+  .pay-btn.is-primary { box-shadow: 0 0 0 3px var(--color-leaf); }
   .app-icon { width: var(--icon); height: var(--icon); }
   @media (min-width: 640px) { .store-badges { --icon: calc(var(--hb) + 12px); } }
   .badge-link.is-primary { box-shadow: 0 0 0 3px var(--color-leaf); }

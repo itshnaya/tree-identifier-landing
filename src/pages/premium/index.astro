@@ -1,0 +1,55 @@
+---
+// /premium: plan choice → the partner's Stripe Payment Link (opened on Stripe's own page).
+// Only public Payment Link URLs live here: never a Stripe secret key.
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Tbc from '../../components/Tbc.astro';
+import { site } from '../../lib/content.js';
+import { isTBC } from '../../lib/tbc.js';
+import { showTBC } from '../../lib/mode.js';
+import { withBase } from '../../lib/paths.js';
+import { plans } from '../../lib/premium.js';
+const m = site.premium;
+const manage = isTBC(m.manage_url) ? '' : m.manage_url;
+---
+<Base title={m.page_title} noindex={true}>
+  <Header />
+  <main id="main" class="wrap max-w-3xl py-12 md:py-20">
+    <h1 class="text-[2.2rem] font-bold md:text-[3rem]">{m.title}</h1>
+    <p class="mt-3 max-w-[52ch] text-[1.1rem] text-muted">{m.intro}</p>
+    <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+      {plans.map((p) => (
+        <li class="flex flex-col rounded-3xl border border-forest/15 bg-surface p-6">
+          <h2 class="text-[1.4rem] font-semibold">{p.name}</h2>
+          <p class="mt-2"><span class="font-display text-[2.2rem] font-bold">{p.price}</span> <span class="text-muted">{p.period}</span></p>
+          <div class="mt-5">
+            {p.link
+              ? <a href={p.link} class="btn btn-forest w-full" data-pay-link data-plan={p.id}>{m.choose}</a>
+              : <p class="text-sm text-muted">{m.unavailable} {showTBC && <Tbc value={p.stripe_payment_link} label="Stripe" />}</p>}
+          </div>
+        </li>
+      ))}
+    </ul>
+    <p class="mt-6 text-sm text-muted">{m.renewal_note}</p>
+    {(manage || showTBC) && <p class="mt-2 text-sm">{manage ? <a class="underline" href={manage} target="_blank" rel="noopener">{m.manage_label}</a> : <>{m.manage_label} <Tbc value={m.manage_url} /></>}</p>}
+    <p class="mt-8"><a class="underline" href={withBase('/')}>{m.back}</a></p>
+  </main>
+  <Footer />
+  <script>
+    // Pass the TikTok/Instagram/YouTube origin to Stripe (client_reference_id + UTM), and count the click.
+    import { cleanParam } from '../../lib/storeLinks.js';
+    import { makeTracker } from '../../lib/track.js';
+    const track = makeTracker(JSON.parse(document.getElementById('analytics-config')?.textContent || '{}'));
+    const q = new URLSearchParams(location.search);
+    const s = cleanParam(q.get('s'), 'direct'), p = cleanParam(q.get('p'), 'direct'), os = cleanParam(q.get('platform'), 'unknown');
+    document.querySelectorAll('a[data-pay-link]').forEach((a) => {
+      const u = new URL(a.href);
+      u.searchParams.set('client_reference_id', `${s}_${p}_${os}`.slice(0, 200));
+      u.searchParams.set('utm_source', p); u.searchParams.set('utm_medium', 'organic'); u.searchParams.set('utm_campaign', s);
+      a.href = u.toString();
+      a.addEventListener('click', () => track('checkout_click', { plan: a.dataset.plan, os, series: s, network: p }));
+    });
+  </script>
+</Base>
+<style>.btn-forest { background: var(--color-forest); color: var(--color-ink); }</style>
