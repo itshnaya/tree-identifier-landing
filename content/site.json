@@ -34,8 +34,8 @@
     "api_host": "https://plausible.io"
   },
   "seo": {
-    "title": "Tree Identifier — Learn how to care for what grows in your yard",
-    "description": "Take a photo of a tree, a shrub or a fruit tree: find out what it is, how to care for it, and what's wrong when it looks sick. Free app for iPhone and Android from the team behind Plant Tea.",
+    "title": "Tree Identifier — Your plant looks sick? Find out what it needs.",
+    "description": "Snap a photo of any plant at home or in your garden: get its name, how to care for it, and what's wrong when it looks sick. Free app for iPhone and Android from the team behind Plant Tea.",
     "og_image_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
     "structured_data_operating_systems": [
       "iOS",
@@ -70,9 +70,9 @@
   },
   "hero": {
     "kicker": "Free app for iPhone and Android",
-    "title_line_1": "Something growing in your yard?",
-    "title_line_2": "Learn how to keep it healthy.",
-    "subtitle": "Take a photo of a tree, a shrub or a fruit tree. Tree Identifier tells you what it is, how to care for it, and what's wrong when it looks sick.",
+    "title_line_1": "Your plant looks sick?",
+    "title_line_2": "Find out what it needs.",
+    "subtitle": "Snap a photo of any plant at home or in your garden, from a Monstera to a fruit tree. Get its name, how to care for it, and what's wrong when it looks sick.",
     "facts": [
       "Free to download",
       "No account needed",
@@ -86,13 +86,13 @@
     "steps": [
       {
         "title": "Take a photo",
-        "text": "Point your camera at a leaf, the bark, a flower or a fruit.",
+        "text": "Point your camera at a leaf, a flower or the whole plant.",
         "image": "step-1-photo",
         "alt": "Tree Identifier app screen: a tree framed in the camera viewfinder, labeled Tilia"
       },
       {
         "title": "Get its name",
-        "text": "You get the most likely species, with look-alikes to compare.",
+        "text": "The app tells you what it is in seconds.",
         "image": "step-2-name",
         "alt": "Tree Identifier app screen: result page naming the tree African Mahogany, Khaya anthotheca"
       },
@@ -166,11 +166,11 @@
     "items": [
       {
         "q": "Is Tree Identifier free?",
-        "a": "Tree Identifier is free to download. Identification, health checks and the AI tree expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store or Google Play account settings."
+        "a": "Tree Identifier is free to download. Identification, health checks and the AI expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store or Google Play account settings."
       },
       {
         "q": "Which plants can it identify?",
-        "a": "Trees, shrubs, palms, conifers and fruit trees. You can photograph a leaf, the bark, a flower, a fruit or the whole tree, and bark and buds work in winter too, when the leaves are gone. The app also includes an encyclopedia of 160 trees and shrubs."
+        "a": "Houseplants like Monstera and pothos, garden plants, flowers and trees, including shrubs, palms, conifers and fruit trees. Photograph a leaf, a flower, a fruit, the bark or the whole plant."
       },
       {
         "q": "Do I need an account?",
@@ -224,31 +224,31 @@
     "items": [
       {
         "icon": "💧",
-        "title": "Care, month by month",
-        "text": "Light, water, soil, pruning and feeding for your species, with a month-by-month care calendar and reminders."
+        "title": "Care made simple",
+        "text": "Watering, light, soil and feeding for your plant, with care reminders so you never forget."
       },
       {
         "icon": "🍂",
-        "title": "Is my tree sick?",
-        "text": "Photograph the leaves, bark or branches to get a health check: likely problems, clear treatment steps, and how to prevent it next time."
+        "title": "Is my plant sick?",
+        "text": "Photograph the yellow leaves, spots or odd marks to get a health check: likely causes, what to do now, and how to prevent it next time."
       },
       {
         "icon": "📷",
         "title": "Know what it is",
-        "text": "Up to 3 photos per scan: leaf, bark, flower, fruit or the whole tree. Bark and buds work in winter, when the leaves are gone."
+        "text": "Houseplants, garden plants, flowers and trees. Point your camera at a leaf, a flower or the whole plant and get its name in seconds."
       },
       {
         "icon": "💬",
-        "title": "Ask a tree expert",
-        "text": "Chat with an AI tree expert about pruning, planting, pests or any tree question."
+        "title": "Ask an expert",
+        "text": "Chat with an AI plant expert about watering, light, pests or any plant question, day or night."
       },
       {
         "icon": "🧰",
         "title": "Free tools",
-        "text": "A light meter to find the right spot, a watering helper, tree age, tree height and an encyclopedia of 160 trees and shrubs."
+        "text": "A light meter to find the right spot, a watering helper and practical care guides."
       }
     ],
-    "premium_note": "Identification, health checks and the tree expert are part of Premium, a paid subscription."
+    "premium_note": "Identification, health checks and the expert are part of Premium, a paid subscription."
   },
   "plant_tea": {
     "title": "From the team behind Plant Tea",

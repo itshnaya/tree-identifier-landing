@@ -24,10 +24,10 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 ## SEO (onglet du navigateur, partage, Google) — `site.json → seo`
 
-- Tree Identifier — Learn how to care for what grows in your yard
-  🇫🇷 Tree Identifier — Apprenez à prendre soin de ce qui pousse dans votre jardin
-- Take a photo of a tree, a shrub or a fruit tree: find out what it is, how to care for it, and what's wrong when it looks sick. Free app for iPhone and Android from the team behind Plant Tea.
-  🇫🇷 Prenez en photo un arbre, un arbuste ou un arbre fruitier : découvrez ce que c'est, comment en prendre soin, et ce qui ne va pas quand il a l'air malade. App gratuite pour iPhone et Android, par l'équipe de Plant Tea.
+- Tree Identifier — Your plant looks sick? Find out what it needs.
+  🇫🇷 Tree Identifier — Votre plante a l'air malade ? Découvrez ce dont elle a besoin.
+- Snap a photo of any plant at home or in your garden: get its name, how to care for it, and what's wrong when it looks sick. Free app for iPhone and Android from the team behind Plant Tea.
+  🇫🇷 Prenez en photo n'importe quelle plante de la maison ou du jardin : obtenez son nom, comment en prendre soin, et ce qui ne va pas quand elle a l'air malade. App gratuite pour iPhone et Android, par l'équipe de Plant Tea.
 - Monty, a Monstera in a terracotta pot with a face, sipping tea
   🇫🇷 Monty, une Monstera dans un pot en terre cuite avec un visage, qui boit son thé (texte alternatif de l'image de partage, du hero et de la carte de Monty)
 
@@ -56,14 +56,12 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 - Free app for iPhone and Android
   🇫🇷 App gratuite pour iPhone et Android
-- Something growing in your yard?
-  🇫🇷 Quelque chose pousse dans votre jardin ?
-- Learn how to keep it healthy.
-  🇫🇷 Apprenez à le garder en bonne santé.
-- Take a photo of a tree, a shrub or a fruit tree. Tree Identifier tells you what it is, how to care for it, and what's wrong when it looks sick.
-  🇫🇷 Prenez en photo un arbre, un arbuste ou un arbre fruitier. Tree Identifier vous dit ce que c'est, comment en prendre soin, et ce qui ne va pas quand il a l'air malade.
-- Free to download · No account needed · 12 languages
-  🇫🇷 Téléchargement gratuit · Sans compte · 12 langues
+- Your plant looks sick?
+  🇫🇷 Votre plante a l'air malade ?
+- Find out what it needs.
+  🇫🇷 Découvrez ce dont elle a besoin.
+- Snap a photo of any plant at home or in your garden, from a Monstera to a fruit tree. Get its name, how to care for it, and what's wrong when it looks sick.
+  🇫🇷 Prenez en photo n'importe quelle plante de la maison ou du jardin, de la Monstera à l'arbre fruitier. Obtenez son nom, comment en prendre soin, et ce qui ne va pas quand elle a l'air malade.
 - Free to download
   🇫🇷 Téléchargement gratuit
 - No account needed
@@ -74,33 +72,33 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 ## 2 bis. What the app does — `site.json → features`
 
-Source : description officielle de la fiche App Store (lue le 23/11/2026).
+Sources : descriptions officielles des fiches App Store et Google Play (lues le 23/11/2026) ; plantes d'intérieur sur iPhone confirmées par Claire le 23/11/2026.
 
 - What the app does
   🇫🇷 Ce que fait l'app
 - Know what it is, how to care for it, and what to do when something looks wrong.
   🇫🇷 Savoir ce que c'est, comment en prendre soin, et quoi faire quand quelque chose ne va pas.
-- Care, month by month
-  🇫🇷 L'entretien, mois par mois
-- Light, water, soil, pruning and feeding for your species, with a month-by-month care calendar and reminders.
-  🇫🇷 Lumière, arrosage, sol, taille et engrais adaptés à votre espèce, avec un calendrier d'entretien mois par mois et des rappels.
+- Care made simple
+  🇫🇷 L'entretien, tout simplement
+- Watering, light, soil and feeding for your plant, with care reminders so you never forget.
+  🇫🇷 Arrosage, lumière, sol et engrais adaptés à votre plante, avec des rappels pour ne jamais oublier.
+- Is my plant sick?
+  🇫🇷 Ma plante est-elle malade ?
+- Photograph the yellow leaves, spots or odd marks to get a health check: likely causes, what to do now, and how to prevent it next time.
+  🇫🇷 Photographiez les feuilles jaunies, les taches ou les marques bizarres pour un bilan de santé : causes probables, quoi faire tout de suite, et comment éviter que ça recommence.
 - Know what it is
   🇫🇷 Savoir ce que c'est
-- Up to 3 photos per scan: leaf, bark, flower, fruit or the whole tree. Bark and buds work in winter, when the leaves are gone.
-  🇫🇷 Jusqu'à 3 photos par analyse : feuille, écorce, fleur, fruit ou l'arbre entier. L'écorce et les bourgeons suffisent en hiver, quand les feuilles sont tombées.
-- Is my tree sick?
-  🇫🇷 Mon arbre est-il malade ?
-- Photograph the leaves, bark or branches to get a health check: likely problems, clear treatment steps, and how to prevent it next time.
-  🇫🇷 Photographiez les feuilles, l'écorce ou les branches pour un bilan de santé : problèmes probables, étapes de traitement claires, et comment éviter que ça recommence.
-- Ask a tree expert
-  🇫🇷 Demandez à un expert des arbres
-- Chat with an AI tree expert about pruning, planting, pests or any tree question.
-  🇫🇷 Discutez avec un expert des arbres (IA) : taille, plantation, parasites ou toute autre question.
+- Houseplants, garden plants, flowers and trees. Point your camera at a leaf, a flower or the whole plant and get its name in seconds.
+  🇫🇷 Plantes d'intérieur, plantes du jardin, fleurs et arbres. Visez une feuille, une fleur ou la plante entière et obtenez son nom en quelques secondes.
+- Ask an expert
+  🇫🇷 Demandez à un expert
+- Chat with an AI plant expert about watering, light, pests or any plant question, day or night.
+  🇫🇷 Discutez avec un expert des plantes (IA) : arrosage, lumière, parasites ou toute autre question, de jour comme de nuit.
 - Free tools
   🇫🇷 Outils gratuits
-- A light meter to find the right spot, a watering helper, tree age, tree height and an encyclopedia of 160 trees and shrubs.
-  🇫🇷 Une mesure de la lumière pour trouver le bon emplacement, une aide à l'arrosage, l'âge et la hauteur de l'arbre, et une encyclopédie de 160 arbres et arbustes.
-- Identification, health checks and the tree expert are part of Premium, a paid subscription.
+- A light meter to find the right spot, a watering helper and practical care guides.
+  🇫🇷 Une mesure de la lumière pour trouver le bon emplacement, une aide à l'arrosage et des guides d'entretien pratiques.
+- Identification, health checks and the expert are part of Premium, a paid subscription.
   🇫🇷 L'identification, le bilan de santé et l'expert font partie de Premium, un abonnement payant.
 - Icônes : 💧 🍂 📷 💬 🧰 (émojis, non traduits)
 
@@ -112,14 +110,14 @@ Source : description officielle de la fiche App Store (lue le 23/11/2026).
   🇫🇷 Trois étapes, quelques secondes.
 - Take a photo
   🇫🇷 Prenez une photo
-- Point your camera at a leaf, the bark, a flower or a fruit.
-  🇫🇷 Visez une feuille, l'écorce, une fleur ou un fruit.
+- Point your camera at a leaf, a flower or the whole plant.
+  🇫🇷 Visez une feuille, une fleur ou la plante entière.
 - Tree Identifier app screen: a tree framed in the camera viewfinder, labeled Tilia
   🇫🇷 Écran de l'app Tree Identifier : un arbre cadré dans le viseur, identifié « Tilia » (texte alternatif)
 - Get its name
   🇫🇷 Obtenez son nom
-- You get the most likely species, with look-alikes to compare.
-  🇫🇷 Vous obtenez l'espèce la plus probable, avec les espèces qui lui ressemblent pour comparer.
+- The app tells you what it is in seconds.
+  🇫🇷 L'app vous dit ce que c'est en quelques secondes.
 - Tree Identifier app screen: result page naming the tree African Mahogany, Khaya anthotheca
   🇫🇷 Écran de l'app Tree Identifier : page de résultat qui nomme l'arbre « African Mahogany », Khaya anthotheca (texte alternatif)
 - Learn how to care for it
@@ -290,12 +288,12 @@ Source : description officielle de la fiche App Store (lue le 23/11/2026).
   🇫🇷 FAQ
 - Is Tree Identifier free?
   🇫🇷 Tree Identifier est-elle gratuite ?
-- Tree Identifier is free to download. Identification, health checks and the AI tree expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store or Google Play account settings.
+- Tree Identifier is free to download. Identification, health checks and the AI expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store or Google Play account settings.
   🇫🇷 Tree Identifier se télécharge gratuitement. L'identification, le bilan de santé et l'expert arbres par IA font partie de Premium, un abonnement payant (hebdomadaire ou annuel). Le prix s'affiche dans l'app avant de vous abonner, et vous pouvez résilier à tout moment dans les réglages de votre compte App Store. (source : fiche App Store)
 - Which plants can it identify?
   🇫🇷 Quelles plantes peut-elle identifier ?
-- Trees, shrubs, palms, conifers and fruit trees. You can photograph a leaf, the bark, a flower, a fruit or the whole tree, and bark and buds work in winter too, when the leaves are gone. The app also includes an encyclopedia of 160 trees and shrubs.
-  🇫🇷 Les arbres, arbustes, palmiers, conifères et arbres fruitiers. Vous pouvez photographier une feuille, l'écorce, une fleur, un fruit ou l'arbre entier ; l'écorce et les bourgeons fonctionnent aussi en hiver, quand il n'y a plus de feuilles. L'app contient aussi une encyclopédie de 160 arbres et arbustes. (source : description App Store)
+- Houseplants like Monstera and pothos, garden plants, flowers and trees, including shrubs, palms, conifers and fruit trees. Photograph a leaf, a flower, a fruit, the bark or the whole plant.
+  🇫🇷 Les plantes d'intérieur comme la Monstera et le pothos, les plantes du jardin, les fleurs et les arbres, y compris arbustes, palmiers, conifères et arbres fruitiers. Photographiez une feuille, une fleur, un fruit, l'écorce ou la plante entière.
 - Is the toxicity info veterinary or medical advice?
   🇫🇷 Les informations de toxicité sont-elles un avis vétérinaire ou médical ?
 - No. It's general information with sources. If you think a pet or a child ate a plant, contact a vet or a poison control center right away.
