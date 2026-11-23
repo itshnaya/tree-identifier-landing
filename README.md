@@ -91,6 +91,10 @@ Dans `content/toxicity.json`, chaque fiche contient :
 
 Mesure envoyée (sans cookies, sans ralentir) : `store_click` (os, series, network, from), `quiz_answer`, `cheatsheet_download`.
 
+## Lien court (bio TikTok)
+
+**https://is.gd/treeidentifier** → `https://itshnaya.github.io/tree-identifier-landing/?p=tiktok&s=bio` (créé le 23/11/2026). Un lien is.gd ne peut pas être modifié : si l'adresse du site change (nom de domaine), il faudra en créer un nouveau.
+
 ## Fiche PDF gratuite
 
 Déposez le fichier sous `public/downloads/pet-safe-plant-cheat-sheet.pdf`. Le bouton de téléchargement direct s'active tout seul au build suivant.
