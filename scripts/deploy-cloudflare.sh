@@ -13,6 +13,6 @@ else
   SITE_ORIGIN=https://$PROJECT.pages.dev PREVIEW_NOINDEX=1 npx astro build
 fi
 npm test
-npx --yes wrangler@4 pages project list 2>/dev/null | grep -q "$PROJECT" || npx --yes wrangler@4 pages project create "$PROJECT" --production-branch main
+# Projet Cloudflare Pages "treeidentifierapp" créé le 23/11/2026 (compte Cloudflare de Claire).
 npx --yes wrangler@4 pages deploy dist.nosync --project-name "$PROJECT" --branch main --commit-dirty=true
 echo "Publié : https://$PROJECT.pages.dev/"

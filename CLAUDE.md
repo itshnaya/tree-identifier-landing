@@ -38,4 +38,6 @@ Node : `~/.local/node22/bin` (ajouter au PATH). `node_modules` et `dist` sont de
 
 ## Hébergement
 
+Site principal depuis le 23/11/2026 : **https://treeidentifierapp.pages.dev** (Cloudflare Pages, compte de Claire, projet `treeidentifierapp`, mode aperçu noindex). Mise à jour : `npm run deploy:cloudflare` (build + tests avant envoi). Version finale (indexée, [À CONFIRMER] masqués) : `PRODUCTION=1 npm run deploy:cloudflare`, uniquement sur demande de Claire.
+
 Aperçu public autorisé par Claire le 16/11/2026 : dépôt public `itshnaya/tree-identifier-landing`, GitHub Pages (noindex) https://itshnaya.github.io/tree-identifier-landing/ — mise à jour avec `npm run deploy:preview` (build + tests avant push). Lien court créé le 23/11/2026 avec l'accord de Claire : https://is.gd/treeidentifier → https://itshnaya.github.io/tree-identifier-landing/?p=tiktok&s=bio (is.gd : définitif, non modifiable ; à recréer si l'adresse du site change). Aucun domaine ni hébergement définitif : à confirmer avec Claire.
