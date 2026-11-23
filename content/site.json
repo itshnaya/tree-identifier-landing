@@ -4,13 +4,11 @@
   "media_name": "Plant Tea",
   "stores": {
     "ios_url": "https://apps.apple.com/us/app/tree-identifier-id/id6752256800",
-    "android_url": "[À CONFIRMER]",
+    "android_url": "https://play.google.com/store/apps/details?id=com.identify.plant&gl=us",
     "apple_provider_token": "[À CONFIRMER]",
     "app_store_badge_alt": "Download on the App Store",
     "google_play_badge_alt": "Get it on Google Play",
-    "app_icon_alt": "Tree Identifier app icon",
-    "android_url_proposal": "[À CONFIRMER] https://play.google.com/store/apps/details?id=com.identify.plant",
-    "android_proposal_label": "Proposed Google Play listing:"
+    "app_icon_alt": "Tree Identifier app icon"
   },
   "social": {
     "tiktok": {
@@ -37,10 +35,11 @@
   },
   "seo": {
     "title": "Tree Identifier — Which tree is that? Snap a photo to find out.",
-    "description": "Take a photo of a leaf, the bark, a flower or a fruit and find out which tree it is in seconds, with care tips. Free iPhone app from the team behind Plant Tea.",
+    "description": "Take a photo of a leaf, the bark, a flower or a fruit and find out which tree it is in seconds, with care tips. Free app for iPhone and Android from the team behind Plant Tea.",
     "og_image_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
     "structured_data_operating_systems": [
-      "iOS"
+      "iOS",
+      "Android"
     ],
     "structured_data_price": "0",
     "structured_data_currency": "USD"
@@ -70,7 +69,7 @@
     "aria_label": "Sections"
   },
   "hero": {
-    "kicker": "Free iPhone app",
+    "kicker": "Free app for iPhone and Android",
     "title_line_1": "Which tree is that?",
     "title_line_2": "Snap a photo to find out.",
     "subtitle": "Take a photo of a leaf, the bark, a flower or a fruit. Tree Identifier tells you which tree it is in seconds, and how to care for it.",
@@ -167,7 +166,7 @@
     "items": [
       {
         "q": "Is Tree Identifier free?",
-        "a": "Tree Identifier is free to download. Identification, health checks and the AI tree expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store account settings."
+        "a": "Tree Identifier is free to download. Identification, health checks and the AI tree expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store or Google Play account settings."
       },
       {
         "q": "Which plants can it identify?",
@@ -262,6 +261,6 @@
   },
   "final_cta": {
     "title": "Find out which tree it is.",
-    "text": "Free to download on iPhone."
+    "text": "Free to download on iPhone and Android."
   }
 }

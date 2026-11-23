@@ -27,7 +27,7 @@ Les consignes globales de Claire (`~/.claude/CLAUDE.md`) s'appliquent aussi.
 
 - `assets/logo.png` : logo exact fourni par Claire. `assets/monty.png` : portrait exact de Monty. Ne pas les remplacer.
 - `assets/app-screen-1..3.png` : visuels officiels de la fiche App Store (iOS). La page utilise des **recadrages sans les titres promotionnels** (`src/assets/screens/`), choix validé par Claire le 15/11/2026, car ces titres annoncent des fonctionnalités non confirmées. Le bouton « Ask Expert » de l'interface reste visible sur l'étape 3 : à ne pas mettre en avant dans les textes.
-- `assets/android/` : visuels de l'app Google Play `com.identify.plant` (nom sur le store : « Identify Plants: Weeds & Care »). **Non utilisés** : Claire a demandé le 15/11/2026 de n'utiliser pour l'instant que le lien App Store, avec un bouton Google Play dont le lien reste `[À CONFIRMER]`. Ne pas brancher ce lien Android sans son accord.
+- `assets/android/` : visuels de l'app Google Play `com.identify.plant` (nom sur le store : « Identify Plants: Weeds & Care »). Lien Google Play **confirmé par Claire le 23/11/2026** (https://play.google.com/store/apps/details?id=com.identify.plant&gl=us), branché sur le bouton Google Play. Visuels Android toujours non utilisés.
 
 ## Commandes
 

@@ -85,7 +85,7 @@ Dans `content/toxicity.json`, chaque fiche contient :
 `/get?s=<série>&p=<réseau>`, par exemple `/get?s=plant-er&p=tiktok`.
 
 - iPhone / iPad → App Store avec `pt=<jeton Apple>` et `ct=<série>_<réseau>` (sans `pt` tant que le jeton est à confirmer).
-- Android → Google Play avec `referrer=utm_source%3D<réseau>%26utm_medium%3Dorganic%26utm_campaign%3D<série>`. **Tant que `stores.android_url` est à confirmer, Android voit la page avec les badges.**
+- Android → Google Play avec `referrer=utm_source%3D<réseau>%26utm_medium%3Dorganic%26utm_campaign%3D<série>`. Lien Google Play donné par Claire le 23/11/2026 : `com.identify.plant`.
 - Ordinateur → page avec les deux badges et un QR code.
 - `&to=ios` ou `&to=android` force un store (utilisé par les badges).
 - Lien en bio conseillé : `https://<votre-domaine>/?p=tiktok&s=bio` (idem `p=instagram`, `p=youtube`). Les badges de la page reprennent automatiquement `s` et `p`.
@@ -147,8 +147,6 @@ Chaque ligne correspond à un endroit précis de `/content` (le test `npm test` 
 
 **Liens et identifiants**
 - `site.json → site_url` : adresse définitive du site (domaine).
-- `site.json → stores.android_url` : lien Google Play de Tree Identifier.
-- `site.json → stores.android_url_proposal` : **proposition** `com.identify.plant` (doute : développeur « Qualitech Apps LLC » ≠ « Qualitech Solutions Ltd » sur l'App Store, et nom d'app différent).
 - `site.json → stores.apple_provider_token` : jeton fournisseur Apple pour les campagnes (`pt`).
 - `site.json → social.tiktok.handle`, `site.json → social.tiktok.url` : compte TikTok de Plant Tea.
 - `site.json → social.instagram.handle`, `site.json → social.instagram.url` : compte Instagram.

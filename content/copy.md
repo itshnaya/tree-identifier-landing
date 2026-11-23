@@ -21,15 +21,13 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Icône de l'app Tree Identifier
 - TikTok · Instagram · YouTube
   🇫🇷 (noms des réseaux, non traduits)
-- Google Play link · Proposed Google Play listing:
-  🇫🇷 Lien Google Play · Fiche Google Play proposée : (visibles seulement en aperçu, à côté du badge Google Play)
 
 ## SEO (onglet du navigateur, partage, Google) — `site.json → seo`
 
 - Tree Identifier — Which tree is that? Snap a photo to find out.
   🇫🇷 Tree Identifier — C'est quoi, cet arbre ? Prenez-le en photo pour le savoir.
-- Take a photo of a leaf, the bark, a flower or a fruit and find out which tree it is in seconds, with care tips. Free iPhone app from the team behind Plant Tea.
-  🇫🇷 Prenez en photo une feuille, l'écorce, une fleur ou un fruit et découvrez de quel arbre il s'agit en quelques secondes, avec des conseils d'entretien. App iPhone gratuite, par l'équipe de Plant Tea.
+- Take a photo of a leaf, the bark, a flower or a fruit and find out which tree it is in seconds, with care tips. Free app for iPhone and Android from the team behind Plant Tea.
+  🇫🇷 Prenez en photo une feuille, l'écorce, une fleur ou un fruit et découvrez de quel arbre il s'agit en quelques secondes, avec des conseils d'entretien. App gratuite pour iPhone et Android, par l'équipe de Plant Tea.
 - Monty, a Monstera in a terracotta pot with a face, sipping tea
   🇫🇷 Monty, une Monstera dans un pot en terre cuite avec un visage, qui boit son thé (texte alternatif de l'image de partage, du hero et de la carte de Monty)
 
@@ -56,8 +54,8 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 ## 2. Hero — `site.json → hero`
 
-- Free iPhone app
-  🇫🇷 App iPhone gratuite
+- Free app for iPhone and Android
+  🇫🇷 App gratuite pour iPhone et Android
 - Which tree is that?
   🇫🇷 C'est quoi, cet arbre ?
 - Snap a photo to find out.
@@ -292,7 +290,7 @@ Source : description officielle de la fiche App Store (lue le 23/11/2026).
   🇫🇷 FAQ
 - Is Tree Identifier free?
   🇫🇷 Tree Identifier est-elle gratuite ?
-- Tree Identifier is free to download. Identification, health checks and the AI tree expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store account settings.
+- Tree Identifier is free to download. Identification, health checks and the AI tree expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store or Google Play account settings.
   🇫🇷 Tree Identifier se télécharge gratuitement. L'identification, le bilan de santé et l'expert arbres par IA font partie de Premium, un abonnement payant (hebdomadaire ou annuel). Le prix s'affiche dans l'app avant de vous abonner, et vous pouvez résilier à tout moment dans les réglages de votre compte App Store. (source : fiche App Store)
 - Which plants can it identify?
   🇫🇷 Quelles plantes peut-elle identifier ?
@@ -315,8 +313,8 @@ Source : description officielle de la fiche App Store (lue le 23/11/2026).
 
 - Find out which tree it is.
   🇫🇷 Découvrez de quel arbre il s'agit.
-- Free to download on iPhone.
-  🇫🇷 Téléchargement gratuit sur iPhone.
+- Free to download on iPhone and Android.
+  🇫🇷 Téléchargement gratuit sur iPhone et Android.
 
 ## 9. Pied de page — `site.json → footer`
 
