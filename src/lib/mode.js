@@ -1,7 +1,7 @@
-// Show [À CONFIRMER] badges and proposals only in development and previews.
-// Production build (no flag) hides them until Claire confirms.
-//   npm run dev                    → shown
-//   npm run deploy:preview         → shown (PREVIEW_NOINDEX=1, noindex)
-//   npm run build                  → hidden (production)
-export const showTBC =
-  Boolean(import.meta.env.DEV) || process.env.PREVIEW_NOINDEX === '1' || process.env.SHOW_TBC === '1';
+// Show [À CONFIRMER] badges and proposals only on Claire's computer.
+// Every published build (Cloudflare, GitHub Pages) hides them until Claire confirms:
+// visitors coming from TikTok must never see work-in-progress labels.
+//   npm run dev                         → shown
+//   SHOW_TBC=1 npm run build            → shown (local review only, never deployed)
+//   npm run deploy:cloudflare / build   → hidden
+export const showTBC = Boolean(import.meta.env.DEV) || process.env.SHOW_TBC === '1';

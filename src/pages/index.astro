@@ -4,14 +4,24 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import Quiz from '../components/Quiz.astro';
-import Cast from '../components/Cast.astro';
+import Features from '../components/Features.astro';
+import PlantTea from '../components/PlantTea.astro';
+import FinalCta from '../components/FinalCta.astro';
 import Watch from '../components/Watch.astro';
 import CheatSheet from '../components/CheatSheet.astro';
 import Faq from '../components/Faq.astro';
 import Footer from '../components/Footer.astro';
 import StoreLinkScript from '../components/StoreLinkScript.astro';
-import { site } from '../lib/content.js';
+import { site, series, cards, isQuizPreview } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
+import { showTBC } from '../lib/mode.js';
+
+// Sections that have nothing real to show yet stay off the public page
+// (no empty game, no episode list without episodes).
+const showQuiz = cards.length > 0 || isQuizPreview || showTBC;
+const hasVideo = series.some((s) => !isTBC(s.tiktok_video_url));
+const hasSocial = Object.values(site.social).some((s) => !isTBC(s.url));
+const showWatch = hasVideo || hasSocial || showTBC;
 
 // SoftwareApplication: price only from the store listing; no rating (CLAUDE.md rule 1).
 const jsonLd = {
@@ -30,12 +40,14 @@ const jsonLd = {
   <Header />
   <main id="main">
     <Hero />
+    <Features />
     <HowItWorks />
-    <Quiz />
-    <Cast />
-    <Watch />
+    {showQuiz && <Quiz />}
+    <PlantTea />
+    {showWatch && <Watch />}
     <CheatSheet />
     <Faq />
+    <FinalCta />
   </main>
   <Footer />
   <StoreLinkScript />

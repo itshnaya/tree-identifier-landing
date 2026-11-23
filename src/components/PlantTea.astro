@@ -1,0 +1,28 @@
+---
+// Plant Tea, secondary to the app: Monty, one paragraph, the cast as a simple list.
+// Portraits only for characters that have a real image (no placeholders on the public site).
+import { Picture } from 'astro:assets';
+import monty from '../assets/cast/monty.png';
+import { site, cast } from '../lib/content.js';
+const t = site.plant_tea;
+---
+<section id="plant-tea" class="section bg-surface" aria-labelledby="tea-title">
+  <div class="wrap grid items-center gap-8 md:grid-cols-[.8fr_1.2fr] md:gap-14">
+    <div class="relative mx-auto w-[min(62vw,260px)] md:w-full md:max-w-[380px]">
+      <Picture src={monty} formats={['avif', 'webp']} fallbackFormat="jpg" widths={[260, 400, 560, 760]} sizes="(min-width: 768px) 380px, 62vw"
+        alt={t.monty_alt} loading="lazy" decoding="async" class="block w-full rounded-[28px] shadow-[0_18px_40px_rgba(10,57,39,.18)]" />
+      <p class="absolute -bottom-3 -left-4 whitespace-nowrap rounded-[18px_18px_18px_4px] border border-forest/10 bg-white px-3.5 py-2 font-display text-[0.95rem] font-semibold shadow-lg md:text-lg" aria-hidden="true">
+        {t.monty_bubble_before}<span class="text-terra-dark">{t.monty_bubble_highlight}</span>{t.monty_bubble_after}
+      </p>
+    </div>
+    <div>
+      <h2 id="tea-title" class="section-title">{t.title}</h2>
+      <p class="mt-3 max-w-[48ch] text-[1.05rem]">{t.text}</p>
+      <h3 class="mt-7 text-[1.25rem] font-semibold">{t.cast_title}</h3>
+      <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+        {cast.map((c) => <li class="rounded-2xl border border-forest/10 bg-white px-4 py-3"><span class="font-display text-[1.1rem] font-semibold">{c.name}</span><span class="block text-sm text-muted">{c.role}</span></li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+<style>.text-terra-dark { color: #B8441D; }</style>

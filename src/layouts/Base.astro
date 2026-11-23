@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { site } from '../lib/content.js';
 import { isTBC } from '../lib/tbc.js';
 import { withBase } from '../lib/paths.js';
+import { showTBC } from '../lib/mode.js';
 const { title = site.seo.title, description = site.seo.description, noindex: noindexProp = false, jsonLd = null } = Astro.props;
 // PREVIEW_NOINDEX=1: temporary previews (e.g. GitHub Pages) are kept out of search engines.
 const noindex = noindexProp || process.env.PREVIEW_NOINDEX === '1';
@@ -13,7 +14,7 @@ const ogImage = base ? `${base}/og-image.jpg` : previewOrigin + withBase('/og-im
 const analytics = { enabled: site.analytics.enabled && !isTBC(site.analytics.domain), domain: isTBC(site.analytics.domain) ? '' : site.analytics.domain, api_host: site.analytics.api_host };
 ---
 <!doctype html>
-<html lang="en-US">
+<html lang="en-US" data-show-tbc={showTBC ? "1" : undefined}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />

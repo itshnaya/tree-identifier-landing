@@ -36,8 +36,8 @@
     "api_host": "https://plausible.io"
   },
   "seo": {
-    "title": "Tree Identifier — Snap a photo. Meet your plant.",
-    "description": "Tree Identifier names your plant from a photo and tells you how to care for it. From the team behind Plant Tea.",
+    "title": "Tree Identifier — Which tree is that? Snap a photo to find out.",
+    "description": "Take a photo of a leaf, the bark, a flower or a fruit and find out which tree it is in seconds, with care tips. Free iPhone app from the team behind Plant Tea.",
     "og_image_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
     "structured_data_operating_systems": [
       "iOS"
@@ -49,20 +49,16 @@
     "home_label": "Tree Identifier home",
     "links": [
       {
+        "label": "Features",
+        "href": "#features"
+      },
+      {
         "label": "How it works",
         "href": "#how-it-works"
       },
       {
-        "label": "Toxic or Not?",
-        "href": "#toxic-or-not"
-      },
-      {
-        "label": "The cast",
-        "href": "#cast"
-      },
-      {
-        "label": "Watch",
-        "href": "#watch"
+        "label": "Plant Tea",
+        "href": "#plant-tea"
       },
       {
         "label": "FAQ",
@@ -74,35 +70,36 @@
     "aria_label": "Sections"
   },
   "hero": {
-    "title_line_1": "Snap a photo.",
-    "title_line_2": "Meet your plant.",
-    "subtitle": "Tree Identifier names your plant from a photo and tells you how to care for it.",
-    "tea_line": "Your plants have drama. We translate it.",
-    "tea_signature": "— From the team behind Plant Tea",
-    "monty_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
-    "monty_bubble_before": "Darling, ",
-    "monty_bubble_highlight": "I",
-    "monty_bubble_after": " have a name."
+    "kicker": "Free iPhone app",
+    "title_line_1": "Which tree is that?",
+    "title_line_2": "Snap a photo to find out.",
+    "subtitle": "Take a photo of a leaf, the bark, a flower or a fruit. Tree Identifier tells you which tree it is in seconds, and how to care for it.",
+    "facts": [
+      "Free to download",
+      "No account needed",
+      "12 languages"
+    ],
+    "screen_alt": "Tree Identifier app screen: result page naming the tree African Mahogany, Khaya anthotheca"
   },
   "how_it_works": {
     "title": "How it works",
-    "intro": "Three steps. No drama. (We save that for the show.)",
+    "intro": "Three steps, a few seconds.",
     "steps": [
       {
         "title": "Take a photo",
-        "text": "Point your camera at the plant.",
+        "text": "Point your camera at a leaf, the bark, a flower or a fruit.",
         "image": "step-1-photo",
         "alt": "Tree Identifier app screen: a tree framed in the camera viewfinder, labeled Tilia"
       },
       {
         "title": "Get its name",
-        "text": "The app's AI tells you what it is.",
+        "text": "You get the most likely species, with look-alikes to compare.",
         "image": "step-2-name",
         "alt": "Tree Identifier app screen: result page naming the tree African Mahogany, Khaya anthotheca"
       },
       {
         "title": "Learn how to care for it",
-        "text": "Watering, light, soil and more.",
+        "text": "Light, water, soil, pruning and more.",
         "image": "step-3-care",
         "alt": "Tree Identifier app screen: care tips for watering, light, soil, temperature and fertilizing"
       }
@@ -177,6 +174,14 @@
         "a": "Trees, shrubs, palms, conifers and fruit trees. You can photograph a leaf, the bark, a flower, a fruit or the whole tree, and bark and buds work in winter too, when the leaves are gone. The app also includes an encyclopedia of 160 trees and shrubs."
       },
       {
+        "q": "Do I need an account?",
+        "a": "No account needed. The app is available in 12 languages."
+      },
+      {
+        "q": "Are the results always right?",
+        "a": "Results come from an AI analysis of your photos and are indicative. Never eat a plant on the word of an app alone, and ask a certified arborist before felling a tree or doing major work on it."
+      },
+      {
         "q": "Is the toxicity info veterinary or medical advice?",
         "a": "No. It's general information with sources. If you think a pet or a child ate a plant, contact a vet or a poison control center right away."
       },
@@ -213,5 +218,50 @@
     "image_placeholder_suffix": "(image coming)",
     "quiz_noscript": "JavaScript is needed to play.",
     "image_label": "Image"
+  },
+  "features": {
+    "title": "What the app does",
+    "intro": "Everything you need to recognize a tree, care for it and keep it healthy.",
+    "items": [
+      {
+        "icon": "📷",
+        "title": "Identify any tree, all year",
+        "text": "Up to 3 photos per scan: leaf, bark, flower, fruit or the whole tree. Bark and buds work in winter, when the leaves are gone."
+      },
+      {
+        "icon": "📖",
+        "title": "A full report for every tree",
+        "text": "How to recognize it, look-alikes, care, a month-by-month calendar, and safety info: toxic for pets or people, pollen allergy, edible parts."
+      },
+      {
+        "icon": "🍂",
+        "title": "Is my tree sick?",
+        "text": "Photograph the leaves, bark or branches to get a health check, with clear treatment steps."
+      },
+      {
+        "icon": "💬",
+        "title": "Ask a tree expert",
+        "text": "Chat with an AI tree expert about pruning, planting, pests or any tree question."
+      },
+      {
+        "icon": "🧰",
+        "title": "Free tools",
+        "text": "Tree age, tree height, a light meter, a watering helper and an encyclopedia of 160 trees and shrubs."
+      }
+    ],
+    "premium_note": "Identification, health checks and the tree expert are part of Premium, a paid subscription."
+  },
+  "plant_tea": {
+    "title": "From the team behind Plant Tea",
+    "text": "Plant Tea is our comedy show about plants on TikTok, Instagram and YouTube. The plants talk (the faces are on the pots), and every episode slips in a real plant lesson.",
+    "cast_title": "The cast",
+    "monty_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
+    "monty_bubble_before": "Darling, ",
+    "monty_bubble_highlight": "I",
+    "monty_bubble_after": " have a name."
+  },
+  "final_cta": {
+    "title": "Find out which tree it is.",
+    "text": "Free to download on iPhone."
   }
 }

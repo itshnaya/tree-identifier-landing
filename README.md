@@ -47,7 +47,8 @@ Tout est dans `content/site.json` :
 | Mode | Commande | [À CONFIRMER] et propositions |
 |---|---|---|
 | Développement | `npm run dev` | affichés avec le badge doré |
-| Aperçu public (GitHub Pages, noindex) | `npm run deploy:preview` | affichés avec le badge doré |
+| Site en ligne (Cloudflare, noindex tant que `PRODUCTION=1` n'est pas utilisé) | `npm run deploy:cloudflare` | **masqués** (les visiteurs ne voient jamais de repère « à confirmer ») |
+| Relecture locale | `SHOW_TBC=1 npm run build && npm run preview` | affichés avec le badge doré |
 | Production (futur domaine) | `npm run build` | **masqués** (l'élément entier disparaît : question de FAQ, lien, bouton Google Play, section PDF…) |
 
 Une proposition n'est **jamais** utilisée pour une redirection : `/get` n'envoie que vers des liens confirmés. Un test vérifie qu'aucun [À CONFIRMER] n'apparaît dans un build de production.

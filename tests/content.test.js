@@ -50,9 +50,9 @@ test('"safe" only in the allowed places (cheat sheet title given by the brief, n
   assert.deepEqual(bad, []);
 });
 
-test('production build: no [À CONFIRMER] and no proposal is visible', { skip: !fs.existsSync('dist/index.html') && 'run npm run build first' }, () => {
+test('published build: no [À CONFIRMER] and no proposal is visible', { skip: !fs.existsSync('dist/index.html') && 'run npm run build first' }, () => {
   const html = read('dist/index.html');
-  if (html.includes('name="robots" content="noindex"')) return; // preview build: badges allowed
+  if (html.includes('data-show-tbc="1"')) return; // local SHOW_TBC=1 review build: badges allowed
   assert.ok(!html.includes(TBC), 'dist/index.html (production) contains [À CONFIRMER]');
   for (const f of files) for (const t of strings(content[f])) {
     const prop = proposalOf(t);

@@ -5,7 +5,7 @@ const screens = import.meta.glob('../assets/screens/*.png', { eager: true });
 const img = (name) => screens[`../assets/screens/${name}.png`].default;
 const s = site.how_it_works;
 ---
-<section id="how-it-works" class="section bg-surface" aria-labelledby="how-title">
+<section id="how-it-works" class="section" aria-labelledby="how-title">
   <div class="wrap">
     <h2 id="how-title" class="section-title">{s.title}</h2>
     <p class="section-intro">{s.intro}</p>

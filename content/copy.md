@@ -26,10 +26,10 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 ## SEO (onglet du navigateur, partage, Google) — `site.json → seo`
 
-- Tree Identifier — Snap a photo. Meet your plant.
-  🇫🇷 Tree Identifier — Prenez une photo. Faites connaissance avec votre plante.
-- Tree Identifier names your plant from a photo and tells you how to care for it. From the team behind Plant Tea.
-  🇫🇷 Tree Identifier donne le nom de votre plante à partir d'une photo et vous explique comment en prendre soin. Par l'équipe de Plant Tea.
+- Tree Identifier — Which tree is that? Snap a photo to find out.
+  🇫🇷 Tree Identifier — C'est quoi, cet arbre ? Prenez-le en photo pour le savoir.
+- Take a photo of a leaf, the bark, a flower or a fruit and find out which tree it is in seconds, with care tips. Free iPhone app from the team behind Plant Tea.
+  🇫🇷 Prenez en photo une feuille, l'écorce, une fleur ou un fruit et découvrez de quel arbre il s'agit en quelques secondes, avec des conseils d'entretien. App iPhone gratuite, par l'équipe de Plant Tea.
 - Monty, a Monstera in a terracotta pot with a face, sipping tea
   🇫🇷 Monty, une Monstera dans un pot en terre cuite avec un visage, qui boit son thé (texte alternatif de l'image de partage, du hero et de la carte de Monty)
 
@@ -39,14 +39,14 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Accueil Tree Identifier (lu par les lecteurs d'écran sur le logo)
 - How it works
   🇫🇷 Comment ça marche
-- Toxic or Not?
-  🇫🇷 Toxique ou pas ?
-- The cast
-  🇫🇷 Les personnages
-- Watch
-  🇫🇷 Regarder
+- Features
+  🇫🇷 Fonctionnalités
+- Plant Tea
+  🇫🇷 Plant Tea
 - FAQ
   🇫🇷 FAQ
+- Toxic or Not?
+  🇫🇷 Toxique ou pas ? (titre du mini-jeu, affiché quand des fiches sont vérifiées)
 - Get the app
   🇫🇷 Télécharger l'app
 - Skip to content
@@ -56,41 +56,78 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 ## 2. Hero — `site.json → hero`
 
-- Snap a photo.
-  🇫🇷 Prenez une photo.
-- Meet your plant.
-  🇫🇷 Faites connaissance avec votre plante.
-- Tree Identifier names your plant from a photo and tells you how to care for it.
-  🇫🇷 Tree Identifier donne le nom de votre plante à partir d'une photo et vous explique comment en prendre soin.
-- Your plants have drama. We translate it.
-  🇫🇷 Vos plantes font des drames. Nous les traduisons.
-- — From the team behind Plant Tea
-  🇫🇷 — Par l'équipe de Plant Tea
-- Bulle de Monty : "Darling, " + "I" + " have a name." → Darling, I have a name.
-  🇫🇷 Mon chéri, *moi*, j'ai un nom.
+- Free iPhone app
+  🇫🇷 App iPhone gratuite
+- Which tree is that?
+  🇫🇷 C'est quoi, cet arbre ?
+- Snap a photo to find out.
+  🇫🇷 Prenez-le en photo pour le savoir.
+- Take a photo of a leaf, the bark, a flower or a fruit. Tree Identifier tells you which tree it is in seconds, and how to care for it.
+  🇫🇷 Prenez en photo une feuille, l'écorce, une fleur ou un fruit. Tree Identifier vous dit de quel arbre il s'agit en quelques secondes, et comment en prendre soin.
+- Free to download · No account needed · 12 languages
+  🇫🇷 Téléchargement gratuit · Sans compte · 12 langues
+- Free to download
+  🇫🇷 Téléchargement gratuit
+- No account needed
+  🇫🇷 Sans compte
+- 12 languages
+  🇫🇷 12 langues
+- (Image : écran réel de l'app, page de résultat — texte alternatif identique à l'étape 2 ci-dessous)
+
+## 2 bis. What the app does — `site.json → features`
+
+Source : description officielle de la fiche App Store (lue le 23/11/2026).
+
+- What the app does
+  🇫🇷 Ce que fait l'app
+- Everything you need to recognize a tree, care for it and keep it healthy.
+  🇫🇷 Tout ce qu'il faut pour reconnaître un arbre, en prendre soin et le garder en bonne santé.
+- Identify any tree, all year
+  🇫🇷 Identifiez n'importe quel arbre, toute l'année
+- Up to 3 photos per scan: leaf, bark, flower, fruit or the whole tree. Bark and buds work in winter, when the leaves are gone.
+  🇫🇷 Jusqu'à 3 photos par analyse : feuille, écorce, fleur, fruit ou l'arbre entier. L'écorce et les bourgeons suffisent en hiver, quand les feuilles sont tombées.
+- A full report for every tree
+  🇫🇷 Une fiche complète pour chaque arbre
+- How to recognize it, look-alikes, care, a month-by-month calendar, and safety info: toxic for pets or people, pollen allergy, edible parts.
+  🇫🇷 Comment le reconnaître, les espèces qui lui ressemblent, l'entretien, un calendrier mois par mois, et les infos de sécurité : toxique pour les animaux ou les humains, allergie au pollen, parties comestibles.
+- Is my tree sick?
+  🇫🇷 Mon arbre est-il malade ?
+- Photograph the leaves, bark or branches to get a health check, with clear treatment steps.
+  🇫🇷 Photographiez les feuilles, l'écorce ou les branches pour un bilan de santé, avec des étapes de traitement claires.
+- Ask a tree expert
+  🇫🇷 Demandez à un expert des arbres
+- Chat with an AI tree expert about pruning, planting, pests or any tree question.
+  🇫🇷 Discutez avec un expert des arbres (IA) : taille, plantation, parasites ou toute autre question.
+- Free tools
+  🇫🇷 Outils gratuits
+- Tree age, tree height, a light meter, a watering helper and an encyclopedia of 160 trees and shrubs.
+  🇫🇷 Âge de l'arbre, hauteur de l'arbre, mesure de la lumière, aide à l'arrosage et une encyclopédie de 160 arbres et arbustes.
+- Identification, health checks and the tree expert are part of Premium, a paid subscription.
+  🇫🇷 L'identification, le bilan de santé et l'expert font partie de Premium, un abonnement payant.
+- Icônes : 📷 📖 🍂 💬 🧰 (émojis, non traduits)
 
 ## 3. How it works — `site.json → how_it_works`
 
 - How it works
   🇫🇷 Comment ça marche
-- Three steps. No drama. (We save that for the show.)
-  🇫🇷 Trois étapes. Zéro drame. (On le garde pour la série.)
+- Three steps, a few seconds.
+  🇫🇷 Trois étapes, quelques secondes.
 - Take a photo
   🇫🇷 Prenez une photo
-- Point your camera at the plant.
-  🇫🇷 Visez la plante avec l'appareil photo.
+- Point your camera at a leaf, the bark, a flower or a fruit.
+  🇫🇷 Visez une feuille, l'écorce, une fleur ou un fruit.
 - Tree Identifier app screen: a tree framed in the camera viewfinder, labeled Tilia
   🇫🇷 Écran de l'app Tree Identifier : un arbre cadré dans le viseur, identifié « Tilia » (texte alternatif)
 - Get its name
   🇫🇷 Obtenez son nom
-- The app's AI tells you what it is.
-  🇫🇷 L'IA de l'app vous dit de quelle plante il s'agit.
+- You get the most likely species, with look-alikes to compare.
+  🇫🇷 Vous obtenez l'espèce la plus probable, avec les espèces qui lui ressemblent pour comparer.
 - Tree Identifier app screen: result page naming the tree African Mahogany, Khaya anthotheca
   🇫🇷 Écran de l'app Tree Identifier : page de résultat qui nomme l'arbre « African Mahogany », Khaya anthotheca (texte alternatif)
 - Learn how to care for it
   🇫🇷 Apprenez à en prendre soin
-- Watering, light, soil and more.
-  🇫🇷 Arrosage, lumière, sol, et plus encore.
+- Light, water, soil, pruning and more.
+  🇫🇷 Lumière, arrosage, sol, taille, et plus encore.
 - Tree Identifier app screen: care tips for watering, light, soil, temperature and fertilizing
   🇫🇷 Écran de l'app Tree Identifier : conseils d'entretien pour l'arrosage, la lumière, le sol, la température et l'engrais (texte alternatif)
 - Screens from the iPhone app.
@@ -152,7 +189,20 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 - For cats, the whole plant is dangerous, including the pollen and the water in the vase: it can cause kidney failure. In dogs, it may cause a mild stomach upset.
   🇫🇷 (Lys de Pâques) Pour les chats, toute la plante est dangereuse, pollen et eau du vase compris : elle peut provoquer une insuffisance rénale. Chez le chien, elle peut causer un léger trouble digestif.
 
-## 5. Meet the cast — `site.json → cast` + `cast.json`
+## 5. From the team behind Plant Tea — `site.json → plant_tea` + `cast.json`
+
+- From the team behind Plant Tea
+  🇫🇷 Par l'équipe de Plant Tea
+- Plant Tea is our comedy show about plants on TikTok, Instagram and YouTube. The plants talk (the faces are on the pots), and every episode slips in a real plant lesson.
+  🇫🇷 Plant Tea est notre série comique sur les plantes, sur TikTok, Instagram et YouTube. Les plantes parlent (les visages sont sur les pots), et chaque épisode glisse une vraie leçon de botanique.
+- The cast
+  🇫🇷 Les personnages
+- Monty, a Monstera in a terracotta pot with a face, sipping tea
+  🇫🇷 (texte alternatif de Monty, voir SEO)
+- Bulle de Monty : "Darling, " + "I" + " have a name." → Darling, I have a name.
+  🇫🇷 Mon chéri, *moi*, j'ai un nom.
+
+## 5 bis. Personnages (anciens textes encore utilisés pour les noms et rôles) — `site.json → cast` + `cast.json`
 
 - Meet the cast
   🇫🇷 Les personnages
@@ -230,6 +280,14 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 ## 8. FAQ — `site.json → faq`
 
+- Do I need an account?
+  🇫🇷 Faut-il un compte ?
+- No account needed. The app is available in 12 languages.
+  🇫🇷 Aucun compte nécessaire. L'app est disponible en 12 langues.
+- Are the results always right?
+  🇫🇷 Les résultats sont-ils toujours justes ?
+- Results come from an AI analysis of your photos and are indicative. Never eat a plant on the word of an app alone, and ask a certified arborist before felling a tree or doing major work on it.
+  🇫🇷 Les résultats viennent d'une analyse de vos photos par IA et sont indicatifs. Ne mangez jamais une plante sur la seule foi d'une app, et demandez à un arboriste certifié avant d'abattre un arbre ou d'y faire de gros travaux.
 - FAQ
   🇫🇷 FAQ
 - Is Tree Identifier free?
@@ -252,6 +310,13 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Les personnages sont-ils faits par IA ?
 - Yes, our characters are animated with AI.
   🇫🇷 Oui, nos personnages sont animés grâce à l'IA.
+
+## 8 bis. Dernier appel — `site.json → final_cta`
+
+- Find out which tree it is.
+  🇫🇷 Découvrez de quel arbre il s'agit.
+- Free to download on iPhone.
+  🇫🇷 Téléchargement gratuit sur iPhone.
 
 ## 9. Pied de page — `site.json → footer`
 
