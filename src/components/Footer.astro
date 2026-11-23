@@ -11,7 +11,7 @@ const links = [
 ].filter((l) => showTBC || !isTBC(l.href));
 const socials = Object.values(site.social).filter((s) => showTBC || !isTBC(s.url));
 ---
-<footer class="border-t border-white/10 bg-[#072B1D] py-12">
+<footer class="border-t border-white/10 bg-[#072B1D] pt-12 pb-[max(3rem,calc(2rem+env(safe-area-inset-bottom)))]">
   <div class="wrap grid gap-8 md:grid-cols-2">
     <div>
       <StoreBadges source="footer" />
@@ -28,8 +28,8 @@ const socials = Object.values(site.social).filter((s) => showTBC || !isTBC(s.url
           ))}
         </ul>
       </div>}
-      <ul class="flex flex-wrap gap-5 text-sm md:justify-end">
-        {links.map((l) => <li>{isTBC(l.href) ? <span>{l.label} <span class="tbc">[À CONFIRMER]</span></span> : <a href={l.href} class="underline" target="_blank" rel="noopener">{l.label}</a>}</li>)}
+      <ul class="-mx-2 flex flex-wrap gap-x-1 text-sm md:mx-0 md:justify-end">
+        {links.map((l) => <li>{isTBC(l.href) ? <span class="inline-flex min-h-11 items-center gap-1 px-2">{l.label} <span class="tbc">[À CONFIRMER]</span></span> : <a href={l.href} class="inline-flex min-h-11 items-center px-2 underline" target="_blank" rel="noopener">{l.label}</a>}</li>)}
       </ul>
     </div>
   </div>

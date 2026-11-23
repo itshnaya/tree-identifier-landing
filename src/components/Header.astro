@@ -7,21 +7,28 @@ const { nav } = site;
 ---
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 btn btn-mint">{nav.skip_link}</a>
 <header class="sticky top-0 z-40 border-b border-white/10 bg-forest/95 backdrop-blur supports-[backdrop-filter]:bg-forest/80">
-  <div class="wrap flex h-16 items-center justify-between gap-3">
-    <a href={withBase('/')} class="flex items-center gap-2.5 no-underline" aria-label={nav.home_label}>
-      <Image src={logo} alt="" width={36} height={36} densities={[1, 2, 3]} class="rounded-[9px]" loading="eager" />
-      <span class="font-display text-[1.2rem] font-semibold">{site.app_name}</span>
+  <div class="wrap flex h-14 items-center justify-between gap-3 md:h-16">
+    <a href={withBase('/')} class="flex min-h-11 min-w-0 items-center gap-2 no-underline md:gap-2.5" aria-label={nav.home_label}>
+      <Image src={logo} alt="" width={36} height={36} densities={[1, 2, 3]} class="size-8 shrink-0 rounded-[8px] md:size-9 md:rounded-[9px]" loading="eager" />
+      <span class="whitespace-nowrap font-display text-[clamp(1rem,4.8vw,1.2rem)] font-semibold">{site.app_name}</span>
     </a>
     <nav aria-label={nav.aria_label} class="hidden md:block">
       <ul class="flex gap-6 text-[0.95rem]">
         {nav.links.map((l) => <li><a href={l.href} class="no-underline opacity-90 hover:opacity-100 hover:text-mint">{l.label}</a></li>)}
       </ul>
     </nav>
-    <a href={withBase('/get/')} data-get-link class="btn btn-mint text-sm" data-source="header">{nav.cta}</a>
+    <a href={withBase('/get/')} data-get-link class="btn btn-mint shrink-0 whitespace-nowrap px-4 text-sm md:px-[18px]" data-source="header">{nav.cta}</a>
   </div>
-  <nav aria-label={nav.aria_label} class="md:hidden border-t border-white/10">
-    <ul class="wrap flex gap-5 overflow-x-auto py-2 text-sm whitespace-nowrap [scrollbar-width:none]">
-      {nav.links.map((l) => <li><a href={l.href} class="no-underline opacity-90 inline-block py-1">{l.label}</a></li>)}
+  <nav aria-label={nav.aria_label} class="mobile-nav md:hidden border-t border-white/10">
+    <ul class="wrap flex gap-1 overflow-x-auto text-sm whitespace-nowrap [scrollbar-width:none]">
+      {nav.links.map((l) => <li><a href={l.href} class="no-underline opacity-90 flex min-h-11 min-w-11 items-center justify-center px-2">{l.label}</a></li>)}
     </ul>
   </nav>
 </header>
+<style>
+  /* Links keep a 44px tap area; their padding lines the first label up with the page gutter.
+     Extra room on the right lets the last link scroll clear of the fade. */
+  .mobile-nav ul { padding-inline: max(8px, env(safe-area-inset-left)) max(56px, env(safe-area-inset-right)); }
+  /* Soft fade on the right edge: shows there is more to swipe. */
+  .mobile-nav { -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); mask-image: linear-gradient(to right, #000 85%, transparent); }
+</style>

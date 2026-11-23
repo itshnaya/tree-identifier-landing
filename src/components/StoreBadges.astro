@@ -14,15 +14,15 @@ const h = size === 'lg' ? 48 : 44; // Apple badge height (>= 40px on screen)
 const playMissing = isTBC(site.stores.android_url);
 const showPlay = !playMissing || showTBC; // production: no Play badge until the link is confirmed
 ---
-<div style={`--hb:${h}px;--icon:${h}px`} class="store-badges flex flex-wrap items-center gap-2 sm:gap-3" data-source={source}>
+<div style={size === 'lg' ? undefined : `--hb:${h}px`} class:list={['store-badges flex flex-wrap items-center gap-2 sm:gap-3', { 'badges-lg': size === 'lg' }]} data-source={source}>
   {showIcon && (
     <Image src={logo} alt={site.stores.app_icon_alt} width={h + 12} height={h + 12} densities={[1, 2, 3]} class="app-icon rounded-[12px] border border-white/15" loading="lazy" />
   )}
-  <a href={withBase('/get/?to=ios')} data-get-link data-store="ios" class="badge-link" style={`--h:${h}px`}>
+  <a href={withBase('/get/?to=ios')} data-get-link data-store="ios" class="badge-link">
     <img src={withBase('/badges/app-store-badge-black-en-us.svg')} alt={site.stores.app_store_badge_alt} width={Math.round(h * 2.99)} height={h} />
   </a>
   {showPlay && (
-    <a href={withBase('/get/?to=android')} data-get-link data-store="android" class="badge-link badge-play" style={`--h:${h}px`}>
+    <a href={withBase('/get/?to=android')} data-get-link data-store="android" class="badge-link badge-play">
       <img src={withBase('/badges/google-play-badge-en-us.png')} alt={site.stores.google_play_badge_alt} width={Math.round(h * 1.5 * 2.584)} height={Math.round(h * 1.5)} />
     </a>
   )}
@@ -33,13 +33,18 @@ const showPlay = !playMissing || showTBC; // production: no Play badge until the
   )}
 </div>
 <style>
+  .store-badges { --h: var(--hb); --icon: var(--hb); }
+  /* Large (hero) badges: phone size below 640px, without the app icon (already in the header),
+     so both store badges fit on one line even on a 320px screen. */
+  .badges-lg { --hb: 44px; }
+  @media (max-width: 639.98px) { .badges-lg .app-icon { display: none; } }
+  @media (min-width: 640px) { .badges-lg { --hb: 48px; } }
   .badge-link { display: inline-flex; border-radius: 10px; transition: box-shadow .15s ease; }
   .badge-link img { height: var(--h); width: auto; display: block; }
   /* Google's PNG includes built-in padding: scale it so the visible badge matches Apple's. */
   .badge-play { margin-block: calc(var(--h) * -0.25); margin-inline: calc(var(--h) * -0.26); }
   .badge-play img { height: calc(var(--h) * 1.5); }
   .app-icon { width: var(--icon); height: var(--icon); }
-  @media (min-width: 640px) { .store-badges { --icon: calc(var(--hb) + 12px); } }
   .badge-link.is-primary { box-shadow: 0 0 0 3px var(--color-mint); }
   .badge-play.is-primary { box-shadow: none; outline: 3px solid var(--color-mint); outline-offset: -9px; border-radius: 16px; }
 </style>

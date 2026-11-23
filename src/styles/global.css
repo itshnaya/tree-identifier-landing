@@ -26,7 +26,7 @@
 }
 
 @layer components {
-  .wrap { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: 16px; }
+  .wrap { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); }
   .section { padding-block: 56px; }
   .section-title { font-family: var(--font-display); font-weight: 700; font-size: 2rem; letter-spacing: -0.01em; }
   .section-intro { margin-top: 8px; max-width: 46ch; color: var(--color-mint-light); }
