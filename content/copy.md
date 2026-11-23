@@ -24,10 +24,10 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 ## SEO (onglet du navigateur, partage, Google) — `site.json → seo`
 
-- Tree Identifier — Which tree is that? Snap a photo to find out.
-  🇫🇷 Tree Identifier — C'est quoi, cet arbre ? Prenez-le en photo pour le savoir.
-- Take a photo of a leaf, the bark, a flower or a fruit and find out which tree it is in seconds, with care tips. Free app for iPhone and Android from the team behind Plant Tea.
-  🇫🇷 Prenez en photo une feuille, l'écorce, une fleur ou un fruit et découvrez de quel arbre il s'agit en quelques secondes, avec des conseils d'entretien. App gratuite pour iPhone et Android, par l'équipe de Plant Tea.
+- Tree Identifier — Learn how to care for what grows in your yard
+  🇫🇷 Tree Identifier — Apprenez à prendre soin de ce qui pousse dans votre jardin
+- Take a photo of a tree, a shrub or a fruit tree: find out what it is, how to care for it, and what's wrong when it looks sick. Free app for iPhone and Android from the team behind Plant Tea.
+  🇫🇷 Prenez en photo un arbre, un arbuste ou un arbre fruitier : découvrez ce que c'est, comment en prendre soin, et ce qui ne va pas quand il a l'air malade. App gratuite pour iPhone et Android, par l'équipe de Plant Tea.
 - Monty, a Monstera in a terracotta pot with a face, sipping tea
   🇫🇷 Monty, une Monstera dans un pot en terre cuite avec un visage, qui boit son thé (texte alternatif de l'image de partage, du hero et de la carte de Monty)
 
@@ -56,12 +56,12 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
 
 - Free app for iPhone and Android
   🇫🇷 App gratuite pour iPhone et Android
-- Which tree is that?
-  🇫🇷 C'est quoi, cet arbre ?
-- Snap a photo to find out.
-  🇫🇷 Prenez-le en photo pour le savoir.
-- Take a photo of a leaf, the bark, a flower or a fruit. Tree Identifier tells you which tree it is in seconds, and how to care for it.
-  🇫🇷 Prenez en photo une feuille, l'écorce, une fleur ou un fruit. Tree Identifier vous dit de quel arbre il s'agit en quelques secondes, et comment en prendre soin.
+- Something growing in your yard?
+  🇫🇷 Quelque chose pousse dans votre jardin ?
+- Learn how to keep it healthy.
+  🇫🇷 Apprenez à le garder en bonne santé.
+- Take a photo of a tree, a shrub or a fruit tree. Tree Identifier tells you what it is, how to care for it, and what's wrong when it looks sick.
+  🇫🇷 Prenez en photo un arbre, un arbuste ou un arbre fruitier. Tree Identifier vous dit ce que c'est, comment en prendre soin, et ce qui ne va pas quand il a l'air malade.
 - Free to download · No account needed · 12 languages
   🇫🇷 Téléchargement gratuit · Sans compte · 12 langues
 - Free to download
@@ -70,7 +70,7 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Sans compte
 - 12 languages
   🇫🇷 12 langues
-- (Image : écran réel de l'app, page de résultat — texte alternatif identique à l'étape 2 ci-dessous)
+- (Image : écran réel de l'app, conseils d'entretien — texte alternatif identique à l'étape 3 ci-dessous)
 
 ## 2 bis. What the app does — `site.json → features`
 
@@ -78,31 +78,31 @@ Source : description officielle de la fiche App Store (lue le 23/11/2026).
 
 - What the app does
   🇫🇷 Ce que fait l'app
-- Everything you need to recognize a tree, care for it and keep it healthy.
-  🇫🇷 Tout ce qu'il faut pour reconnaître un arbre, en prendre soin et le garder en bonne santé.
-- Identify any tree, all year
-  🇫🇷 Identifiez n'importe quel arbre, toute l'année
+- Know what it is, how to care for it, and what to do when something looks wrong.
+  🇫🇷 Savoir ce que c'est, comment en prendre soin, et quoi faire quand quelque chose ne va pas.
+- Care, month by month
+  🇫🇷 L'entretien, mois par mois
+- Light, water, soil, pruning and feeding for your species, with a month-by-month care calendar and reminders.
+  🇫🇷 Lumière, arrosage, sol, taille et engrais adaptés à votre espèce, avec un calendrier d'entretien mois par mois et des rappels.
+- Know what it is
+  🇫🇷 Savoir ce que c'est
 - Up to 3 photos per scan: leaf, bark, flower, fruit or the whole tree. Bark and buds work in winter, when the leaves are gone.
   🇫🇷 Jusqu'à 3 photos par analyse : feuille, écorce, fleur, fruit ou l'arbre entier. L'écorce et les bourgeons suffisent en hiver, quand les feuilles sont tombées.
-- A full report for every tree
-  🇫🇷 Une fiche complète pour chaque arbre
-- How to recognize it, look-alikes, care, a month-by-month calendar, and safety info: toxic for pets or people, pollen allergy, edible parts.
-  🇫🇷 Comment le reconnaître, les espèces qui lui ressemblent, l'entretien, un calendrier mois par mois, et les infos de sécurité : toxique pour les animaux ou les humains, allergie au pollen, parties comestibles.
 - Is my tree sick?
   🇫🇷 Mon arbre est-il malade ?
-- Photograph the leaves, bark or branches to get a health check, with clear treatment steps.
-  🇫🇷 Photographiez les feuilles, l'écorce ou les branches pour un bilan de santé, avec des étapes de traitement claires.
+- Photograph the leaves, bark or branches to get a health check: likely problems, clear treatment steps, and how to prevent it next time.
+  🇫🇷 Photographiez les feuilles, l'écorce ou les branches pour un bilan de santé : problèmes probables, étapes de traitement claires, et comment éviter que ça recommence.
 - Ask a tree expert
   🇫🇷 Demandez à un expert des arbres
 - Chat with an AI tree expert about pruning, planting, pests or any tree question.
   🇫🇷 Discutez avec un expert des arbres (IA) : taille, plantation, parasites ou toute autre question.
 - Free tools
   🇫🇷 Outils gratuits
-- Tree age, tree height, a light meter, a watering helper and an encyclopedia of 160 trees and shrubs.
-  🇫🇷 Âge de l'arbre, hauteur de l'arbre, mesure de la lumière, aide à l'arrosage et une encyclopédie de 160 arbres et arbustes.
+- A light meter to find the right spot, a watering helper, tree age, tree height and an encyclopedia of 160 trees and shrubs.
+  🇫🇷 Une mesure de la lumière pour trouver le bon emplacement, une aide à l'arrosage, l'âge et la hauteur de l'arbre, et une encyclopédie de 160 arbres et arbustes.
 - Identification, health checks and the tree expert are part of Premium, a paid subscription.
   🇫🇷 L'identification, le bilan de santé et l'expert font partie de Premium, un abonnement payant.
-- Icônes : 📷 📖 🍂 💬 🧰 (émojis, non traduits)
+- Icônes : 💧 🍂 📷 💬 🧰 (émojis, non traduits)
 
 ## 3. How it works — `site.json → how_it_works`
 
@@ -311,8 +311,8 @@ Source : description officielle de la fiche App Store (lue le 23/11/2026).
 
 ## 8 bis. Dernier appel — `site.json → final_cta`
 
-- Find out which tree it is.
-  🇫🇷 Découvrez de quel arbre il s'agit.
+- Give your plants the care they need.
+  🇫🇷 Donnez à vos plantes les soins dont elles ont besoin.
 - Free to download on iPhone and Android.
   🇫🇷 Téléchargement gratuit sur iPhone et Android.
 

@@ -34,8 +34,8 @@
     "api_host": "https://plausible.io"
   },
   "seo": {
-    "title": "Tree Identifier — Which tree is that? Snap a photo to find out.",
-    "description": "Take a photo of a leaf, the bark, a flower or a fruit and find out which tree it is in seconds, with care tips. Free app for iPhone and Android from the team behind Plant Tea.",
+    "title": "Tree Identifier — Learn how to care for what grows in your yard",
+    "description": "Take a photo of a tree, a shrub or a fruit tree: find out what it is, how to care for it, and what's wrong when it looks sick. Free app for iPhone and Android from the team behind Plant Tea.",
     "og_image_alt": "Monty, a Monstera in a terracotta pot with a face, sipping tea",
     "structured_data_operating_systems": [
       "iOS",
@@ -70,15 +70,15 @@
   },
   "hero": {
     "kicker": "Free app for iPhone and Android",
-    "title_line_1": "Which tree is that?",
-    "title_line_2": "Snap a photo to find out.",
-    "subtitle": "Take a photo of a leaf, the bark, a flower or a fruit. Tree Identifier tells you which tree it is in seconds, and how to care for it.",
+    "title_line_1": "Something growing in your yard?",
+    "title_line_2": "Learn how to keep it healthy.",
+    "subtitle": "Take a photo of a tree, a shrub or a fruit tree. Tree Identifier tells you what it is, how to care for it, and what's wrong when it looks sick.",
     "facts": [
       "Free to download",
       "No account needed",
       "12 languages"
     ],
-    "screen_alt": "Tree Identifier app screen: result page naming the tree African Mahogany, Khaya anthotheca"
+    "screen_alt": "Tree Identifier app screen: care tips for watering, light, soil, temperature and fertilizing"
   },
   "how_it_works": {
     "title": "How it works",
@@ -220,22 +220,22 @@
   },
   "features": {
     "title": "What the app does",
-    "intro": "Everything you need to recognize a tree, care for it and keep it healthy.",
+    "intro": "Know what it is, how to care for it, and what to do when something looks wrong.",
     "items": [
       {
-        "icon": "📷",
-        "title": "Identify any tree, all year",
-        "text": "Up to 3 photos per scan: leaf, bark, flower, fruit or the whole tree. Bark and buds work in winter, when the leaves are gone."
-      },
-      {
-        "icon": "📖",
-        "title": "A full report for every tree",
-        "text": "How to recognize it, look-alikes, care, a month-by-month calendar, and safety info: toxic for pets or people, pollen allergy, edible parts."
+        "icon": "💧",
+        "title": "Care, month by month",
+        "text": "Light, water, soil, pruning and feeding for your species, with a month-by-month care calendar and reminders."
       },
       {
         "icon": "🍂",
         "title": "Is my tree sick?",
-        "text": "Photograph the leaves, bark or branches to get a health check, with clear treatment steps."
+        "text": "Photograph the leaves, bark or branches to get a health check: likely problems, clear treatment steps, and how to prevent it next time."
+      },
+      {
+        "icon": "📷",
+        "title": "Know what it is",
+        "text": "Up to 3 photos per scan: leaf, bark, flower, fruit or the whole tree. Bark and buds work in winter, when the leaves are gone."
       },
       {
         "icon": "💬",
@@ -245,7 +245,7 @@
       {
         "icon": "🧰",
         "title": "Free tools",
-        "text": "Tree age, tree height, a light meter, a watering helper and an encyclopedia of 160 trees and shrubs."
+        "text": "A light meter to find the right spot, a watering helper, tree age, tree height and an encyclopedia of 160 trees and shrubs."
       }
     ],
     "premium_note": "Identification, health checks and the tree expert are part of Premium, a paid subscription."
@@ -260,7 +260,7 @@
     "monty_bubble_after": " have a name."
   },
   "final_cta": {
-    "title": "Find out which tree it is.",
+    "title": "Give your plants the care they need.",
     "text": "Free to download on iPhone and Android."
   }
 }
