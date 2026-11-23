@@ -16,7 +16,7 @@ const showPlay = !playMissing || showTBC; // production: no Play badge until the
 ---
 <div style={`--hb:${h}px;--icon:${h}px`} class="store-badges flex flex-wrap items-center gap-2 sm:gap-3" data-source={source}>
   {showIcon && (
-    <Image src={logo} alt={site.stores.app_icon_alt} width={h + 12} height={h + 12} densities={[1, 2, 3]} class="app-icon rounded-[12px] border border-white/15" loading="lazy" />
+    <Image src={logo} alt={site.stores.app_icon_alt} width={h + 12} height={h + 12} densities={[1, 2, 3]} class="app-icon rounded-[12px] border border-forest/15" loading="lazy" />
   )}
   <a href={withBase('/get/?to=ios')} data-get-link data-store="ios" class="badge-link" style={`--h:${h}px`}>
     <img src={withBase('/badges/app-store-badge-black-en-us.svg')} alt={site.stores.app_store_badge_alt} width={Math.round(h * 2.99)} height={h} />
@@ -40,6 +40,6 @@ const showPlay = !playMissing || showTBC; // production: no Play badge until the
   .badge-play img { height: calc(var(--h) * 1.5); }
   .app-icon { width: var(--icon); height: var(--icon); }
   @media (min-width: 640px) { .store-badges { --icon: calc(var(--hb) + 12px); } }
-  .badge-link.is-primary { box-shadow: 0 0 0 3px var(--color-mint); }
-  .badge-play.is-primary { box-shadow: none; outline: 3px solid var(--color-mint); outline-offset: -9px; border-radius: 16px; }
+  .badge-link.is-primary { box-shadow: 0 0 0 3px var(--color-leaf); }
+  .badge-play.is-primary { box-shadow: none; outline: 3px solid var(--color-leaf); outline-offset: -9px; border-radius: 16px; }
 </style>

@@ -6,7 +6,7 @@ import { withBase } from '../lib/paths.js';
 const { nav } = site;
 ---
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 btn btn-mint">{nav.skip_link}</a>
-<header class="sticky top-0 z-40 border-b border-white/10 bg-forest/95 backdrop-blur supports-[backdrop-filter]:bg-forest/80">
+<header class="sticky top-0 z-40 border-b border-forest/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
   <div class="wrap flex h-16 items-center justify-between gap-3">
     <a href={withBase('/')} class="flex items-center gap-2.5 no-underline" aria-label={nav.home_label}>
       <Image src={logo} alt="" width={36} height={36} densities={[1, 2, 3]} class="rounded-[9px]" loading="eager" />
@@ -14,12 +14,12 @@ const { nav } = site;
     </a>
     <nav aria-label={nav.aria_label} class="hidden md:block">
       <ul class="flex gap-6 text-[0.95rem]">
-        {nav.links.map((l) => <li><a href={l.href} class="no-underline opacity-90 hover:opacity-100 hover:text-mint">{l.label}</a></li>)}
+        {nav.links.map((l) => <li><a href={l.href} class="no-underline opacity-90 hover:opacity-100 hover:text-leaf-dark">{l.label}</a></li>)}
       </ul>
     </nav>
     <a href={withBase('/get/')} data-get-link class="btn btn-mint text-sm" data-source="header">{nav.cta}</a>
   </div>
-  <nav aria-label={nav.aria_label} class="md:hidden border-t border-white/10">
+  <nav aria-label={nav.aria_label} class="md:hidden border-t border-forest/10">
     <ul class="wrap flex gap-5 overflow-x-auto py-2 text-sm whitespace-nowrap [scrollbar-width:none]">
       {nav.links.map((l) => <li><a href={l.href} class="no-underline opacity-90 inline-block py-1">{l.label}</a></li>)}
     </ul>

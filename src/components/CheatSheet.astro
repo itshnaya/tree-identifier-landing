@@ -13,7 +13,7 @@ const fileExists = fs.existsSync(path.join(process.cwd(), 'public', c.file));
 const emailOn = e.enabled && !isTBC(e.form_action);
 const visible = emailOn || fileExists || showTBC;
 ---
-{visible && <section id="cheat-sheet" class="section bg-forest-2" aria-labelledby="cheat-title">
+{visible && <section id="cheat-sheet" class="section bg-surface" aria-labelledby="cheat-title">
   <div class="wrap">
     <div class="card-light grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-10">
       <div>

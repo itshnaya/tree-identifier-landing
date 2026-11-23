@@ -27,8 +27,8 @@ const stores = {
       <p data-get-redirecting class="font-display text-xl" aria-live="polite">{g.redirecting}</p>
       <div data-get-fallback hidden class="grid justify-items-center gap-5">
         <h1 class="text-[2rem] font-bold md:text-[2.6rem]">{g.desktop_title}</h1>
-        <p class="max-w-[40ch] text-mint-light">{g.desktop_text}</p>
-        <div data-get-qr class="rounded-3xl bg-ink p-4 empty:hidden" role="img" aria-label={g.qr_alt}></div>
+        <p class="max-w-[40ch] text-muted">{g.desktop_text}</p>
+        <div data-get-qr class="rounded-3xl border border-forest/15 bg-white p-4 empty:hidden" role="img" aria-label={g.qr_alt}></div>
         <StoreBadges source="get" />
         <a href={withBase('/')} class="underline">{g.back}</a>
       </div>
