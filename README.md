@@ -84,7 +84,7 @@ Dans `content/toxicity.json`, chaque fiche contient :
 `/get?s=<série>&p=<réseau>`, par exemple `/get?s=plant-er&p=tiktok`.
 
 - iPhone / iPad → App Store avec `pt=<jeton Apple>` et `ct=<série>_<réseau>` (sans `pt` tant que le jeton est à confirmer).
-- Android → Google Play avec `referrer=utm_source%3D<réseau>%26utm_medium%3Dorganic%26utm_campaign%3D<série>`. **Tant que `stores.android_url` est à confirmer, Android voit la page avec les badges.**
+- Android → Google Play avec `referrer=utm_source%3D<réseau>%26utm_medium%3Dorganic%26utm_campaign%3D<série>`. (lien Google Play confirmé par Claire le 23/11/2026)
 - Ordinateur → page avec les deux badges et un QR code.
 - `&to=ios` ou `&to=android` force un store (utilisé par les badges).
 - Lien en bio conseillé : `https://<votre-domaine>/?p=tiktok&s=bio` (idem `p=instagram`, `p=youtube`). Les badges de la page reprennent automatiquement `s` et `p`.
@@ -136,7 +136,26 @@ Netlify (même réglages : `npm run build`, dossier `dist`) et Vercel (preset As
 
 Développeur sur l'App Store : vendeur « Qualitech Solutions Ltd », nom affiché « Qualitech » (id 1833549754). Les prix des abonnements ne sont pas affichés sur la page, car ils peuvent changer.
 
-**Google Play** : aucune fiche trouvée avec exactement le même nom de développeur. L'app `com.identify.plant` (« Identify Plants: Weeds & Care ») est publiée par « Qualitech Apps LLC » : elle reste une proposition [À CONFIRMER], jamais utilisée pour rediriger.
+**Google Play** : lien fourni par Claire le 23/11/2026 : https://play.google.com/store/apps/details?id=com.identify.plant&gl=us (nom sur le store : « Identify Plants: Weeds & Care », développeur « Qualitech Apps LLC », mise à jour du 21/07/2026). Branché sur les badges et sur `/get`.
+
+**Attention, les deux apps ne sont pas identiques** (fiches lues le 23/11/2026) : l'app iPhone vise les arbres (arbres, arbustes, palmiers, conifères, arbres fruitiers) ; l'app Android vise toutes les plantes (fleurs, plantes d'intérieur, mauvaises herbes), avec une assistante IA nommée « Emma ». La section « What the app does » ne montre que ce qui figure dans **les deux** descriptions ; les bonus propres à chaque plateforme sont indiqués séparément.
+
+### Fonctionnalités (section « What the app does », vérifiées le 23/11/2026)
+
+| Carte | App Store (description officielle, API iTunes Lookup) | Google Play (« About this app ») |
+|---|---|---|
+| Identify from a photo | « Take a photo of a leaf, the bark, a flower or a fruit and find out which tree it is in seconds » | « Snap a photo: get the plant name, species and family in seconds » |
+| Health check | IS MY TREE SICK? : « Likely problems… Clear treatment steps, and how to prevent it next time » | PLANT DISEASE SCANNER : « likely causes, urgent actions, the solution and prevention advice » |
+| Ask the AI expert | « Chat with an AI tree expert about pruning, planting, pests or any tree question » | « Chat with Emma, the AI plant care assistant… » |
+| Your plant collection | « Save the trees you find or grow with photo, place, date and notes » | « Save every plant you identify and build your own collection » |
+| Care reminders | « Care reminders for each species, month by month » | « Watering reminders and care reminders so you never forget a plant » |
+| Handy tools | « Light meter to find the right spot », « Watering helper » | « Light gauge », « Water calculator » |
+| Also on iPhone | Bark and buds in winter ; tree age and height ; encyclopedia of 160 trees and shrubs ; month-by-month care calendar | — |
+| Also on Android | — | Weed identifier, houseplants ; « Pot gauge: find the right pot size » |
+| Premium | « Identification, health checks and the tree expert are part of Premium » | « Unlimited plant identifications plus every advanced feature » |
+| AI note | « Results come from an AI analysis of your photos and are indicative. Never eat a plant on the word of an app alone » | « Do not eat or touch a plant based on an identification alone » |
+
+Non utilisés : notes et avis des stores, prix des abonnements (ils peuvent changer), « Available in 12 languages » (la fiche technique App Store n'indique que l'anglais).
 
 **Non utilisé** : la note App Store (4,9 sur 13 avis au 16/11/2026, voir la question à Claire) ; « Available in 12 languages » (la fiche technique n'indique que l'anglais).
 
@@ -146,8 +165,6 @@ Chaque ligne correspond à un endroit précis de `/content` (le test `npm test` 
 
 **Liens et identifiants**
 - `site.json → site_url` : adresse définitive du site (domaine).
-- `site.json → stores.android_url` : lien Google Play de Tree Identifier.
-- `site.json → stores.android_url_proposal` : **proposition** `com.identify.plant` (doute : développeur « Qualitech Apps LLC » ≠ « Qualitech Solutions Ltd » sur l'App Store, et nom d'app différent).
 - `site.json → stores.apple_provider_token` : jeton fournisseur Apple pour les campagnes (`pt`).
 - `site.json → social.tiktok.handle`, `site.json → social.tiktok.url` : compte TikTok de Plant Tea.
 - `site.json → social.instagram.handle`, `site.json → social.instagram.url` : compte Instagram.

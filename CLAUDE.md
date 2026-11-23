@@ -6,7 +6,7 @@ Les consignes globales de Claire (`~/.claude/CLAUDE.md`) s'appliquent aussi.
 ## RÈGLES NON NÉGOCIABLES (valables pour toute modification future)
 
 1. Aucun avis, témoignage, note, nombre de téléchargements, logo de presse, récompense ou statistique inventés. Aucune note (`aggregateRating`) ni prix (`offers`) dans les données structurées tant qu'il n'y a pas de vraie note ou de vrai prix.
-2. Aucune fonctionnalité de l'app qui n'est pas confirmée. Confirmé à ce jour, et rien d'autre : l'app identifie une plante à partir d'une photo grâce à l'IA, et explique comment en prendre soin. Pas de « best app », pas de nom de concurrent.
+2. Aucune fonctionnalité de l'app qui n'est pas confirmée. Depuis le 23/11/2026, Claire demande de reprendre les fonctionnalités des fiches officielles App Store et Google Play (tableau dans le README) : n'afficher comme commun que ce qui figure dans **les deux** fiches (les apps iPhone et Android sont différentes), et signaler par plateforme ce qui n'existe que d'un côté. Jamais de note, d'avis ni de prix tirés des stores. Pas de « best app », pas de nom de concurrent.
 3. Toxicité : seulement les fiches de `/content/toxicity.json` qui ont une source et un champ `verified_at` rempli. Le mini-jeu ignore les autres fiches (filtre dans `src/lib/toxicity.js`, test `tests/toxicity.test.js`). Le mot « safe » n'apparaît que pour un statut `non_toxic` sourcé (seule exception : le titre « The Pet-Safe Plant Cheat Sheet » donné par Claire). Si le statut pour les enfants est inconnu, afficher « Keep out of reach of children and pets ». Ne jamais récupérer automatiquement le contenu du site de l'ASPCA : seulement un lien vers la fiche, vérifiée à la main par Claire (`verified_by`, `verified_at`).
 4. La page dit clairement qu'elle vient de l'équipe Tree Identifier.
 5. Ne jamais inviter à « chercher Tree Identifier » dans les stores (d'autres apps portent ce nom) : toujours des liens directs, via `/get`.
@@ -26,8 +26,8 @@ Les consignes globales de Claire (`~/.claude/CLAUDE.md`) s'appliquent aussi.
 ## Assets (préparés par Codex le 14–15/11/2026)
 
 - `assets/logo.png` : logo exact fourni par Claire. `assets/monty.png` : portrait exact de Monty. Ne pas les remplacer.
-- `assets/app-screen-1..3.png` : visuels officiels de la fiche App Store (iOS). La page utilise des **recadrages sans les titres promotionnels** (`src/assets/screens/`), choix validé par Claire le 15/11/2026, car ces titres annoncent des fonctionnalités non confirmées. Le bouton « Ask Expert » de l'interface reste visible sur l'étape 3 : à ne pas mettre en avant dans les textes.
-- `assets/android/` : visuels de l'app Google Play `com.identify.plant` (nom sur le store : « Identify Plants: Weeds & Care »). **Non utilisés** : Claire a demandé le 15/11/2026 de n'utiliser pour l'instant que le lien App Store, avec un bouton Google Play dont le lien reste `[À CONFIRMER]`. Ne pas brancher ce lien Android sans son accord.
+- `assets/app-screen-1..3.png` : visuels officiels de la fiche App Store (iOS). La page utilise des **recadrages sans les titres promotionnels** (`src/assets/screens/`), choix validé par Claire le 15/11/2026, car ces titres annoncent des fonctionnalités non confirmées. Le bouton « Ask Expert » de l’interface reste visible sur l’étape 3 ; l’expert IA figure dans les deux fiches des stores, il est donc cité dans la section « What the app does » depuis le 23/11/2026.
+- `assets/android/` : visuels de l'app Google Play `com.identify.plant` (nom sur le store : « Identify Plants: Weeds & Care »). Visuels **non utilisés**. Le lien Google Play a été fourni et branché par Claire le 23/11/2026.
 
 ## Commandes
 

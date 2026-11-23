@@ -21,8 +21,6 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Icône de l'app Tree Identifier
 - TikTok · Instagram · YouTube
   🇫🇷 (noms des réseaux, non traduits)
-- Google Play link · Proposed Google Play listing:
-  🇫🇷 Lien Google Play · Fiche Google Play proposée : (visibles seulement en aperçu, à côté du badge Google Play)
 
 ## SEO (onglet du navigateur, partage, Google) — `site.json → seo`
 
@@ -39,6 +37,8 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Accueil Tree Identifier (lu par les lecteurs d'écran sur le logo)
 - How it works
   🇫🇷 Comment ça marche
+- Features
+  🇫🇷 Fonctionnalités
 - Toxic or Not?
   🇫🇷 Toxique ou pas ?
 - The cast
@@ -95,6 +95,61 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 Écran de l'app Tree Identifier : conseils d'entretien pour l'arrosage, la lumière, le sol, la température et l'engrais (texte alternatif)
 - Screens from the iPhone app.
   🇫🇷 Écrans de l'app iPhone.
+
+## 3 bis. Fonctionnalités — `site.json → features`
+
+Source : descriptions officielles App Store (« Tree Identifier ID ») et Google Play (« Identify Plants: Weeds & Care »), lues le 23/11/2026. Les six cartes ne reprennent que ce qui figure **dans les deux** fiches.
+
+- What the app does
+  🇫🇷 Ce que fait l'app
+- Straight from the App Store and Google Play listings. No drama, just the facts.
+  🇫🇷 Tout droit sorti des fiches App Store et Google Play. Pas de drame, juste les faits.
+- Identify from a photo
+  🇫🇷 Identifier avec une photo
+- Snap a leaf, a flower, a fruit or the whole plant and get its name in seconds.
+  🇫🇷 Photographiez une feuille, une fleur, un fruit ou la plante entière et obtenez son nom en quelques secondes.
+- Health check
+  🇫🇷 Bilan de santé
+- Photograph the trouble spot. See the likely causes, what to do and how to prevent it next time.
+  🇫🇷 Photographiez la zone abîmée. Voyez les causes probables, que faire et comment éviter que ça recommence.
+- Ask the AI expert
+  🇫🇷 Demander à l'expert IA
+- Chat with an AI expert about care, pests or any plant question.
+  🇫🇷 Discutez avec un expert IA de l'entretien, des nuisibles ou de toute question sur les plantes.
+- Your plant collection
+  🇫🇷 Votre collection de plantes
+- Save every plant you identify, with its care tips in one place.
+  🇫🇷 Enregistrez chaque plante identifiée, avec ses conseils d'entretien au même endroit.
+- Care reminders
+  🇫🇷 Rappels d'entretien
+- Reminders for each plant, so you never forget to look after it.
+  🇫🇷 Des rappels pour chaque plante, pour ne jamais oublier de vous en occuper.
+- Handy tools
+  🇫🇷 Outils pratiques
+- A light meter to find the right spot, and a watering helper.
+  🇫🇷 Un luxmètre pour trouver le bon emplacement, et une aide à l'arrosage.
+- A few extras depend on your phone
+  🇫🇷 Quelques bonus dépendent de votre téléphone
+- Also on iPhone
+  🇫🇷 En plus sur iPhone
+- Identify trees in winter from their bark and buds
+  🇫🇷 Identifier les arbres en hiver grâce à l'écorce et aux bourgeons
+- Tree age and tree height tools
+  🇫🇷 Outils pour l'âge et la hauteur d'un arbre
+- An encyclopedia of 160 trees and shrubs
+  🇫🇷 Une encyclopédie de 160 arbres et arbustes
+- A month-by-month care calendar
+  🇫🇷 Un calendrier d'entretien mois par mois
+- Also on Android
+  🇫🇷 En plus sur Android
+- Identify houseplants and garden weeds
+  🇫🇷 Identifier les plantes d'intérieur et les mauvaises herbes du jardin
+- A pot size gauge
+  🇫🇷 Un outil pour choisir la bonne taille de pot
+- Unlimited identification and the advanced features need Premium, a paid subscription. Details in the FAQ.
+  🇫🇷 L'identification illimitée et les fonctions avancées demandent Premium, un abonnement payant. Détails dans la FAQ.
+- Results come from an AI analysis of your photos and are indicative. Never eat a plant on the word of an app alone.
+  🇫🇷 Les résultats viennent d'une analyse de vos photos par IA et sont indicatifs. Ne mangez jamais une plante sur la seule parole d'une app.
 
 ## 4. Toxic or Not? — `site.json → quiz`
 
@@ -234,12 +289,12 @@ Chaque texte de la page apparaît ici en anglais, avec sa traduction française 
   🇫🇷 FAQ
 - Is Tree Identifier free?
   🇫🇷 Tree Identifier est-elle gratuite ?
-- Tree Identifier is free to download. Identification, health checks and the AI tree expert are part of Premium, a paid subscription (weekly or yearly). The price is shown in the app before you subscribe, and you can cancel anytime in your App Store account settings.
-  🇫🇷 Tree Identifier se télécharge gratuitement. L'identification, le bilan de santé et l'expert arbres par IA font partie de Premium, un abonnement payant (hebdomadaire ou annuel). Le prix s'affiche dans l'app avant de vous abonner, et vous pouvez résilier à tout moment dans les réglages de votre compte App Store. (source : fiche App Store)
+- Tree Identifier is free to download. Unlimited identification and the advanced features are part of Premium, a paid subscription. The price is shown in the app before you subscribe, and you can cancel anytime in your App Store or Google Play account settings.
+  🇫🇷 Tree Identifier se télécharge gratuitement. L'identification illimitée et les fonctions avancées font partie de Premium, un abonnement payant. Le prix s'affiche dans l'app avant de vous abonner, et vous pouvez résilier à tout moment dans les réglages de votre compte App Store ou Google Play. (sources : fiches App Store et Google Play)
 - Which plants can it identify?
   🇫🇷 Quelles plantes peut-elle identifier ?
-- Trees, shrubs, palms, conifers and fruit trees. You can photograph a leaf, the bark, a flower, a fruit or the whole tree, and bark and buds work in winter too, when the leaves are gone. The app also includes an encyclopedia of 160 trees and shrubs.
-  🇫🇷 Les arbres, arbustes, palmiers, conifères et arbres fruitiers. Vous pouvez photographier une feuille, l'écorce, une fleur, un fruit ou l'arbre entier ; l'écorce et les bourgeons fonctionnent aussi en hiver, quand il n'y a plus de feuilles. L'app contient aussi une encyclopédie de 160 arbres et arbustes. (source : description App Store)
+- On iPhone: trees, shrubs, palms, conifers and fruit trees. You can photograph a leaf, the bark, a flower, a fruit or the whole tree, and bark and buds work in winter too. On Android: flowers, trees, leaves, fruits, houseplants and garden weeds.
+  🇫🇷 Sur iPhone : les arbres, arbustes, palmiers, conifères et arbres fruitiers. Vous pouvez photographier une feuille, l'écorce, une fleur, un fruit ou l'arbre entier, et l'écorce et les bourgeons fonctionnent aussi en hiver. Sur Android : fleurs, arbres, feuilles, fruits, plantes d'intérieur et mauvaises herbes du jardin. (sources : descriptions App Store et Google Play)
 - Is the toxicity info veterinary or medical advice?
   🇫🇷 Les informations de toxicité sont-elles un avis vétérinaire ou médical ?
 - No. It's general information with sources. If you think a pet or a child ate a plant, contact a vet or a poison control center right away.

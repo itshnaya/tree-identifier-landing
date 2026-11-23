@@ -5,7 +5,7 @@ const screens = import.meta.glob('../assets/screens/*.png', { eager: true });
 const img = (name) => screens[`../assets/screens/${name}.png`].default;
 const s = site.how_it_works;
 ---
-<section id="how-it-works" class="section bg-forest-2" aria-labelledby="how-title">
+<section id="how-it-works" class="section section-light" aria-labelledby="how-title">
   <div class="wrap">
     <h2 id="how-title" class="section-title">{s.title}</h2>
     <p class="section-intro">{s.intro}</p>
@@ -16,14 +16,14 @@ const s = site.how_it_works;
             <span class="grid size-10 shrink-0 place-items-center rounded-full bg-mint font-display text-lg font-bold text-forest" aria-hidden="true">{i + 1}</span>
             <h3 class="text-[1.45rem] font-semibold">{step.title}</h3>
           </div>
-          <p class="mt-2 text-mint-light">{step.text}</p>
-          <div class="mt-5 overflow-hidden rounded-[28px] border border-white/10 bg-black/20">
+          <p class="mt-2 text-moss">{step.text}</p>
+          <div class="mt-5 overflow-hidden rounded-[28px] border border-forest/10 bg-forest/5">
             <Picture src={img(step.image)} formats={['avif', 'webp']} fallbackFormat="jpg" widths={[320, 480, 640]} sizes="(min-width: 768px) 340px, 78vw"
               alt={step.alt} loading="lazy" decoding="async" class="block aspect-[1287/1845] h-auto w-full" />
           </div>
         </li>
       ))}
     </ol>
-    <p class="mt-6 text-sm text-mint-light">{s.screens_note}</p>
+    <p class="mt-6 text-sm text-moss">{s.screens_note}</p>
   </div>
 </section>

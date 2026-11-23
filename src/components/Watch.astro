@@ -8,7 +8,7 @@ const w = site.watch;
 const socials = Object.values(site.social).filter((s) => showTBC || !isTBC(s.url));
 const videoId = (url) => (isTBC(url) ? null : (String(url).match(/\/video\/(\d+)/) || [])[1] || null);
 ---
-<section id="watch" class="section" aria-labelledby="watch-title">
+<section id="watch" class="section section-light" aria-labelledby="watch-title">
   <div class="wrap">
     <h2 id="watch-title" class="section-title">{w.title}</h2>
     <p class="section-intro">{w.intro}</p>
@@ -16,7 +16,7 @@ const videoId = (url) => (isTBC(url) ? null : (String(url).match(/\/video\/(\d+)
       {series.map((s) => {
         const id = videoId(s.tiktok_video_url);
         return (
-          <li class="flex flex-col rounded-3xl border border-white/12 bg-forest-2 p-5">
+          <li class="flex flex-col rounded-3xl bg-forest-2 p-5 text-ink">
             <h3 class="text-[1.45rem] font-bold text-mint">{s.title}</h3>
             <p class="mt-2 flex-1">{s.pitch}</p>
             <div class="mt-4" data-embed-slot>
@@ -32,7 +32,7 @@ const videoId = (url) => (isTBC(url) ? null : (String(url).match(/\/video\/(\d+)
         );
       })}
     </ul>
-    {series.some((s) => videoId(s.tiktok_video_url)) && <p class="mt-3 text-sm text-mint-light">{w.embed_notice}</p>}
+    {series.some((s) => videoId(s.tiktok_video_url)) && <p class="mt-3 text-sm text-moss">{w.embed_notice}</p>}
     {socials.length > 0 && <div class="mt-8 flex flex-wrap items-center gap-3">
       <span class="font-semibold">{w.follow_label}</span>
       {socials.map((s) => isTBC(s.url)

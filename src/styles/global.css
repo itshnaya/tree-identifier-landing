@@ -12,6 +12,9 @@
   --color-terra: #D8582D;
   --color-gold: #C67A13;
   --color-ink: #F6FBF4;
+  --color-paper: #FBFDF8;
+  --color-moss: #2B5A44;
+  --color-leaf-dark: #17733A;
   --font-display: "Fredoka", ui-rounded, system-ui, sans-serif;
   --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -30,6 +33,10 @@
   .section { padding-block: 56px; }
   .section-title { font-family: var(--font-display); font-weight: 700; font-size: 2rem; letter-spacing: -0.01em; }
   .section-intro { margin-top: 8px; max-width: 46ch; color: var(--color-mint-light); }
+  /* Light sections alternate with the green ones. */
+  .section-light { background: var(--color-paper); color: var(--color-forest); }
+  .section-light .section-intro { color: var(--color-moss); }
+  .section-light .kicker { color: var(--color-leaf-dark); }
   .card-light { background: var(--color-mint-light); color: var(--color-forest); border-radius: 24px; }
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 18px; border-radius: 999px; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform .15s ease, background-color .15s ease; }
   .btn-mint { background: var(--color-mint); color: var(--color-forest); }
